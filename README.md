@@ -32,12 +32,7 @@ Works great in **GitHub Codespaces** and includes **Copilot instructions** to st
 
 ## Quickstart
 
-**Option A — Codespaces**  
-1. Open this repo in GitHub and click **Code → Codespaces → Create codespace**.  
-2. The dev container installs Node and runs `npm install` automatically.  
-3. Run `npm run dev` to start the dev server.
-
-**Option B — Local**  
+**Option — Local**  
 1. Install **Node.js 18+**.  
 2. `npm install`  
 3. `npm run dev`
@@ -84,7 +79,7 @@ This repo includes **custom Copilot agents** and **slash command prompts** that 
 The easiest way to get started is using slash commands. Type `/` in chat to see available commands:
 
 #### Step 0: Setup (First Time Only)
-If you're running locally (not in Codespaces), install dependencies first:
+If you're running locally, install dependencies first:
 
 ```
 /install

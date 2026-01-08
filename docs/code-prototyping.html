@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build your prototype with GitHub Copilot">
+    <title>6.0 Prototyping - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="layout-container">
+        <nav aria-label="Main navigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Challenge Home">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li>
+                    <a href="index.html" class="nav-link">
+                        Introduction
+                    </a>
+                </li>
+                <li>
+                    <a href="idea-generation.html" class="nav-link">
+                        1.0 Idea Generation
+                    </a>
+                </li>
+                <li>
+                    <a href="research.html" class="nav-link">
+                        2.0 Research
+                    </a>
+                </li>
+                <li>
+                    <a href="branding.html" class="nav-link">
+                        3.0 Branding
+                    </a>
+                </li>
+                <li>
+                    <a href="product-requirements.html" class="nav-link">
+                        4.0 Product Requirements
+                    </a>
+                </li>
+                <li>
+                    <a href="prototype.html" class="nav-link">
+                        5.0 Prototype
+                    </a>
+                </li>
+                <li>
+                    <a href="code-prototyping.html" aria-current="page" class="nav-link active">
+                        6.0 Prototyping
+                    </a>
+                </li>
+                <li>
+                    <a href="learnings-resources.html" class="nav-link">
+                        7.0 Learnings and Resources
+                    </a>
+                </li>
+                <li>
+                    <a href="express-version.html" class="nav-link">
+                        Express Version
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <h2 class="page-title">Step 6. GitHub Copilot Prototyping</h2>
+                    <p class="status-badge incomplete">Incomplete</p>
+                </header>
+
+                <section aria-labelledby="intro-heading">
+                    <h3 id="intro-heading">Time to Bring Your Idea to Life with AI-Assisted Coding Tools</h3>
+                </section>
+
+                <section aria-labelledby="overview-heading">
+                    <h4 id="overview-heading">6.0 Overview</h4>
+                    <p>In this section, we will be collaborating with AI to take on the role of an Engineer to rapidly prototype our idea with code.</p>
+
+                    <div class="info-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <div style="border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem;">
+                            <div style="color: #b91c1c; font-size: 2rem; margin-bottom: 0.5rem;">⏱</div>
+                            <h5 style="margin: 0.5rem 0; font-size: 0.875rem; color: #586069;">Estimated Time</h5>
+                            <p style="margin: 0; font-weight: bold;">30-60 minutes</p>
+                        </div>
+                        <div style="border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem;">
+                            <div style="color: #b91c1c; font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+                            <h5 style="margin: 0.5rem 0; font-size: 0.875rem; color: #586069;">Skills Developed</h5>
+                            <p style="margin: 0; font-weight: bold;">Rapid Prototyping, Development</p>
+                        </div>
+                        <div style="border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem;">
+                            <div style="color: #b91c1c; font-size: 2rem; margin-bottom: 0.5rem;">✓</div>
+                            <h5 style="margin: 0.5rem 0; font-size: 0.875rem; color: #586069;">Technology</h5>
+                            <p style="margin: 0; font-weight: bold;">GitHub Copilot</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Objective:</strong> Build a functional prototype that demonstrates the core value proposition and brand identity within a limited timeframe.</p>
+                    <p><strong>Key Outcome:</strong> Working prototype that can be demonstrated. If the platform or tech chosen supports, a link to the application is ideal.</p>
+                </section>
+
+                <section aria-labelledby="get-started-heading">
+                    <h4 id="get-started-heading">6.1 Get Started</h4>
+                    <p>Time to bring everything together. You have your concept, market validation, PRD, and brand identity. Now let's build a working prototype that demonstrates your value proposition using feature-by-feature development.</p>
+                    
+                    <p>This exercise encourages exploration. While we provide guidance, you're welcome to iterate and expand based on your creativity and goals.</p>
+                </section>
+
+                <section aria-labelledby="prerequisites-heading">
+                    <h4 id="prerequisites-heading">6.2 Prerequisites</h4>
+                    
+                    <h5>Requirements:</h5>
+                    <ul>
+                        <li>Node.js from <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs.org</a></li>
+                        <li>VS Code from <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+                        <li>GitHub Copilot account</li>
+                    </ul>
+
+                    <h5>Steps:</h5>
+                    <ol>
+                        <li>Navigate to <a href="https://github.com/new?template_name=prompt-to-prototype-challenge&template_owner=MSLifN" target="_blank" rel="noopener noreferrer">the starter repo</a></li>
+                        <li>Clone or download the repository:
+                            <ul>
+                                <li><strong>Clone:</strong> Click <strong>Code</strong>, copy URL, run <code>git clone [URL]</code></li>
+                                <li><strong>Download:</strong> Click <strong>Code</strong> > <strong>Download ZIP</strong>, extract files</li>
+                            </ul>
+                        </li>
+                        <li>Open in VS Code: <strong>File</strong> > <strong>Open Folder</strong></li>
+                        <li>Install dependencies:
+                            <div class="prompt-box" style="margin: 1rem 0;">
+                                <pre class="prompt-code" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>npm install</code></pre>
+                            </div>
+                        </li>
+                        <li>Start development:
+                            <div class="prompt-box" style="margin: 1rem 0;">
+                                <pre class="prompt-code" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto;"><code>npm run dev</code></pre>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="setup-heading">
+                    <h4 id="setup-heading">6.3 Add Your PRD</h4>
+                    
+                    <p>In a previous module, you generated a Product Requirements Document. Let's work with Copilot to refine it for rapid prototyping.</p>
+
+                    <h5>Steps:</h5>
+                    <ol>
+                        <li>Locate your saved PRD you created. If you need to create a markdown file, select <strong>File</strong> > <strong>New File</strong> and name it <code>PRD.md</code> and copy your Product Requirements content to there.</li>
+                        <li>In Copilot Chat, drag your <code>PRD.md</code> file to the prompt box</li>
+                        <li>Use this prompt:</li>
+                    </ol>
+
+                    <div class="prompt-box" style="margin: 1rem 0;">
+                        <div class="prompt-header" style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1rem; background-color: #f6f8fa; border-bottom: 1px solid #d0d7de;">
+                            <span class="prompt-label">Prompt</span>
+                            <button class="prompt-copy-btn" style="background: none; border: none; cursor: pointer; color: #586069;">📋 Copy</button>
+                        </div>
+                        <div class="prompt-content">
+                            <pre class="prompt-code" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; margin: 0; overflow-x: auto;"><code>Attached is my Product Requirements document named PRD.md. Please refine and update this document to be optimized for vibe coding a lightweight client-side web application.
+
+Make the purpose clear, identify core features for a simple prototype, outline key user flows, and ensure it supports building with limited time.
+
+Update the document directly with your improvements.</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="copilot-chat-heading">
+                    <h4 id="copilot-chat-heading">6.4 Use GitHub Copilot Chat</h4>
+                    <p>GitHub Copilot Chat is your AI pair programmer. Use it to:</p>
+                    <ul>
+                        <li>Generate component boilerplate</li>
+                        <li>Write functions based on natural language descriptions</li>
+                        <li>Debug issues and explain code</li>
+                        <li>Refactor for better structure</li>
+                        <li>Add styling and interactivity</li>
+                    </ul>
+
+                    <div class="subsection" style="margin-top: 2rem;">
+                        <h5>Tips for Effective Prompts:</h5>
+                        <ul>
+                            <li><strong>Be specific:</strong> "Create a React component that displays a list of tasks with checkboxes"</li>
+                            <li><strong>Reference your context:</strong> "Using the PRD features, build a form for [feature name]"</li>
+                            <li><strong>Iterate:</strong> Start simple, then ask Copilot to enhance or modify</li>
+                            <li><strong>Use inline chat:</strong> Press <code>Ctrl+I</code> (Windows) or <code>Cmd+I</code> (Mac) to edit code in place</li>
+                        </ul>
+                    </div>
+
+                    <div class="prompt-box" style="margin: 2rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Example Prompt</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre><code>Create a React component for a quiz interface with:
+- A question display
+- 4 multiple choice options as buttons
+- A "Next Question" button
+- Track score in state
+- Show results at the end</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="build-mvp-heading">
+                    <h4 id="build-mvp-heading">6.5 Build Your MVP Features</h4>
+                    <p>Follow this workflow to implement your MVP:</p>
+                    
+                    <div class="steps-section">
+                        <h5>Development Workflow:</h5>
+                        <ol>
+                            <li><strong>Start with structure:</strong> Create main component files for your app's sections</li>
+                            <li><strong>Build one feature at a time:</strong> Reference your PRD and tackle MVP features in order</li>
+                            <li><strong>Use Copilot for boilerplate:</strong> Let AI generate initial component code</li>
+                            <li><strong>Test as you go:</strong> Check each feature works before moving on</li>
+                            <li><strong>Add interactivity:</strong> Wire up buttons, forms, and state management</li>
+                            <li><strong>Apply branding:</strong> Add your colors, logo, and typography</li>
+                            <li><strong>Polish the UX:</strong> Add loading states, error messages, transitions</li>
+                        </ol>
+                    </div>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">🎯 Keep it Simple</h5>
+                        <p style="margin-bottom: 0;">For a 1-hour MVP, stick to client-side only: no backends, no databases, no authentication. Use local state, mock data, or browser storage.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="apply-branding-heading">
+                    <h4 id="apply-branding-heading">6.6 Apply Your Branding</h4>
+                    <p>Integrate the brand assets you created earlier:</p>
+                    
+                    <div class="steps-section">
+                        <h5>Branding Integration:</h5>
+                        <ol>
+                            <li><strong>Colors:</strong> Add your hex colors to CSS variables or Tailwind config</li>
+                            <li><strong>Logo:</strong> Import your logo file and add it to a header component</li>
+                            <li><strong>Typography:</strong> Import web fonts (Google Fonts) or use system font stack</li>
+                            <li><strong>Tone:</strong> Use copy that matches your brand voice</li>
+                        </ol>
+                    </div>
+
+                    <div class="prompt-box" style="margin: 2rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Example Prompt for Styling</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre><code>Update the App.css to use this color palette:
+- Primary: #3b82f6
+- Secondary: #8b5cf6
+- Accent: #f59e0b
+- Background: #f9fafb
+- Text: #1f2937
+
+Apply these colors throughout the app with a modern, clean design.</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="copilot-features-heading">
+                    <h4 id="copilot-features-heading">6.7 Leverage Key Copilot Features</h4>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Inline Suggestions</h5>
+                            <p>As you type, Copilot suggests completions. Press <code>Tab</code> to accept, <code>Esc</code> to dismiss.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Chat Panel</h5>
+                            <p>Open with <code>Ctrl+Shift+I</code> to ask questions and get code snippets. Great for "How do I..." questions.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Inline Chat</h5>
+                            <p>Press <code>Ctrl+I</code> in a file to edit code in context. Ask Copilot to "refactor this," "add error handling," etc.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Generate Tests</h5>
+                            <p>Ask Copilot to generate tests for your functions to ensure reliability.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Explain Code</h5>
+                            <p>Select code and ask "Explain this" to understand what it does—helpful for learning.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="common-patterns-heading">
+                    <h4 id="common-patterns-heading">6.8 Common MVP Patterns</h4>
+                    <p>Here are some typical features you might build with example prompts:</p>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Form with Validation</h5>
+                            <p><strong>Prompt:</strong> "Create a contact form with name, email, and message fields. Add validation and show success message on submit."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Data List with Filtering</h5>
+                            <p><strong>Prompt:</strong> "Create a component that displays a list of products with search/filter functionality using mock data."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Multi-Step Flow</h5>
+                            <p><strong>Prompt:</strong> "Build a 3-step wizard with Next/Previous buttons and progress indicator. Store form data across steps."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Interactive Calculator/Tool</h5>
+                            <p><strong>Prompt:</strong> "Create a budget calculator that takes inputs and displays real-time results with charts."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Results/Summary Screen</h5>
+                            <p><strong>Prompt:</strong> "Design a results page that shows a summary card with key metrics and a call-to-action button."</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="troubleshooting-heading">
+                    <h4 id="troubleshooting-heading">6.9 Troubleshooting</h4>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Copilot not suggesting anything</h5>
+                            <p>Check that Copilot is enabled (icon in status bar). Try adding a comment describing what you want, then press Enter.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Suggestions are off-target</h5>
+                            <p>Be more specific in comments or Chat. Provide context about your PRD, tech stack, or desired outcome.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Code has errors</h5>
+                            <p>Ask Copilot Chat: "Fix this error" and paste the error message. Or select the problematic code and use Inline Chat to debug.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">npm install fails</h5>
+                            <p>Ensure Node.js is updated. Try <code>npm cache clean --force</code> and reinstall. Check for version conflicts.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Styles not applying</h5>
+                            <p>Check CSS import statements. Verify class names match. Use browser DevTools to inspect elements.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="test-refine-heading">
+                    <h4 id="test-refine-heading">6.10 Test and Refine</h4>
+                    <p>Before finalizing your prototype:</p>
+                    <ol>
+                        <li><strong>Test all features:</strong> Click through every button, form, and interaction</li>
+                        <li><strong>Check responsiveness:</strong> Resize browser window to test mobile view</li>
+                        <li><strong>Review console:</strong> Fix any errors or warnings in browser console</li>
+                        <li><strong>Validate against PRD:</strong> Ensure all MVP features are implemented</li>
+                        <li><strong>Polish UI:</strong> Fix alignment, spacing, and visual consistency</li>
+                        <li><strong>Add loading states:</strong> Show feedback for any async actions</li>
+                    </ol>
+
+                    <div class="info-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">🐛 Quick Fixes</h5>
+                        <p style="margin-bottom: 0;">Use Copilot Chat to quickly address issues: "This button doesn't work, fix the onClick handler" or "Add error handling to this form submission."</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="deploy-heading">
+                    <h4 id="deploy-heading">6.11 Deploy Your Prototype</h4>
+                    <p>Make your prototype accessible online:</p>
+                    
+                    <div class="steps-section">
+                        <h5>Quick Deployment Options:</h5>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h6>GitHub Pages (Recommended for Simple SPAs):</h6>
+                            <ol>
+                                <li>Run <code>npm run build</code> to create production files</li>
+                                <li>Push your code to a GitHub repository</li>
+                                <li>Enable GitHub Pages in repository settings</li>
+                                <li>Deploy from the <code>dist</code> folder</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h6>Vercel (Recommended for React/Vite):</h6>
+                            <ol>
+                                <li>Sign up at <code>vercel.com</code></li>
+                                <li>Import your GitHub repository</li>
+                                <li>Vercel auto-detects Vite and deploys</li>
+                                <li>Get a live URL in minutes</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h6>Netlify:</h6>
+                            <ol>
+                                <li>Sign up at <code>netlify.com</code></li>
+                                <li>Drag-and-drop your <code>dist</code> folder</li>
+                                <li>Or connect GitHub for continuous deployment</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="note-box" style="background-color: #fff9e6; border-left: 4px solid #f4a300; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="color: #8b5a00; margin-top: 0;">💡 Pro Tip</h5>
+                        <p style="color: #5c4200; margin-bottom: 0;">All three platforms offer free tiers perfect for MVPs. Vercel and Netlify provide instant SSL and custom domains.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="document-heading">
+                    <h4 id="document-heading">6.12 Document Your Work</h4>
+                    <p>Create a brief README or documentation including:</p>
+                    <ul>
+                        <li><strong>Project description:</strong> What your MVP does (1-2 sentences)</li>
+                        <li><strong>Tech stack:</strong> React, Vite, any key libraries</li>
+                        <li><strong>Features implemented:</strong> List from your PRD</li>
+                        <li><strong>How to run locally:</strong> Installation and dev server commands</li>
+                        <li><strong>Live demo link:</strong> URL to deployed version</li>
+                        <li><strong>Known limitations:</strong> What's not implemented yet</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin: 2rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Ask Copilot to Help</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre><code>Create a README.md for my project with:
+- Project title and description
+- Features list
+- Tech stack
+- Installation instructions
+- How to run the dev server
+- Deployment URL section</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="next-steps-heading">
+                    <h4 id="next-steps-heading">6.13 What's Next?</h4>
+                    <p>After completing your code prototype:</p>
+                    <ul>
+                        <li>Review <a href="learnings-resources.html">7.0 Learnings and Resources</a> for additional tips</li>
+                        <li>Consider gathering feedback from peers</li>
+                        <li>Document lessons learned and areas for future improvement</li>
+                        <li>Share your deployed prototype with your team or community</li>
+                    </ul>
+
+                    <div class="info-box" style="background-color: #dcfce7; border-left: 4px solid #16a34a; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="color: #15803d; margin-top: 0;">🎉 Congratulations!</h5>
+                        <p style="color: #166534; margin-bottom: 0;">You've built a functional MVP using AI-assisted development. This is a foundational skill for modern software engineering.</p>
+                    </div>
+                </section>
+
+                <nav aria-label="Page navigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #586069;">Previous</p>
+                        <a href="prototype.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 5.0 Prototype
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #586069;">Next</p>
+                        <a href="learnings-resources.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            7.0 Learnings and Resources →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">On this page</h2>
+                <nav aria-label="Page table of contents">
+                    <ul role="list">
+                        <li><a href="#intro-heading">Time to Bring Your Idea to Life</a></li>
+                        <li><a href="#overview-heading">6.0 Overview</a></li>
+                        <li><a href="#get-started-heading">6.1 Get Started</a></li>
+                        <li><a href="#prerequisites-heading">6.2 Prerequisites</a></li>
+                        <li><a href="#setup-heading">6.3 Set Up Your Project</a></li>
+                        <li><a href="#copilot-chat-heading">6.4 Use GitHub Copilot Chat</a></li>
+                        <li><a href="#build-mvp-heading">6.5 Build Your MVP Features</a></li>
+                        <li><a href="#apply-branding-heading">6.6 Apply Your Branding</a></li>
+                        <li><a href="#copilot-features-heading">6.7 Leverage Key Copilot Features</a></li>
+                        <li><a href="#common-patterns-heading">6.8 Common MVP Patterns</a></li>
+                        <li><a href="#troubleshooting-heading">6.9 Troubleshooting</a></li>
+                        <li><a href="#test-refine-heading">6.10 Test and Refine</a></li>
+                        <li><a href="#deploy-heading">6.11 Deploy Your Prototype</a></li>
+                        <li><a href="#document-heading">6.12 Document Your Work</a></li>
+                        <li><a href="#next-steps-heading">6.13 What's Next?</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
