@@ -22,10 +22,76 @@ You’ll go through **six key stages**:
 
 Visit [https://aka.ms/skillupai/ptpchallenge](https://aka.ms/skillupai/ptpchallenge) to learn more about the Challenge and get started. 
 
+## 🎯 Using This Repo with Free Tier?
 
+**Good news!** This starter works great with **GitHub Copilot Free Tier**. You have access to:
+- ✅ **Code Completions** - Suggestions as you type (press Tab)
+- ✅ **Copilot Chat** - Ask questions and get code (Ctrl+Shift+I)
+- ✅ **Inline Chat** - Edit code in context (Ctrl+I)
 
+**Note:** The sections below describe advanced features (custom agents, slash commands) that require a **paid Copilot plan**. If you're on the free tier, skip to the [Free Tier Quickstart](#free-tier-quickstart) section instead.
 
-# Starter Scaffold (React + Vite)
+**📖 Complete Free Tier Guide:** See [`docs/free-tier-workflow.md`](docs/free-tier-workflow.md) for detailed instructions, examples, and best practices.
+
+---
+
+## 🚀 Free Tier Quickstart
+
+**For participants using GitHub Copilot Free Tier:**
+
+### Setup (5 minutes)
+```bash
+# 1. Clone this repo
+git clone https://github.com/MSLifN/prompt-to-prototype-challenge
+cd prompt-to-prototype-challenge
+
+# 2. Install dependencies
+npm install
+
+# 3. Start development server
+npm run dev
+```
+
+### Build Your MVP (30-60 minutes)
+
+**Step 1: Plan (10 min)**
+Create a `PRD.md` file with:
+- One-sentence goal
+- 3-5 core features
+- UI components needed
+- Data requirements
+
+**Step 2: Generate Code (10 min)**
+- Open Copilot Chat (Ctrl+Shift+I)
+- Drag your PRD.md into chat
+- Prompt: "Based on this PRD, create a React component in App.jsx with [describe your app]"
+- Copy the code into `src/App.jsx`
+
+**Step 3: Add Functionality (15 min)**
+- Select specific code sections
+- Press Ctrl+I (Inline Chat)
+- Ask for changes: "Add onClick handler", "Add validation", "Make this responsive"
+
+**Step 4: Style & Polish (10 min)**
+- Use Chat to apply your branding colors
+- Use Inline Chat to refine specific elements
+- Test in browser at `localhost:5173`
+
+**Step 5: Deploy (5 min)**
+```bash
+npm run build
+# Deploy to Vercel, Netlify, or GitHub Pages
+```
+
+**💡 See full examples and troubleshooting in [`docs/free-tier-workflow.md`](docs/free-tier-workflow.md)**
+
+---
+
+## 🔧 Advanced Features (Paid Tier Only)
+
+The features below require a **GitHub Copilot paid plan** and are NOT needed for the free tier workflow above.
+
+### Starter Scaffold (React + Vite)
 
 A tiny scaffold to help you build a **quiz, game, site, dashboard, or landing page** in under an hour.
 Works great in **GitHub Codespaces** and includes **Copilot instructions** to steer your build.

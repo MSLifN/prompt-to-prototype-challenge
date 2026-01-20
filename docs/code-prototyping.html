@@ -120,8 +120,20 @@
                     <ul>
                         <li>Node.js from <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs.org</a></li>
                         <li>VS Code from <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
-                        <li>GitHub Copilot account</li>
+                        <li>GitHub Copilot account (free tier is sufficient!)</li>
                     </ul>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">📘 Free Tier vs Paid Features</h5>
+                        <p><strong>This guide works with GitHub Copilot FREE TIER!</strong> You'll use:</p>
+                        <ul style="margin: 0.5rem 0;">
+                            <li>✅ Code Completions (suggestions as you type)</li>
+                            <li>✅ Copilot Chat (ask questions, get code snippets)</li>
+                            <li>✅ Inline Chat (edit code in context with Ctrl+I)</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;"><strong>Advanced features</strong> like custom agents (@agent) and slash commands (/build, /start) require paid plans, but are NOT needed for this exercise.</p>
+                        <p style="margin-bottom: 0;"><a href="free-tier-workflow.md" style="color: #0078d4; font-weight: bold;">→ See the Free Tier Workflow Guide for detailed instructions</a></p>
+                    </div>
 
                     <h5>Steps:</h5>
                     <ol>
@@ -294,8 +306,80 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                     </div>
                 </section>
 
+                <section aria-labelledby="free-tier-workflow-heading">
+                    <h4 id="free-tier-workflow-heading">6.8 Free Tier Workflow</h4>
+                    
+                    <div class="note-box" style="background-color: #dcfce7; border-left: 4px solid #16a34a; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="color: #15803d; margin-top: 0;">🎯 Optimized for Free Tier</h5>
+                        <p style="color: #166534; margin-bottom: 0;">The workflow below uses ONLY free tier features: Chat, Inline Chat, and Completions. No paid features required!</p>
+                    </div>
+
+                    <div style="margin: 1.5rem 0;">
+                        <h5>The Three Tools You'll Use</h5>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h6 style="color: #0366d6; margin-top: 0;">💬 Copilot Chat - Your AI Partner</h6>
+                            <p><strong>What:</strong> Open chat panel to ask questions and get code</p>
+                            <p><strong>How:</strong> Click chat icon in sidebar or press <code>Ctrl+Shift+I</code></p>
+                            <p style="margin-bottom: 0;"><strong>Use for:</strong> Getting starter code, planning components, generating full functions</p>
+                        </div>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h6 style="color: #0366d6; margin-top: 0;">✏️ Inline Chat - Quick Edits</h6>
+                            <p><strong>What:</strong> Edit specific code you've selected</p>
+                            <p><strong>How:</strong> Select code, press <code>Ctrl+I</code> (Windows) or <code>Cmd+I</code> (Mac)</p>
+                            <p style="margin-bottom: 0;"><strong>Use for:</strong> "Make this responsive", "Add validation", "Fix this bug"</p>
+                        </div>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h6 style="color: #0366d6; margin-top: 0;">⚡ Code Completions - Auto-suggestions</h6>
+                            <p><strong>What:</strong> Gray text suggestions as you type</p>
+                            <p><strong>How:</strong> Just start typing, press <code>Tab</code> to accept</p>
+                            <p style="margin-bottom: 0;"><strong>Use for:</strong> Writing code line-by-line with AI assistance</p>
+                        </div>
+                    </div>
+
+                    <h5>Recommended Workflow (1 Hour)</h5>
+                    <ol>
+                        <li><strong>Plan (10 min):</strong> Create a simple PRD.md with your one-sentence goal, 3-5 features, and needed components</li>
+                        <li><strong>Generate Structure (10 min):</strong> Use Chat to create your initial component based on the PRD</li>
+                        <li><strong>Add Interactivity (15 min):</strong> Use Inline Chat to wire up buttons, forms, and state</li>
+                        <li><strong>Style (10 min):</strong> Use Chat and Inline Chat to apply your branding and polish the UI</li>
+                        <li><strong>Test & Fix (10 min):</strong> Test everything, use Chat to debug any issues</li>
+                        <li><strong>Deploy (5 min):</strong> Build and deploy to Vercel or Netlify</li>
+                    </ol>
+
+                    <div class="prompt-box" style="margin: 2rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Example: Building a Quiz App with Free Tier</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre><code><strong>Step 1 - Chat Prompt:</strong>
+"Create a React quiz app with:
+- 5 multiple choice questions (use mock data)
+- Show one question at a time
+- Track score
+- Show results screen at end
+Keep everything in App.jsx"
+
+<strong>Step 2 - After pasting code, select answer buttons, Inline Chat:</strong>
+"Add onClick that checks if answer is correct, updates score, and moves to next question"
+
+<strong>Step 3 - Select the results section, Inline Chat:</strong>
+"Add congratulations message and show score as percentage"
+
+<strong>Step 4 - Chat Prompt for styling:</strong>
+"Update styles to use colors: primary #3b82f6, background #f9fafb. Make it modern and clean."
+
+Done! Test and deploy.</code></pre>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 2rem;"><strong>📖 For detailed examples and troubleshooting:</strong> <a href="free-tier-workflow.md" style="color: #0366d6;">See the complete Free Tier Workflow Guide</a></p>
+                </section>
+
                 <section aria-labelledby="common-patterns-heading">
-                    <h4 id="common-patterns-heading">6.8 Common MVP Patterns</h4>
+                    <h4 id="common-patterns-heading">6.9 Common MVP Patterns</h4>
                     <p>Here are some typical features you might build with example prompts:</p>
                     
                     <div style="margin: 1.5rem 0;">
@@ -327,7 +411,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="troubleshooting-heading">
-                    <h4 id="troubleshooting-heading">6.9 Troubleshooting</h4>
+                    <h4 id="troubleshooting-heading">6.10 Troubleshooting</h4>
                     
                     <div style="margin: 1.5rem 0;">
                         <div style="margin-bottom: 1.5rem;">
@@ -358,7 +442,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="test-refine-heading">
-                    <h4 id="test-refine-heading">6.10 Test and Refine</h4>
+                    <h4 id="test-refine-heading">6.11 Test and Refine</h4>
                     <p>Before finalizing your prototype:</p>
                     <ol>
                         <li><strong>Test all features:</strong> Click through every button, form, and interaction</li>
@@ -376,7 +460,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="deploy-heading">
-                    <h4 id="deploy-heading">6.11 Deploy Your Prototype</h4>
+                    <h4 id="deploy-heading">6.12 Deploy Your Prototype</h4>
                     <p>Make your prototype accessible online:</p>
                     
                     <div class="steps-section">
@@ -419,7 +503,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="document-heading">
-                    <h4 id="document-heading">6.12 Document Your Work</h4>
+                    <h4 id="document-heading">6.13 Document Your Work</h4>
                     <p>Create a brief README or documentation including:</p>
                     <ul>
                         <li><strong>Project description:</strong> What your MVP does (1-2 sentences)</li>
@@ -447,7 +531,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="next-steps-heading">
-                    <h4 id="next-steps-heading">6.13 What's Next?</h4>
+                    <h4 id="next-steps-heading">6.14 What's Next?</h4>
                     <p>After completing your code prototype:</p>
                     <ul>
                         <li>Review <a href="learnings-resources.html">7.0 Learnings and Resources</a> for additional tips</li>
@@ -486,17 +570,18 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                         <li><a href="#overview-heading">6.0 Overview</a></li>
                         <li><a href="#get-started-heading">6.1 Get Started</a></li>
                         <li><a href="#prerequisites-heading">6.2 Prerequisites</a></li>
-                        <li><a href="#setup-heading">6.3 Set Up Your Project</a></li>
+                        <li><a href="#setup-heading">6.3 Add Your PRD</a></li>
                         <li><a href="#copilot-chat-heading">6.4 Use GitHub Copilot Chat</a></li>
                         <li><a href="#build-mvp-heading">6.5 Build Your MVP Features</a></li>
                         <li><a href="#apply-branding-heading">6.6 Apply Your Branding</a></li>
                         <li><a href="#copilot-features-heading">6.7 Leverage Key Copilot Features</a></li>
-                        <li><a href="#common-patterns-heading">6.8 Common MVP Patterns</a></li>
-                        <li><a href="#troubleshooting-heading">6.9 Troubleshooting</a></li>
-                        <li><a href="#test-refine-heading">6.10 Test and Refine</a></li>
-                        <li><a href="#deploy-heading">6.11 Deploy Your Prototype</a></li>
-                        <li><a href="#document-heading">6.12 Document Your Work</a></li>
-                        <li><a href="#next-steps-heading">6.13 What's Next?</a></li>
+                        <li><a href="#free-tier-workflow-heading">6.8 Free Tier Workflow</a></li>
+                        <li><a href="#common-patterns-heading">6.9 Common MVP Patterns</a></li>
+                        <li><a href="#troubleshooting-heading">6.10 Troubleshooting</a></li>
+                        <li><a href="#test-refine-heading">6.11 Test and Refine</a></li>
+                        <li><a href="#deploy-heading">6.12 Deploy Your Prototype</a></li>
+                        <li><a href="#document-heading">6.13 Document Your Work</a></li>
+                        <li><a href="#next-steps-heading">6.14 What's Next?</a></li>
                     </ul>
                 </nav>
             </aside>
