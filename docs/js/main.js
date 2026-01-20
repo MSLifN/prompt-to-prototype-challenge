@@ -268,6 +268,289 @@
         });
     }
 
+    // Completion Status Management
+    const STORAGE_KEY = 'ptpchallenge-completion-status';
+
+    // Get all completion data from localStorage
+    function getCompletionData() {
+        try {
+            const data = localStorage.getItem(STORAGE_KEY);
+            return data ? JSON.parse(data) : {};
+        } catch (e) {
+            console.error('Failed to read completion data:', e);
+            return {};
+        }
+    }
+
+    // Save completion data to localStorage
+    function saveCompletionData(data) {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            return true;
+        } catch (e) {
+            console.error('Failed to save completion data:', e);
+            return false;
+        }
+    }
+
+    // Get page ID from current URL
+    function getCurrentPageId() {
+        const path = window.location.pathname;
+        const filename = path.substring(path.lastIndexOf('/') + 1);
+        return filename || 'index.html';
+    }
+
+    // Check if a page is completed
+    function isPageCompleted(pageId) {
+        const data = getCompletionData();
+        return data[pageId] === true;
+    }
+
+    // Mark page as complete/incomplete
+    function togglePageCompletion(pageId, isComplete) {
+        const data = getCompletionData();
+        data[pageId] = isComplete;
+        saveCompletionData(data);
+        return isComplete;
+    }
+
+    // Update badge UI
+    function updateBadgeUI(isComplete) {
+        const badge = document.querySelector('.status-badge');
+        if (!badge) return;
+
+        if (isComplete) {
+            badge.classList.remove('incomplete');
+            badge.classList.add('complete');
+            
+            // Update icon and text
+            const icon = badge.querySelector('.status-icon');
+            const text = badge.querySelector('span:last-child') || badge;
+            if (icon) icon.textContent = '✓';
+            if (text.tagName === 'SPAN') {
+                text.textContent = 'Complete';
+            } else {
+                badge.textContent = 'Complete';
+            }
+        } else {
+            badge.classList.remove('complete');
+            badge.classList.add('incomplete');
+            
+            // Update icon and text
+            const icon = badge.querySelector('.status-icon');
+            const text = badge.querySelector('span:last-child') || badge;
+            if (icon) icon.textContent = '✕';
+            if (text.tagName === 'SPAN') {
+                text.textContent = 'Incomplete';
+            } else {
+                badge.textContent = 'Incomplete';
+            }
+        }
+
+        // Announce change to screen readers
+        announceCompletion(isComplete);
+    }
+
+    // Update sidebar navigation with checkmarks
+    function updateSidebarCheckmarks() {
+        const data = getCompletionData();
+        const navLinks = document.querySelectorAll('.sidebar .nav-link');
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href || href.startsWith('#')) return;
+
+            const pageId = href.substring(href.lastIndexOf('/') + 1);
+            const isComplete = data[pageId] === true;
+
+            // Remove existing checkmark if any
+            const existingCheck = link.querySelector('.completion-check');
+            if (existingCheck) existingCheck.remove();
+
+            // Add checkmark if complete
+            if (isComplete) {
+                const checkmark = document.createElement('span');
+                checkmark.className = 'completion-check';
+                checkmark.setAttribute('aria-label', 'Completed');
+                checkmark.textContent = ' ✓';
+                link.appendChild(checkmark);
+            }
+        });
+    }
+
+    // Announce completion status to screen readers
+    function announceCompletion(isComplete) {
+        const announcement = document.createElement('div');
+        announcement.setAttribute('role', 'status');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.setAttribute('aria-atomic', 'true');
+        announcement.className = 'sr-only';
+        announcement.textContent = isComplete 
+            ? 'Page marked as complete' 
+            : 'Page marked as incomplete';
+        document.body.appendChild(announcement);
+
+        setTimeout(() => announcement.remove(), 1000);
+    }
+
+    // Initialize completion button
+    function initCompletionButton() {
+        const pageId = getCurrentPageId();
+        const isComplete = isPageCompleted(pageId);
+
+        // Update badge on page load
+        updateBadgeUI(isComplete);
+
+        // Create completion button at bottom of article
+        const article = document.querySelector('article');
+        if (!article) return;
+
+        // Check if button already exists
+        if (document.querySelector('.completion-toggle-btn')) return;
+
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'completion-button-container';
+        buttonContainer.style.marginTop = 'var(--spacing-lg)';
+        buttonContainer.style.marginBottom = 'var(--spacing-lg)';
+        buttonContainer.style.paddingTop = 'var(--spacing-md)';
+        buttonContainer.style.borderTop = '1px solid var(--color-border)';
+
+        const button = document.createElement('button');
+        button.className = 'completion-toggle-btn button-primary';
+        button.textContent = isComplete ? 'Mark as Incomplete' : 'Mark as Complete';
+        button.setAttribute('aria-pressed', isComplete ? 'true' : 'false');
+
+        button.addEventListener('click', function() {
+            const currentStatus = isPageCompleted(pageId);
+            const newStatus = !currentStatus;
+            
+            togglePageCompletion(pageId, newStatus);
+            updateBadgeUI(newStatus);
+            updateSidebarCheckmarks();
+
+            // Update button
+            this.textContent = newStatus ? 'Mark as Incomplete' : 'Mark as Complete';
+            this.setAttribute('aria-pressed', newStatus ? 'true' : 'false');
+        });
+
+        buttonContainer.appendChild(button);
+        
+        // Insert before page navigation if it exists, otherwise at end
+        const pageNav = article.querySelector('.page-navigation');
+        if (pageNav) {
+            article.insertBefore(buttonContainer, pageNav);
+        } else {
+            article.appendChild(buttonContainer);
+        }
+    }
+
+    // Calculate completion progress
+    function calculateProgress() {
+        const pages = [
+            'idea-generation.html',
+            'research.html',
+            'branding.html',
+            'product-requirements.html',
+            'prototype.html',
+            'code-prototyping.html',
+            'learnings-resources.html'
+        ];
+
+        const data = getCompletionData();
+        const completed = pages.filter(page => data[page] === true).length;
+        const total = pages.length;
+
+        return {
+            completed,
+            total,
+            percentage: Math.round((completed / total) * 100)
+        };
+    }
+
+    // Add progress indicator to home page
+    function initProgressIndicator() {
+        // Only add to home page
+        const pageId = getCurrentPageId();
+        if (pageId !== 'index.html') return;
+
+        const article = document.querySelector('article');
+        if (!article) return;
+
+        // Check if already exists
+        if (document.querySelector('.progress-indicator')) return;
+
+        const progress = calculateProgress();
+
+        const progressContainer = document.createElement('div');
+        progressContainer.className = 'progress-indicator';
+        progressContainer.style.marginTop = 'var(--spacing-xl)';
+        progressContainer.style.padding = 'var(--spacing-md)';
+        progressContainer.style.backgroundColor = 'var(--color-background-alt)';
+        progressContainer.style.borderRadius = '8px';
+        progressContainer.style.border = '1px solid var(--color-border)';
+
+        const progressTitle = document.createElement('h3');
+        progressTitle.textContent = 'Your Progress';
+        progressTitle.style.marginTop = '0';
+        progressTitle.style.marginBottom = 'var(--spacing-sm)';
+
+        const progressText = document.createElement('p');
+        progressText.textContent = `${progress.completed} of ${progress.total} steps completed`;
+        progressText.style.marginBottom = 'var(--spacing-sm)';
+
+        const progressBarContainer = document.createElement('div');
+        progressBarContainer.style.width = '100%';
+        progressBarContainer.style.height = '24px';
+        progressBarContainer.style.backgroundColor = '#f3f2f1';
+        progressBarContainer.style.borderRadius = '12px';
+        progressBarContainer.style.overflow = 'hidden';
+
+        const progressBar = document.createElement('div');
+        progressBar.style.width = `${progress.percentage}%`;
+        progressBar.style.height = '100%';
+        progressBar.style.backgroundColor = '#8B2635';
+        progressBar.style.transition = 'width 0.3s ease';
+        progressBar.setAttribute('role', 'progressbar');
+        progressBar.setAttribute('aria-valuenow', progress.completed);
+        progressBar.setAttribute('aria-valuemin', '0');
+        progressBar.setAttribute('aria-valuemax', progress.total);
+        progressBar.setAttribute('aria-label', `${progress.completed} of ${progress.total} steps completed`);
+
+        progressBarContainer.appendChild(progressBar);
+
+        const resetButton = document.createElement('button');
+        resetButton.className = 'button-secondary';
+        resetButton.textContent = 'Reset Progress';
+        resetButton.style.marginTop = 'var(--spacing-sm)';
+        resetButton.style.padding = '0.5rem 1rem';
+        resetButton.style.fontSize = 'var(--font-size-small)';
+        resetButton.style.backgroundColor = 'transparent';
+        resetButton.style.border = '1px solid var(--color-border)';
+        resetButton.style.borderRadius = '4px';
+        resetButton.style.cursor = 'pointer';
+        resetButton.style.color = 'var(--color-text)';
+
+        resetButton.addEventListener('click', function() {
+            if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
+                localStorage.removeItem(STORAGE_KEY);
+                location.reload();
+            }
+        });
+
+        progressContainer.appendChild(progressTitle);
+        progressContainer.appendChild(progressText);
+        progressContainer.appendChild(progressBarContainer);
+        progressContainer.appendChild(resetButton);
+
+        // Insert after the first section
+        const firstSection = article.querySelector('section');
+        if (firstSection) {
+            firstSection.parentNode.insertBefore(progressContainer, firstSection.nextSibling);
+        } else {
+            article.appendChild(progressContainer);
+        }
+    }
+
     // Initialize all features when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
@@ -282,6 +565,9 @@
         initKeyboardNav();
         announcePageLoad();
         initPromptBoxes();
+        initCompletionButton();
+        initProgressIndicator();
+        updateSidebarCheckmarks();
     }
 
 })();
