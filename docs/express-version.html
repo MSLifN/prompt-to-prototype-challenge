@@ -57,13 +57,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="project-submission.html" class="nav-link">
-                        7.0 Project Submission
-                    </a>
-                </li>
-                <li>
                     <a href="learnings-resources.html" class="nav-link">
-                        8.0 Learnings and Resources
+                        7.0 Learnings and Resources
                     </a>
                 </li>
                 <li>
@@ -80,17 +75,326 @@
                     <h2 class="page-title">Express Version</h2>
                 </header>
 
-                <section aria-labelledby="content-heading">
-                    <h3 id="content-heading">Quick Version of the Challenge</h3>
-                    <p>Content coming soon...</p>
+                <section aria-labelledby="overview-heading">
+                    <h3 id="overview-heading">Quick Version of the Challenge</h3>
+                    <p>Short on time? This express version uses <strong>custom GitHub Copilot agents</strong> and <strong>slash command prompts</strong> to guide you through a streamlined workflow from ideation to implementation in about 30-45 minutes.</p>
+                    
+                    <p>The workflow is designed to keep your MVP achievable and focused on building with GitHub Copilot's free tier features.</p>
                 </section>
+
+                <section aria-labelledby="setup-heading">
+                    <h3 id="setup-heading">What You'll Need</h3>
+                    <ul>
+                        <li><strong>VS Code</strong> with GitHub Copilot extension installed</li>
+                        <li><strong>GitHub Copilot</strong> (free tier works perfectly)</li>
+                        <li><strong>Node.js 18+</strong> installed on your system</li>
+                        <li>The starter repository cloned locally or opened in GitHub Codespaces</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="workflow-heading">
+                    <h3 id="workflow-heading">Complete Workflow (6 Steps)</h3>
+                    <p>The easiest way to get started is using slash commands. Type <code>/</code> in GitHub Copilot Chat to see available commands:</p>
+
+                    <div class="subsection">
+                        <h4>Step 0: Setup (First Time Only)</h4>
+                        <p>If you're running locally, install dependencies first by typing this in Copilot Chat:</p>
+                        
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Command</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy command to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>/install</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Step 1: Ideate</h4>
+                        <p>Brainstorm and discover compelling MVP ideas through guided conversation:</p>
+                        
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Command</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy command to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>/ideate</code></pre>
+                        </div>
+
+                        <p><strong>What happens:</strong></p>
+                        <ul>
+                            <li>Launches the <code>@idea-generator</code> agent</li>
+                            <li>Asks about your interests, skill level, and goals</li>
+                            <li>Generates 3-5 concrete, feasible ideas across different categories</li>
+                            <li>Helps you refine and choose the best idea</li>
+                            <li>Hands off to planning with a clear one-sentence goal</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Step 2: Create PRD</h4>
+                        <p>Create a detailed implementation plan with a Product Requirements Document:</p>
+                        
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Command</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy command to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>/prd</code></pre>
+                        </div>
+
+                        <p><strong>What happens:</strong></p>
+                        <ul>
+                            <li>Launches the <code>@mvp-kickoff</code> agent</li>
+                            <li>Confirms the MVP goal and scope (~1 hour feasibility)</li>
+                            <li>Identifies the ONE core user action</li>
+                            <li>Breaks down UI components, state, and data requirements</li>
+                            <li>Proposes 3-5 clear implementation steps</li>
+                            <li>Generates a <code>PRD.md</code> file after your confirmation</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Step 3: Build MVP</h4>
+                        <p>Build the MVP following the PRD steps:</p>
+                        
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Command</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy command to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>/build</code></pre>
+                        </div>
+
+                        <p><strong>What happens:</strong></p>
+                        <ul>
+                            <li>Launches the <code>@agent</code> with pre-configured editing tools</li>
+                            <li>Reads PRD.md to understand requirements</li>
+                            <li>Implements the code step-by-step in <code>src/App.jsx</code></li>
+                            <li>Runs <code>npm run dev</code> to test</li>
+                            <li>Verifies everything works with no console errors</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Step 4: Start Server</h4>
+                        <p>Launch the development server to test your MVP:</p>
+                        
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Command</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy command to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>/start</code></pre>
+                        </div>
+
+                        <p><strong>What happens:</strong></p>
+                        <ul>
+                            <li>Runs <code>npm run dev</code> in the terminal</li>
+                            <li>Waits for the server to start</li>
+                            <li>Provides the local URL (typically <code>http://localhost:5173</code>)</li>
+                            <li>Confirms the server is ready</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Step 5: Export Your Work</h4>
+                        <p>Download your MVP workspace as a ZIP file or push to your GitHub repository:</p>
+                        
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Command</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy command to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>/export</code></pre>
+                        </div>
+
+                        <p><strong>What happens:</strong></p>
+                        <ul>
+                            <li>Guides you through opening the Command Palette</li>
+                            <li>Using "Codespaces: Download Current Workspace" (if in Codespaces)</li>
+                            <li>Saving the ZIP file with all your work</li>
+                            <li>Explains what's included and next steps for deployment</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section aria-labelledby="alternative-heading">
+                    <h3 id="alternative-heading">Alternative: Using Agents Directly</h3>
+                    <p>You can also invoke agents directly in Copilot Chat if you prefer more control:</p>
+
+                    <div class="subsection">
+                        <h4>Ideation</h4>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Prompt</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy prompt to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>@idea-generator I want to build something fun for my portfolio</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Planning</h4>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Prompt</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy prompt to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>@mvp-kickoff Build a Speed Reader app where users paste text and read words one-at-a-time</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Implementation</h4>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Prompt</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-copy-btn" aria-label="Copy prompt to clipboard">
+                                        <span aria-hidden="true">📋</span> Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>@agent Implement the MVP plan from PRD.md</code></pre>
+                        </div>
+
+                        <p>Or use inline chat (<code>Ctrl+I</code> or <code>Cmd+I</code>) directly in <code>src/App.jsx</code> to build step-by-step.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="tips-heading">
+                    <h3 id="tips-heading">Tips for Success</h3>
+                    <ul>
+                        <li><strong>Start with <code>/ideate</code></strong> if you need help choosing what to build</li>
+                        <li><strong>Use slash commands</strong> for the simplest experience with pre-configured tools</li>
+                        <li><strong>Follow the sequence:</strong> <code>/ideate</code> → <code>/prd</code> → <code>/build</code></li>
+                        <li><strong>Be specific:</strong> The more context you provide, the better the results</li>
+                        <li><strong>Iterate:</strong> Don't hesitate to ask follow-up questions or refine ideas</li>
+                        <li><strong>Use handoffs:</strong> Agents provide handoff buttons to seamlessly transition between phases</li>
+                        <li><strong>Keep scope minimal:</strong> The workflow is designed to keep your MVP achievable in ~1 hour</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="comparison-heading">
+                    <h3 id="comparison-heading">Express vs. Full Version</h3>
+                    
+                    <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+                        <thead>
+                            <tr style="background-color: #f6f8fa;">
+                                <th style="border: 1px solid #d0d7de; padding: 12px; text-align: left;">Aspect</th>
+                                <th style="border: 1px solid #d0d7de; padding: 12px; text-align: left;">Express Version</th>
+                                <th style="border: 1px solid #d0d7de; padding: 12px; text-align: left;">Full Version</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Time</strong></td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">30-45 minutes</td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">60+ minutes</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Approach</strong></td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">Automated workflow using slash commands and custom agents</td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">Manual step-by-step learning journey through documentation</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Tools</strong></td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">GitHub Copilot in VS Code with custom agents</td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">Copilot Chat in browser + GitHub Copilot in VS Code</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Ideal For</strong></td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">Quick prototyping, experienced developers, time-constrained sessions</td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">Learning AI-assisted development, understanding the full process</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Interaction</strong></td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">Type commands, follow agent guidance</td>
+                                <td style="border: 1px solid #d0d7de; padding: 12px;">Copy/paste prompts, iterate with AI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section aria-labelledby="quickstart-heading">
+                    <h3 id="quickstart-heading">Quick Example</h3>
+                    <p>Here's what a complete Express Version session looks like in VS Code Copilot Chat:</p>
+                    
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Complete Workflow</span>
+                        </div>
+                        <pre class="prompt-code"><code># In VS Code Chat (no terminal needed!):
+/install                   # First time: install dependencies
+/ideate                    # Brainstorm ideas → choose "Speed Reader"
+/prd                       # Create PRD.md with implementation plan
+/build                     # Implement the code
+/start                     # Start dev server → get URL
+# Open URL in browser → Test your MVP!
+/export                    # Download ZIP or push to your GitHub repo</code></pre>
+                    </div>
+                </section>
+
+                <nav aria-label="Page navigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #586069;">Previous</p>
+                        <a href="learnings-resources.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 7.0 Learnings and Resources
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #586069;">Ready to Start?</p>
+                        <a href="index.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            Back to Introduction →
+                        </a>
+                    </div>
+                </nav>
             </article>
 
             <aside aria-labelledby="toc-heading" class="toc-sidebar">
                 <h2 id="toc-heading" class="toc-title">On this page</h2>
                 <nav aria-label="Page table of contents">
                     <ul role="list">
-                        <li><a href="#content-heading">Quick Version of the Challenge</a></li>
+                        <li><a href="#overview-heading">Quick Version of the Challenge</a></li>
+                        <li><a href="#setup-heading">What You'll Need</a></li>
+                        <li><a href="#workflow-heading">Complete Workflow (6 Steps)</a></li>
+                        <li><a href="#alternative-heading">Alternative: Using Agents Directly</a></li>
+                        <li><a href="#tips-heading">Tips for Success</a></li>
+                        <li><a href="#comparison-heading">Express vs. Full Version</a></li>
+                        <li><a href="#quickstart-heading">Quick Example</a></li>
                     </ul>
                 </nav>
             </aside>
