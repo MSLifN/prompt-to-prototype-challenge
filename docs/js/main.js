@@ -410,10 +410,12 @@
 
         const buttonContainer = document.createElement('div');
         buttonContainer.className = 'completion-button-container';
-        buttonContainer.style.marginTop = 'var(--spacing-lg)';
-        buttonContainer.style.marginBottom = 'var(--spacing-lg)';
-        buttonContainer.style.paddingTop = 'var(--spacing-md)';
-        buttonContainer.style.borderTop = '1px solid var(--color-border)';
+        buttonContainer.style.cssText = `
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--color-border);
+        `;
 
         const button = document.createElement('button');
         button.className = 'completion-toggle-btn button-primary';
@@ -446,15 +448,11 @@
 
     // Calculate completion progress
     function calculateProgress() {
-        const pages = [
-            'idea-generation.html',
-            'research.html',
-            'branding.html',
-            'product-requirements.html',
-            'prototype.html',
-            'code-prototyping.html',
-            'learnings-resources.html'
-        ];
+        // Dynamically get page list from navigation (excluding index and express-version)
+        const navLinks = document.querySelectorAll('.sidebar .nav-link');
+        const pages = Array.from(navLinks)
+            .map(link => link.getAttribute('href'))
+            .filter(href => href && !href.startsWith('#') && href !== 'index.html' && href !== 'express-version.html');
 
         const data = getCompletionData();
         const completed = pages.filter(page => data[page] === true).length;
@@ -483,11 +481,13 @@
 
         const progressContainer = document.createElement('div');
         progressContainer.className = 'progress-indicator';
-        progressContainer.style.marginTop = 'var(--spacing-xl)';
-        progressContainer.style.padding = 'var(--spacing-md)';
-        progressContainer.style.backgroundColor = 'var(--color-background-alt)';
-        progressContainer.style.borderRadius = '8px';
-        progressContainer.style.border = '1px solid var(--color-border)';
+        progressContainer.style.cssText = `
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-md);
+            background-color: var(--color-background-alt);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        `;
 
         const progressTitle = document.createElement('h3');
         progressTitle.textContent = 'Your Progress';
@@ -499,17 +499,21 @@
         progressText.style.marginBottom = 'var(--spacing-sm)';
 
         const progressBarContainer = document.createElement('div');
-        progressBarContainer.style.width = '100%';
-        progressBarContainer.style.height = '24px';
-        progressBarContainer.style.backgroundColor = '#f3f2f1';
-        progressBarContainer.style.borderRadius = '12px';
-        progressBarContainer.style.overflow = 'hidden';
+        progressBarContainer.style.cssText = `
+            width: 100%;
+            height: 24px;
+            background-color: var(--color-background-alt);
+            border-radius: 12px;
+            overflow: hidden;
+        `;
 
         const progressBar = document.createElement('div');
-        progressBar.style.width = `${progress.percentage}%`;
-        progressBar.style.height = '100%';
-        progressBar.style.backgroundColor = '#8B2635';
-        progressBar.style.transition = 'width 0.3s ease';
+        progressBar.style.cssText = `
+            width: ${progress.percentage}%;
+            height: 100%;
+            background-color: #8B2635;
+            transition: width 0.3s ease;
+        `;
         progressBar.setAttribute('role', 'progressbar');
         progressBar.setAttribute('aria-valuenow', progress.completed);
         progressBar.setAttribute('aria-valuemin', '0');
@@ -521,14 +525,16 @@
         const resetButton = document.createElement('button');
         resetButton.className = 'button-secondary';
         resetButton.textContent = 'Reset Progress';
-        resetButton.style.marginTop = 'var(--spacing-sm)';
-        resetButton.style.padding = '0.5rem 1rem';
-        resetButton.style.fontSize = 'var(--font-size-small)';
-        resetButton.style.backgroundColor = 'transparent';
-        resetButton.style.border = '1px solid var(--color-border)';
-        resetButton.style.borderRadius = '4px';
-        resetButton.style.cursor = 'pointer';
-        resetButton.style.color = 'var(--color-text)';
+        resetButton.style.cssText = `
+            margin-top: var(--spacing-sm);
+            padding: 0.5rem 1rem;
+            font-size: var(--font-size-small);
+            background-color: transparent;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--color-text);
+        `;
 
         resetButton.addEventListener('click', function() {
             if (confirm('Are you sure you want to reset all progress? This cannot be undone.')) {
@@ -545,7 +551,7 @@
         // Insert after the first section
         const firstSection = article.querySelector('section');
         if (firstSection) {
-            firstSection.parentNode.insertBefore(progressContainer, firstSection.nextSibling);
+            firstSection.insertAdjacentElement('afterend', progressContainer);
         } else {
             article.appendChild(progressContainer);
         }
