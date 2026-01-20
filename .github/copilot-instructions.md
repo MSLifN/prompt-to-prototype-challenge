@@ -2,6 +2,24 @@
 
 > Purpose: Speed-run a tiny **web MVP** in under an hour. Keep scope minimal. Prefer plain React + Vite. Only add deps if necessary.
 
+## Important: Free Tier Compatibility
+
+**This project is designed to work with GitHub Copilot FREE TIER.**
+
+Free tier users have access to:
+- ✅ Code Completions (Tab to accept)
+- ✅ Copilot Chat (ask questions, get code)
+- ✅ Inline Chat (Ctrl+I / Cmd+I for in-place edits)
+
+Users should use these tools directly without relying on:
+- ❌ Custom agents (@agent, @idea-generator, etc.)
+- ❌ Slash commands (/install, /build, /start, etc.)
+- ❌ Copilot Edits (multi-file editing mode)
+
+**See docs/free-tier-workflow.md for complete free tier guidance.**
+
+---
+
 ## Repo Context
 - React + Vite single-page scaffold
 - Objective: one clear user action (e.g., answer 5 questions, click-to-start mini-game, submit an email, display a simple chart)
