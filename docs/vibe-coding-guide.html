@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vibe Coding with GitHub Copilot - A beginner-friendly guide to building prototypes fast with AI assistance">
+    <title>Vibe Coding Guide - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="layout-container">
+        <nav aria-label="Main navigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Challenge Home">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li>
+                    <a href="index.html" class="nav-link">
+                        Introduction
+                    </a>
+                </li>
+                <li>
+                    <a href="idea-generation.html" class="nav-link">
+                        1.0 Idea Generation
+                    </a>
+                </li>
+                <li>
+                    <a href="research.html" class="nav-link">
+                        2.0 Research
+                    </a>
+                </li>
+                <li>
+                    <a href="branding.html" class="nav-link">
+                        3.0 Branding
+                    </a>
+                </li>
+                <li>
+                    <a href="product-requirements.html" class="nav-link">
+                        4.0 Product Requirements
+                    </a>
+                </li>
+                <li>
+                    <a href="prototype.html" class="nav-link">
+                        5.0 Prototype
+                    </a>
+                </li>
+                <li>
+                    <a href="code-prototyping.html" class="nav-link">
+                        6.0 Prototyping
+                    </a>
+                </li>
+                <li>
+                    <a href="learnings-resources.html" class="nav-link">
+                        7.0 Learnings and Resources
+                    </a>
+                </li>
+                <li>
+                    <a href="express-version.html" class="nav-link">
+                        Express Version
+                    </a>
+                </li>
+                <li>
+                    <a href="vibe-coding-guide.html" aria-current="page" class="nav-link active">
+                        Vibe Coding Guide
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <h2 class="page-title">Vibe Coding with GitHub Copilot Free Tier</h2>
+                    <p class="page-subtitle">A beginner-friendly guide to building prototypes fast with AI assistance</p>
+                </header>
+
+                <section aria-labelledby="what-is-heading">
+                    <h3 id="what-is-heading">What is Vibe Coding?</h3>
+                    <p>Vibe coding is a new way of building software where you describe what you want in plain English, and AI helps you write the code. Instead of memorizing syntax or struggling with documentation, you have a conversation with GitHub Copilot to bring your ideas to life.</p>
+                    <p><strong>Perfect for:</strong> Non-programmers, beginners, and anyone who wants to build a prototype quickly without getting stuck in technical details.</p>
+                </section>
+
+                <section aria-labelledby="what-you-need-heading">
+                    <h3 id="what-you-need-heading">What You Need</h3>
+                    <ol>
+                        <li><strong>VS Code</strong> - Download from <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+                        <li><strong>GitHub Copilot Extension</strong> - Free tier available with any GitHub account</li>
+                        <li><strong>Node.js</strong> - Download from <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs.org</a> (for running web apps)</li>
+                        <li><strong>A clear idea</strong> - Know what you want to build (even just 2-3 sentences)</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="setup-heading">
+                    <h3 id="setup-heading">Setup (5 minutes)</h3>
+                    
+                    <h4>Step 1: Install VS Code</h4>
+                    <ul>
+                        <li>Download and install from <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+                        <li>Open VS Code</li>
+                    </ul>
+
+                    <h4>Step 2: Install GitHub Copilot</h4>
+                    <ol>
+                        <li>Click the Extensions icon in the left sidebar (or press <code>Ctrl+Shift+X</code>)</li>
+                        <li>Search for "GitHub Copilot"</li>
+                        <li>Click "Install"</li>
+                        <li>Sign in with your GitHub account when prompted</li>
+                    </ol>
+
+                    <h4>Step 3: Verify It's Working</h4>
+                    <ul>
+                        <li>Look for the Copilot icon in the bottom right status bar</li>
+                        <li>If you see it, you're ready to go!</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="three-tools-heading">
+                    <h3 id="three-tools-heading">The Three Tools You'll Use</h3>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <h4>🗨️ Copilot Chat (Your AI Partner)</h4>
+                        <ul>
+                            <li><strong>What it does:</strong> Answers questions, generates code, explains things</li>
+                            <li><strong>How to open:</strong> Click the chat icon in the left sidebar or press <code>Ctrl+Alt+I</code></li>
+                            <li><strong>Use it for:</strong> Getting starter code, asking how to do something, planning your app</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 1.5rem 0;">
+                        <h4>⚡ Code Completions (Auto-suggestions)</h4>
+                        <ul>
+                            <li><strong>What it does:</strong> Suggests code as you type (appears in gray text)</li>
+                            <li><strong>How to use:</strong> Just start typing, press <code>Tab</code> to accept the suggestion</li>
+                            <li><strong>Use it for:</strong> Writing HTML, CSS, JavaScript - anything!</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 1.5rem 0;">
+                        <h4>✏️ Inline Chat (Quick Edits)</h4>
+                        <ul>
+                            <li><strong>What it does:</strong> Modifies specific code you select</li>
+                            <li><strong>How to open:</strong> Select code, press <code>Ctrl+I</code> (Windows) or <code>Cmd+I</code> (Mac)</li>
+                            <li><strong>Use it for:</strong> "Make this responsive", "Add a button here", "Fix this error"</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section aria-labelledby="first-session-heading">
+                    <h3 id="first-session-heading">Your First Vibe Coding Session</h3>
+                    <p><strong>Example: Building a Simple Landing Page</strong></p>
+
+                    <h4>Step 1: Start a Project</h4>
+                    <ol>
+                        <li>Create a new folder on your computer (e.g., <code>my-landing-page</code>)</li>
+                        <li>In VS Code: <strong>File > Open Folder</strong> and select your folder</li>
+                        <li>Create a new file: <code>index.html</code></li>
+                    </ol>
+
+                    <h4>Step 2: Use Copilot Chat</h4>
+                    <ol>
+                        <li>Open Copilot Chat (chat icon in sidebar)</li>
+                        <li>Type this prompt:
+                            <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Create a simple landing page HTML structure with:
+- A hero section with headline and description
+- A features section with 3 cards
+- A call-to-action button
+- Basic CSS styling included</code></pre>
+                        </li>
+                        <li>Copilot will generate complete HTML code</li>
+                        <li>Copy and paste it into your <code>index.html</code> file</li>
+                    </ol>
+
+                    <h4>Step 3: Preview Your Page</h4>
+                    <ol>
+                        <li>Right-click on <code>index.html</code> in the file explorer</li>
+                        <li>Select "Open with Live Server" (or just open the file in your browser)</li>
+                        <li>You'll see your landing page!</li>
+                    </ol>
+
+                    <h4>Step 4: Make Changes with Inline Chat</h4>
+                    <ol>
+                        <li>Select the headline text in your HTML</li>
+                        <li>Press <code>Ctrl+I</code> to open inline chat</li>
+                        <li>Type: "Make this headline bigger and change the color to blue"</li>
+                        <li>Press Enter, review the change, click "Accept"</li>
+                    </ol>
+
+                    <h4>Step 5: Add Features with Chat</h4>
+                    <p>Back in Copilot Chat, type:</p>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Add a contact form below the call-to-action button with fields for name, email, and message</code></pre>
+                    <p>Copy the generated code and paste it into your HTML.</p>
+
+                    <h4>Step 6: Use Completions</h4>
+                    <ol>
+                        <li>In your HTML, start typing: <code>&lt;style&gt;</code></li>
+                        <li>Press Enter and start typing <code>body {</code></li>
+                        <li>Watch Copilot suggest CSS properties - press <code>Tab</code> to accept them</li>
+                        <li>Keep typing and accepting suggestions to style your page</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="workflow-heading">
+                    <h3 id="workflow-heading">The Vibe Coding Workflow</h3>
+                    <div style="background-color: #f6f8fa; padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0;">
+                        <ol style="margin: 0;">
+                            <li><strong>DESCRIBE</strong> what you want → Use Chat</li>
+                            <li><strong>GET</strong> starter code → Copy/paste into your file</li>
+                            <li><strong>TEST</strong> it → Open in browser</li>
+                            <li><strong>TWEAK</strong> specific parts → Use Inline Chat (Ctrl+I)</li>
+                            <li><strong>ADD</strong> more features → Back to Chat</li>
+                            <li><strong>ITERATE</strong> → Repeat steps 3-5 until it's done</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section aria-labelledby="tips-heading">
+                    <h3 id="tips-heading">Tips for Success</h3>
+
+                    <h4>✅ Be Specific in Your Prompts</h4>
+                    <ul>
+                        <li>❌ "Create a website"</li>
+                        <li>✅ "Create a landing page for a pet adoption service with a hero image, list of available pets, and contact form"</li>
+                    </ul>
+
+                    <h4>✅ Start Simple, Add Later</h4>
+                    <ul>
+                        <li>Build the basic structure first</li>
+                        <li>Add features one at a time</li>
+                        <li>Test after each addition</li>
+                    </ul>
+
+                    <h4>✅ Give Context</h4>
+                    <p>If you have notes or requirements:</p>
+                    <ol>
+                        <li>Create a file like <code>idea.md</code> with your description</li>
+                        <li>Drag that file into Copilot Chat before asking questions</li>
+                        <li>Say "Based on this idea, create..."</li>
+                    </ol>
+
+                    <h4>✅ Don't Worry About Understanding Everything</h4>
+                    <ul>
+                        <li>You don't need to understand every line of code</li>
+                        <li>Ask Copilot to explain anything: "What does this code do?"</li>
+                        <li>Focus on making it work, learn as you go</li>
+                    </ul>
+
+                    <h4>✅ Use the Right Tool for the Job</h4>
+                    <ul>
+                        <li><strong>Big questions or new features?</strong> → Chat</li>
+                        <li><strong>Small tweaks to existing code?</strong> → Inline Chat (Ctrl+I)</li>
+                        <li><strong>Writing line by line?</strong> → Let completions help you</li>
+                    </ul>
+
+                    <h4>✅ Iterate Freely</h4>
+                    <ul>
+                        <li>Try things, see what works</li>
+                        <li>If you don't like something, just ask Copilot to change it</li>
+                        <li>Use <code>Ctrl+Z</code> to undo if needed</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="common-prompts-heading">
+                    <h3 id="common-prompts-heading">Common Beginner Prompts</h3>
+
+                    <h4>Starting a Project</h4>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Create a basic React app structure for [describe your idea]</code></pre>
+
+                    <h4>Getting Unstuck</h4>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>I'm trying to [what you want to do] but getting this error: [paste error]</code></pre>
+
+                    <h4>Adding Features</h4>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Add a [specific feature] to this component that [describe behavior]</code></pre>
+
+                    <h4>Styling</h4>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Make this [element] look like [description or reference]</code></pre>
+
+                    <h4>Understanding Code</h4>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Explain what this code does in simple terms</code></pre>
+                </section>
+
+                <section aria-labelledby="quiz-example-heading">
+                    <h3 id="quiz-example-heading">A Complete Example: Building a Quiz App</h3>
+
+                    <h4>1️⃣ Chat Prompt</h4>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>I want to build a simple quiz app in React. It should:
+- Show one question at a time with 4 multiple choice options
+- Track the score
+- Show results at the end
+- Have 5 questions about general knowledge
+
+Give me the basic App.jsx component to get started.</code></pre>
+
+                    <h4>2️⃣ Accept the Code</h4>
+                    <ul>
+                        <li>Copy the generated code into your <code>App.jsx</code> file</li>
+                        <li>Run <code>npm run dev</code> to see it</li>
+                    </ul>
+
+                    <h4>3️⃣ Inline Edit (Ctrl+I)</h4>
+                    <p>Select the question text and prompt:</p>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Make the question text larger and centered</code></pre>
+
+                    <h4>4️⃣ Chat: Add Feature</h4>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Now add a progress bar that shows which question number I'm on</code></pre>
+
+                    <h4>5️⃣ Inline Edit: Style the Buttons</h4>
+                    <p>Select the button code, press Ctrl+I:</p>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Make these buttons colorful and add hover effects</code></pre>
+
+                    <h4>6️⃣ Test and Iterate</h4>
+                    <ul>
+                        <li>Click through your quiz</li>
+                        <li>See something you want to change? Use inline chat!</li>
+                        <li>Want to add more? Ask in chat!</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="troubleshooting-heading">
+                    <h3 id="troubleshooting-heading">Troubleshooting</h3>
+
+                    <h4>"Copilot isn't suggesting anything"</h4>
+                    <ul>
+                        <li>Make sure the Copilot icon in the status bar is active (not crossed out)</li>
+                        <li>Try typing a comment describing what you want: <code>// create a function that adds two numbers</code></li>
+                        <li>Press Enter and wait - Copilot will suggest the code</li>
+                    </ul>
+
+                    <h4>"The code doesn't work"</h4>
+                    <ul>
+                        <li>Copy the error message</li>
+                        <li>Paste it in Copilot Chat with: "I got this error, how do I fix it?"</li>
+                        <li>Copilot will explain and suggest a fix</li>
+                    </ul>
+
+                    <h4>"I don't understand the code"</h4>
+                    <ul>
+                        <li>Select any code</li>
+                        <li>Press Ctrl+I and type: "Explain this in simple terms"</li>
+                        <li>Or ask in Chat: "What does [specific part] do?"</li>
+                    </ul>
+
+                    <h4>"Copilot suggested something wrong"</h4>
+                    <ul>
+                        <li>Just ignore it and keep typing, or</li>
+                        <li>Use inline chat to fix it: "This doesn't work, fix the [specific issue]"</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="what-you-can-build-heading">
+                    <h3 id="what-you-can-build-heading">What You Can Build (In 30-60 Minutes Each)</h3>
+                    <ul>
+                        <li>✅ <strong>Landing pages</strong> - For a product, service, or event</li>
+                        <li>✅ <strong>Portfolio sites</strong> - Showcase your work</li>
+                        <li>✅ <strong>Simple web apps</strong> - Todo lists, calculators, quiz games</li>
+                        <li>✅ <strong>Interactive prototypes</strong> - Demonstrate an idea</li>
+                        <li>✅ <strong>Forms and surveys</strong> - Collect information</li>
+                        <li>✅ <strong>Data displays</strong> - Charts, tables, dashboards</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="mindset-heading">
+                    <h3 id="mindset-heading">Key Mindset Shifts</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div>
+                            <h4>Traditional Coding</h4>
+                            <ul>
+                                <li>Memorize syntax</li>
+                                <li>Read documentation</li>
+                                <li>Write every line yourself</li>
+                                <li>Debug for hours</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Vibe Coding</h4>
+                            <ul>
+                                <li>Describe what you want</li>
+                                <li>Let AI handle syntax</li>
+                                <li>Accept and tweak suggestions</li>
+                                <li>Ask AI to fix errors</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p><strong>You're not expected to know everything - you're expected to communicate your ideas clearly and iterate with AI assistance.</strong></p>
+                </section>
+
+                <section aria-labelledby="next-steps-heading">
+                    <h3 id="next-steps-heading">Next Steps</h3>
+                    <ol>
+                        <li><strong>Start with the template</strong> in this repo (already set up for you!)</li>
+                        <li><strong>Follow the exercises</strong> in the documentation</li>
+                        <li><strong>Build your idea</strong> using the workflow above</li>
+                        <li><strong>Share your prototype</strong> - it doesn't have to be perfect!</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="remember-heading">
+                    <h3 id="remember-heading">Remember</h3>
+                    <ul>
+                        <li><strong>There's no wrong way to use Copilot</strong> - experiment and find what works for you</li>
+                        <li><strong>You're learning while building</strong> - every session teaches you more</li>
+                        <li><strong>Speed matters more than perfection</strong> - get it working, then make it better</li>
+                        <li><strong>AI is your teammate, not a replacement</strong> - you provide the vision, Copilot handles the details</li>
+                    </ul>
+                    <p style="font-size: 1.5rem; text-align: center; margin: 2rem 0;"><strong>Now go build something! 🚀</strong></p>
+                </section>
+
+                <nav aria-label="Page navigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #586069;">Related</p>
+                        <a href="code-prototyping.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 6.0 Code Prototyping
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #586069;">Continue</p>
+                        <a href="index.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            Back to Introduction →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">On this page</h2>
+                <nav aria-label="Page table of contents">
+                    <ul role="list">
+                        <li><a href="#what-is-heading">What is Vibe Coding?</a></li>
+                        <li><a href="#what-you-need-heading">What You Need</a></li>
+                        <li><a href="#setup-heading">Setup (5 minutes)</a></li>
+                        <li><a href="#three-tools-heading">The Three Tools You'll Use</a></li>
+                        <li><a href="#first-session-heading">Your First Vibe Coding Session</a></li>
+                        <li><a href="#workflow-heading">The Vibe Coding Workflow</a></li>
+                        <li><a href="#tips-heading">Tips for Success</a></li>
+                        <li><a href="#common-prompts-heading">Common Beginner Prompts</a></li>
+                        <li><a href="#quiz-example-heading">A Complete Example: Building a Quiz App</a></li>
+                        <li><a href="#troubleshooting-heading">Troubleshooting</a></li>
+                        <li><a href="#what-you-can-build-heading">What You Can Build</a></li>
+                        <li><a href="#mindset-heading">Key Mindset Shifts</a></li>
+                        <li><a href="#next-steps-heading">Next Steps</a></li>
+                        <li><a href="#remember-heading">Remember</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
