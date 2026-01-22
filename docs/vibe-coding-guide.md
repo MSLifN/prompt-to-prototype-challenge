@@ -18,8 +18,9 @@ Vibe coding is a new way of building software where you describe what you want i
 
 1. **VS Code** - Download from [code.visualstudio.com](https://code.visualstudio.com)
 2. **GitHub Copilot Extension** - Free tier available with any GitHub account
-3. **Node.js** - Download from [nodejs.org](https://nodejs.org) (for running web apps)
-4. **A clear idea** - Know what you want to build (even just 2-3 sentences)
+3. **A clear idea** - Know what you want to build (even just 2-3 sentences)
+
+> 💡 **No Terminal Required!** You don't need Node.js, npm, or any command-line tools. Just VS Code and a browser.
 
 ---
 
@@ -159,7 +160,7 @@ If you have notes or requirements:
 
 ### Starting a Project
 ```
-Create a basic React app structure for [describe your idea]
+Create a single-file HTML page for [describe your idea] with embedded CSS and JavaScript
 ```
 
 ### Getting Unstuck
@@ -188,18 +189,18 @@ Explain what this code does in simple terms
 
 ### 1️⃣ **Chat Prompt**
 ```
-I want to build a simple quiz app in React. It should:
+I want to build a simple quiz app in a single HTML file. It should:
 - Show one question at a time with 4 multiple choice options
 - Track the score
 - Show results at the end
 - Have 5 questions about general knowledge
 
-Give me the basic App.jsx component to get started.
+Put all CSS in a <style> tag and all JavaScript in a <script> tag at the bottom.
 ```
 
 ### 2️⃣ **Accept the Code**
-- Copy the generated code into your `App.jsx` file
-- Run `npm run dev` to see it
+- Copy the generated code into your `index.html` file
+- Open the file in your browser to see it
 
 ### 3️⃣ **Inline Edit (Ctrl+I)**
 Select the question text and prompt:
@@ -279,7 +280,7 @@ Make these buttons colorful and add hover effects
 
 ## Next Steps
 
-1. **Start with the template** in this repo (already set up for you!)
+1. **Start with the Option A template** - Get the [starter template from GitHub](https://github.com/MSLifN/prompt-to-prototype-challenge/tree/main/templates/option-a)
 2. **Follow the exercises** in the documentation
 3. **Build your idea** using the workflow above
 4. **Share your prototype** - it doesn't have to be perfect!

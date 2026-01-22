@@ -87,9 +87,11 @@
                     <ol>
                         <li><strong>VS Code</strong> - Download from <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
                         <li><strong>GitHub Copilot Extension</strong> - Free tier available with any GitHub account</li>
-                        <li><strong>Node.js</strong> - Download from <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">nodejs.org</a> (for running web apps)</li>
                         <li><strong>A clear idea</strong> - Know what you want to build (even just 2-3 sentences)</li>
                     </ol>
+                    <div style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                        <p style="margin: 0;"><strong>💡 No Terminal Required!</strong> You don't need Node.js, npm, or any command-line tools. Just VS Code and a browser.</p>
+                    </div>
                 </section>
 
                 <section aria-labelledby="setup-heading">
@@ -265,7 +267,7 @@
                     <h3 id="common-prompts-heading">Common Beginner Prompts</h3>
 
                     <h4>Starting a Project</h4>
-                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Create a basic React app structure for [describe your idea]</code></pre>
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Create a single-file HTML page for [describe your idea] with embedded CSS and JavaScript</code></pre>
 
                     <h4>Getting Unstuck</h4>
                     <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>I'm trying to [what you want to do] but getting this error: [paste error]</code></pre>
@@ -284,18 +286,18 @@
                     <h3 id="quiz-example-heading">A Complete Example: Building a Quiz App</h3>
 
                     <h4>1️⃣ Chat Prompt</h4>
-                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>I want to build a simple quiz app in React. It should:
+                    <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>I want to build a simple quiz app in a single HTML file. It should:
 - Show one question at a time with 4 multiple choice options
 - Track the score
 - Show results at the end
 - Have 5 questions about general knowledge
 
-Give me the basic App.jsx component to get started.</code></pre>
+Put all CSS in a &lt;style&gt; tag and all JavaScript in a &lt;script&gt; tag at the bottom.</code></pre>
 
                     <h4>2️⃣ Accept the Code</h4>
                     <ul>
-                        <li>Copy the generated code into your <code>App.jsx</code> file</li>
-                        <li>Run <code>npm run dev</code> to see it</li>
+                        <li>Copy the generated code into your <code>index.html</code> file</li>
+                        <li>Open the file in your browser to see it</li>
                     </ul>
 
                     <h4>3️⃣ Inline Edit (Ctrl+I)</h4>
@@ -390,7 +392,7 @@ Give me the basic App.jsx component to get started.</code></pre>
                 <section aria-labelledby="next-steps-heading">
                     <h3 id="next-steps-heading">Next Steps</h3>
                     <ol>
-                        <li><strong>Start with the template</strong> in this repo (already set up for you!)</li>
+                        <li><strong>Start with the Option A template</strong> - Get the <a href="https://github.com/MSLifN/prompt-to-prototype-challenge/tree/main/templates/option-a">starter template from GitHub</a></li>
                         <li><strong>Follow the exercises</strong> in the documentation</li>
                         <li><strong>Build your idea</strong> using the workflow above</li>
                         <li><strong>Share your prototype</strong> - it doesn't have to be perfect!</li>
