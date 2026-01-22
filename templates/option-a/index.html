@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your prototype description here">
+    <title>My Prototype</title>
+    <style>
+        /* ========================================
+           CSS STYLES
+           Use Copilot to help you style this page!
+           Try: "Add modern styling with my brand colors"
+           ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        header {
+            background-color: #0366d6;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #0366d6;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e1e4e8;
+            padding-bottom: 0.5rem;
+        }
+
+        button {
+            background-color: #0366d6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0256b9;
+        }
+
+        button:focus {
+            outline: 3px solid #0366d6;
+            outline-offset: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        /* TODO: Add your brand colors here
+           Example:
+           --primary-color: #your-color;
+           --secondary-color: #your-color;
+        */
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <!-- TODO: Replace with your product name and tagline from your PRD -->
+        <h1>Your Product Name</h1>
+        <p class="tagline">Your tagline goes here</p>
+    </header>
+
+    <main id="main-content">
+        <!-- ========================================
+             MAIN CONTENT AREA
+             This is where you build your prototype!
+             
+             Ask Copilot:
+             - "Based on my PRD, create the main UI for..."
+             - "Add a form that collects..."
+             - "Create a card layout showing..."
+             ======================================== -->
+
+        <section aria-labelledby="welcome-heading">
+            <h2 id="welcome-heading">Welcome</h2>
+            <p>This is your prototype starting point. Use GitHub Copilot to help you build your idea!</p>
+            
+            <!-- Example: A simple call-to-action button -->
+            <button type="button" id="mainAction">
+                Get Started
+            </button>
+        </section>
+
+        <section aria-labelledby="features-heading">
+            <h2 id="features-heading">Features</h2>
+            <!-- TODO: Add your MVP features here -->
+            <ul>
+                <li>Feature 1 from your PRD</li>
+                <li>Feature 2 from your PRD</li>
+                <li>Feature 3 from your PRD</li>
+            </ul>
+        </section>
+
+        <!-- Add more sections as needed -->
+
+    </main>
+
+    <footer>
+        <p>Built with 💙 using GitHub Copilot</p>
+    </footer>
+
+    <script>
+        /* ========================================
+           JAVASCRIPT
+           Add interactivity here!
+           
+           Ask Copilot:
+           - "Add click handler for the button"
+           - "Create a form submission handler"
+           - "Add localStorage to save user data"
+           ======================================== */
+
+        // Example: Button click handler
+        document.getElementById('mainAction').addEventListener('click', function() {
+            alert('Hello! Replace this with your actual functionality.');
+        });
+
+        // TODO: Add your JavaScript here
+        // Use Copilot Chat or Inline Edit (Ctrl+I) to help!
+
+    </script>
+</body>
+</html>
