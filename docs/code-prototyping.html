@@ -277,7 +277,7 @@ Update the document directly with your improvements.</code></pre>
                     <div class="subsection" style="margin-top: 2rem;">
                         <h5>Tips for Effective Prompts:</h5>
                         <ul>
-                            <li><strong>Be specific:</strong> "Create a React component that displays a list of tasks with checkboxes"</li>
+                            <li><strong>Be specific:</strong> "Create an HTML section that displays a list of tasks with checkboxes"</li>
                             <li><strong>Reference your context:</strong> "Using the PRD features, build a form for [feature name]"</li>
                             <li><strong>Iterate:</strong> Start simple, then ask Copilot to enhance or modify</li>
                             <li><strong>Use inline chat:</strong> Press <code>Ctrl+I</code> (Windows) or <code>Cmd+I</code> (Mac) to edit code in place</li>
@@ -289,12 +289,13 @@ Update the document directly with your improvements.</code></pre>
                             <span class="prompt-label">Example Prompt</span>
                         </div>
                         <div class="prompt-content">
-                            <pre><code>Create a React component for a quiz interface with:
-- A question display
+                            <pre><code>Create an HTML quiz interface in a single file with:
+- A question display area
 - 4 multiple choice options as buttons
 - A "Next Question" button
-- Track score in state
-- Show results at the end</code></pre>
+- JavaScript to track score
+- Show results at the end
+- CSS styling included in a style tag</code></pre>
                         </div>
                     </div>
                 </section>
@@ -473,31 +474,34 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                         <h5>Quick Deployment Options:</h5>
                         
                         <div style="margin: 1.5rem 0;">
-                            <h6>GitHub Pages (Recommended for Simple SPAs):</h6>
+                            <h6>GitHub Pages (Recommended for Single-File HTML):</h6>
                             <ol>
-                                <li>Run <code>npm run build</code> to create production files</li>
-                                <li>Push your code to a GitHub repository</li>
-                                <li>Enable GitHub Pages in repository settings</li>
-                                <li>Deploy from the <code>dist</code> folder</li>
+                                <li>Push your <code>index.html</code> file to a GitHub repository</li>
+                                <li>Go to repository Settings → Pages</li>
+                                <li>Select "Deploy from a branch" and choose <code>main</code></li>
+                                <li>Your site is live at <code>https://username.github.io/repo-name</code></li>
                             </ol>
                         </div>
                         
                         <div style="margin: 1.5rem 0;">
-                            <h6>Vercel (Recommended for React/Vite):</h6>
+                            <h6>Netlify (Drag and Drop):</h6>
+                            <ol>
+                                <li>Go to <code>netlify.com</code> and sign up</li>
+                                <li>Drag your project folder onto the deploy area</li>
+                                <li>Get a live URL in seconds</li>
+                                <li>No build step required for static HTML!</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h6>Vercel:</h6>
                             <ol>
                                 <li>Sign up at <code>vercel.com</code></li>
                                 <li>Import your GitHub repository</li>
-                                <li>Vercel auto-detects Vite and deploys</li>
+                                <li>Vercel serves static HTML automatically</li>
                                 <li>Get a live URL in minutes</li>
                             </ol>
                         </div>
-                        
-                        <div style="margin: 1.5rem 0;">
-                            <h6>Netlify:</h6>
-                            <ol>
-                                <li>Sign up at <code>netlify.com</code></li>
-                                <li>Drag-and-drop your <code>dist</code> folder</li>
-                                <li>Or connect GitHub for continuous deployment</li>
                             </ol>
                         </div>
                     </div>
@@ -513,9 +517,9 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                     <p>Create a brief README or documentation including:</p>
                     <ul>
                         <li><strong>Project description:</strong> What your MVP does (1-2 sentences)</li>
-                        <li><strong>Tech stack:</strong> React, Vite, any key libraries</li>
+                        <li><strong>Tech stack:</strong> HTML, CSS, JavaScript (single-file)</li>
                         <li><strong>Features implemented:</strong> List from your PRD</li>
-                        <li><strong>How to run locally:</strong> Installation and dev server commands</li>
+                        <li><strong>How to run locally:</strong> Open <code>index.html</code> in any browser</li>
                         <li><strong>Live demo link:</strong> URL to deployed version</li>
                         <li><strong>Known limitations:</strong> What's not implemented yet</li>
                     </ul>
@@ -544,7 +548,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                         <div style="padding: 1.5rem; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de;">
                             <h5 style="margin-top: 0; color: #16a34a;">✅ Minimum Success (MVP Complete)</h5>
                             <ul style="margin-bottom: 0;">
-                                <li>App runs without errors (<code>npm run dev</code> works)</li>
+                                <li>Page opens in browser without errors</li>
                                 <li>Core user action is functional (the main thing your app does)</li>
                                 <li>UI is usable (user can complete the primary flow)</li>
                                 <li>No console errors in browser DevTools</li>
@@ -618,7 +622,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                     <ul role="list">
                         <li><a href="#intro-heading">Time to Bring Your Idea to Life</a></li>
                         <li><a href="#overview-heading">6.0 Overview</a></li>
-                        <li><a href="#path-chooser-heading">🛤️ Choose Your Path</a></li>
+                        <li><a href="#choose-path-heading">🛤️ Choose Your Path</a></li>
                         <li><a href="#copilot-free-tier-heading">6.1 Copilot Free Tier Features</a></li>
                         <li><a href="#get-started-heading">6.2 Get Started</a></li>
                         <li><a href="#prerequisites-heading">6.3 Prerequisites</a></li>
