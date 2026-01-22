@@ -1,39 +1,51 @@
-# Copilot Instructions — Vibe Coding Starter
+# Copilot Instructions — Prompt to Prototype Challenge
 
-> Purpose: Speed-run a tiny **web MVP** in under an hour. Keep scope minimal. Prefer plain React + Vite. Only add deps if necessary.
+> Purpose: Help users build a prototype in under an hour using AI assistance. Keep scope minimal. Accessibility-first approach.
 
 ## Repo Context
-- React + Vite single-page scaffold
-- Objective: one clear user action (e.g., answer 5 questions, click-to-start mini-game, submit an email, display a simple chart)
-- Keep code small and readable. Avoid premature abstractions.
+- Two prototyping paths: **Option A** (single-file HTML/JS) or **Option B** (Markdown-first document)
+- Objective: one clear user action or artifact
+- Keep output small, readable, and accessible. Avoid unnecessary complexity.
+
+## Option A: Code a Web Page
+- Single HTML file with embedded CSS and JS
+- No build step, no terminal required
+- Works with screen readers and zoom
+- Great for pairing and co-creation
+
+## Option B: Create a Document
+- Markdown-first artifact
+- Focus on language, structure, clarity
+- Copilot acts as co-author
+- Great for dyslexia, fatigue, cognitive overload
 
 ## Guardrails
 - No heavy frameworks unless explicitly requested.
-- Minimize dependencies. If adding a lib, explain why in comments.
-- Prefer native fetch and simple state via `useState`.
-- Keep components flat. One file is fine until MVP works.
+- Minimize dependencies. Plain HTML/CSS/JS is preferred.
+- Keep files flat. One file is fine until MVP works.
+- Prioritize accessibility (semantic HTML, ARIA labels, good contrast).
 
 ## Build Flow (ask the user step-by-step)
-1. **Confirm the MVP goal** in one sentence.
-2. **Sketch the UI** as simple JSX (form, button, list, results area).
-3. **Wire the core interaction** (event handlers, state).
-4. **Add one finishing touch** (basic validation, simple animation, or a tiny data mock).
-5. **Ship** (build & preview), then suggest next steps.
+1. **Confirm the goal** in one sentence.
+2. **Sketch the structure** (for code: HTML layout; for docs: outline).
+3. **Build the core content** (main interaction or main sections).
+4. **Add one finishing touch** (styling, validation, or polish).
+5. **Review** for accessibility and clarity.
 
 ## Prompts to Use with Me (copy/paste)
-- "Given this idea: <idea>, propose a *one-hour MVP* with 3–5 steps and exactly one core user action."
-- "Generate the minimal JSX + state to implement that action. No extra files unless needed."
-- "Refactor my App.jsx to make the code clearer, without adding libraries."
-- "Create a tiny fake data source (an array or JSON) and show how to render it and filter it."
-- "Add a simple result screen summarizing what the user did, without routing."
-- "Suggest the smallest possible accessibility improvements for this UI."
-- "Write a 3–5 bullet README snippet telling someone how to run and use this MVP."
+- "Given this idea: <idea>, propose a *one-hour prototype* with 3–5 steps."
+- "Generate minimal HTML/CSS/JS to implement this feature. No frameworks."
+- "Help me structure this document with clear headings and accessible formatting."
+- "Review this for accessibility issues and suggest improvements."
+- "Summarize what we built in 3-5 bullets for a README."
 
 ## Quality Bar
-- Works locally with `npm run dev` and builds with `npm run build`.
-- No runtime errors in the console.
-- Keep the bundle minimal.
+- Opens directly in browser (for Option A) or renders in Markdown preview (for Option B).
+- No errors in browser console.
+- Accessible to screen readers and keyboard users.
 
-## Stretch (only after MVP)
-- Add routing (react-router-dom) if multiple views are essential.
-- Add a small chart or animation *only if* it clarifies the outcome.
+## Accessibility Focus
+- Use semantic HTML elements (header, main, nav, button, etc.)
+- Include ARIA labels where appropriate
+- Ensure good color contrast
+- Support keyboard navigation
