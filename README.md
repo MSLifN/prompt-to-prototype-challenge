@@ -30,6 +30,19 @@ Visit [https://aka.ms/skillupai/ptpchallenge](https://aka.ms/skillupai/ptpchalle
 A tiny scaffold to help you build a **quiz, game, site, dashboard, or landing page** in under an hour.
 Works great in **GitHub Codespaces** and includes **Copilot instructions** to steer your build.
 
+## Copilot Compatibility
+
+This starter repo supports **two workflows**:
+
+| Workflow | Copilot Tier | Features Used |
+|----------|--------------|---------------|
+| **Free Tier Workflow** | Free | Copilot Chat, Inline Chat (Ctrl+I), Code Completions |
+| **Express Version** | Paid | Agent mode, Custom agents (@idea-generator, @mvp-kickoff), Slash commands (/ideate, /build) |
+
+**Using Copilot Free Tier?** Skip to [Free Tier Workflow](#free-tier-workflow-copilot-free) below.
+
+**Have Copilot Pro/Business?** Use the [Express Version](#express-version) for the streamlined agent-powered experience.
+
 ## Quickstart
 
 **Option — Local**  
@@ -71,6 +84,8 @@ Then open the URL shown in your terminal.
 ```
 
 ## Express Version
+
+> ⚠️ **Requires Copilot Pro/Business**: This workflow uses Agent mode and custom agents which are not available in Copilot Free tier. If you have Copilot Free, skip to [Free Tier Workflow](#free-tier-workflow-copilot-free) below.
 
 This repo includes **custom Copilot agents** and **slash command prompts** that guide you through a structured workflow from ideation to implementation. The workflow helps you build a one-hour MVP with minimal friction.
 
@@ -226,6 +241,117 @@ The dev server runs on `http://localhost:5173` by default.
 - **Iterate**: Don't hesitate to ask follow-up questions or refine ideas
 - **Use handoffs**: Agents provide handoff buttons to seamlessly transition between phases
 - **Keep scope minimal**: The workflow is designed to keep your MVP achievable in ~1 hour
+
+## Free Tier Workflow (Copilot Free)
+
+**Using GitHub Copilot Free Tier?** This workflow guides you through building your MVP using only the features available in the free tier: **Copilot Chat**, **Inline Chat**, and **Code Completions**.
+
+### The Three Tools You'll Use
+
+| Tool | How to Open | Best For |
+|------|-------------|----------|
+| **Copilot Chat** | Click chat icon in sidebar or `Ctrl+Alt+I` | Generating components, asking questions, planning |
+| **Inline Chat** | Select code, press `Ctrl+I` (Win) or `Cmd+I` (Mac) | Quick edits, refactoring, fixing bugs |
+| **Code Completions** | Just start typing, press `Tab` to accept | Writing functions, filling in patterns |
+
+### 5-Step Free Tier Workflow
+
+#### Step 1: Set Up Your Project
+```bash
+# In terminal:
+npm install
+npm run dev
+```
+Open the URL shown (usually `http://localhost:5173`) in your browser.
+
+#### Step 2: Create Your PRD
+1. Create a file called `PRD.md` in the root directory
+2. Open Copilot Chat and paste this prompt:
+
+```
+I'm building a one-hour MVP for [YOUR IDEA]. Help me create a simple PRD with:
+- One-sentence purpose
+- ONE core user action (the main thing users will do)
+- 3-5 features to implement (in priority order)
+- Simple UI layout description
+- Keep it achievable in 30-60 minutes
+```
+
+#### Step 3: Build Your First Feature
+Open `src/App.jsx` and use Copilot Chat:
+
+```
+Based on my PRD, create the basic React component structure for my MVP. 
+Include:
+- The main UI layout
+- State management with useState
+- Placeholder for the core user action
+Keep it simple - all in one file for now.
+```
+
+Copy the generated code into `src/App.jsx`.
+
+#### Step 4: Iterate with Inline Chat
+Select code in your file and press `Ctrl+I` to make quick changes:
+- "Add styling to make this look better"
+- "Add validation to this form"
+- "Make this responsive for mobile"
+- "Add a loading state"
+
+#### Step 5: Test and Polish
+1. Check your app in the browser
+2. Use Copilot Chat to fix any errors: "I'm getting this error: [paste error]. How do I fix it?"
+3. Add your branding colors and final touches
+
+### Sample Prompts for Common Tasks
+
+**Generate a component:**
+```
+Create a React component for a [quiz/form/list/calculator] that [describe what it does]. 
+Use useState for state management. Include basic styling.
+```
+
+**Fix an error:**
+```
+I'm getting this error: [paste error message]
+Here's my code: [paste relevant code]
+How do I fix this?
+```
+
+**Add styling:**
+```
+Update this component to use these brand colors:
+- Primary: #[your color]
+- Secondary: #[your color]
+Add modern styling with good spacing and hover effects.
+```
+
+**Make it responsive:**
+```
+Make this component responsive. It should:
+- Stack vertically on mobile
+- Use flexible widths
+- Have appropriate font sizes for different screens
+```
+
+### Success Checklist
+
+✅ **Minimum Success:**
+- [ ] App runs without errors (`npm run dev`)
+- [ ] Core user action works (the main thing your app does)
+- [ ] UI is usable
+
+🎯 **Good Success:**
+- [ ] Brand colors applied
+- [ ] Works on mobile
+- [ ] README created
+
+🚀 **Great Success:**
+- [ ] Deployed to Vercel/Netlify
+- [ ] Multiple features working
+- [ ] Professional polish
+
+For more detailed guidance, see [docs/vibe-coding-guide.md](docs/vibe-coding-guide.md).
 
 ## Copilot Instructions
 

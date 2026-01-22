@@ -2,6 +2,8 @@
 
 **A beginner-friendly guide to building prototypes fast with AI assistance**
 
+> ✅ **Free Tier Compatible**: This entire guide is designed for GitHub Copilot's **free tier**. You only need access to Code Completions, Copilot Chat, and Inline Chat—no paid features required!
+
 ---
 
 ## What is Vibe Coding?

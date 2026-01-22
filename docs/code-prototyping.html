@@ -121,17 +121,55 @@
 
                     <p><strong>Objective:</strong> Build a functional prototype that demonstrates the core value proposition and brand identity within a limited timeframe.</p>
                     <p><strong>Key Outcome:</strong> Working prototype that can be demonstrated. If the platform or tech chosen supports, a link to the application is ideal.</p>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">📋 This Guide Uses GitHub Copilot Free Tier</h5>
+                        <p style="margin-bottom: 0;">This exercise is designed to work with GitHub Copilot's free tier features: <strong>Code Completions</strong>, <strong>Copilot Chat</strong>, and <strong>Inline Chat</strong>. No paid features (Agent mode, custom agents, or Copilot Edits) are required.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="copilot-free-tier-heading">
+                    <h4 id="copilot-free-tier-heading">6.1 GitHub Copilot Free Tier Features</h4>
+                    <p>Before we start building, let's understand the three core Copilot features available in the free tier:</p>
+
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f6f8fa; border-radius: 8px; border-left: 4px solid #0366d6;">
+                            <h5 style="color: #0366d6; margin-top: 0;">🗨️ Copilot Chat (Primary Tool)</h5>
+                            <p><strong>What it does:</strong> Your AI pair programmer. Ask questions, generate code, get explanations.</p>
+                            <p><strong>How to open:</strong> Click the chat icon in the left sidebar or press <code>Ctrl+Alt+I</code></p>
+                            <p style="margin-bottom: 0;"><strong>Best for:</strong> Generating components, asking "how do I..." questions, planning features, debugging errors</p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f6f8fa; border-radius: 8px; border-left: 4px solid #16a34a;">
+                            <h5 style="color: #16a34a; margin-top: 0;">⚡ Code Completions (Auto-suggestions)</h5>
+                            <p><strong>What it does:</strong> Suggests code as you type (appears in gray text)</p>
+                            <p><strong>How to use:</strong> Just start typing, press <code>Tab</code> to accept, <code>Esc</code> to dismiss</p>
+                            <p style="margin-bottom: 0;"><strong>Best for:</strong> Writing functions, filling in repetitive code, completing patterns</p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f6f8fa; border-radius: 8px; border-left: 4px solid #8b5cf6;">
+                            <h5 style="color: #8b5cf6; margin-top: 0;">✏️ Inline Chat (Quick Edits)</h5>
+                            <p><strong>What it does:</strong> Modifies specific code you select in context</p>
+                            <p><strong>How to open:</strong> Select code, press <code>Ctrl+I</code> (Windows) or <code>Cmd+I</code> (Mac)</p>
+                            <p style="margin-bottom: 0;"><strong>Best for:</strong> "Make this responsive", "Add error handling", "Fix this bug"</p>
+                        </div>
+                    </div>
+
+                    <div class="note-box" style="background-color: #fff9e6; border-left: 4px solid #f4a300; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="color: #8b5a00; margin-top: 0;">💡 Free Tier Workflow</h5>
+                        <p style="color: #5c4200; margin-bottom: 0;">With free tier, you'll work <strong>one file at a time</strong> using Chat and Inline Chat. This is actually great for learning—you'll understand what each piece of code does as you build it!</p>
+                    </div>
                 </section>
 
                 <section aria-labelledby="get-started-heading">
-                    <h4 id="get-started-heading">6.1 Get Started</h4>
+                    <h4 id="get-started-heading">6.2 Get Started</h4>
                     <p>Time to bring everything together. You have your concept, market validation, PRD, and brand identity. Now let's build a working prototype that demonstrates your value proposition using feature-by-feature development.</p>
                     
                     <p>This exercise encourages exploration. While we provide guidance, you're welcome to iterate and expand based on your creativity and goals.</p>
                 </section>
 
                 <section aria-labelledby="prerequisites-heading">
-                    <h4 id="prerequisites-heading">6.2 Prerequisites</h4>
+                    <h4 id="prerequisites-heading">6.3 Prerequisites</h4>
                     
                     <h5>Requirements:</h5>
                     <ul>
@@ -164,7 +202,7 @@
                 </section>
 
                 <section aria-labelledby="setup-heading">
-                    <h4 id="setup-heading">6.3 Add Your PRD</h4>
+                    <h4 id="setup-heading">6.4 Add Your PRD</h4>
                     
                     <p>In a previous module, you generated a Product Requirements Document. Let's work with Copilot to refine it for rapid prototyping.</p>
 
@@ -191,7 +229,7 @@ Update the document directly with your improvements.</code></pre>
                 </section>
 
                 <section aria-labelledby="copilot-chat-heading">
-                    <h4 id="copilot-chat-heading">6.4 Use GitHub Copilot Chat</h4>
+                    <h4 id="copilot-chat-heading">6.5 Use GitHub Copilot Chat</h4>
                     <p>GitHub Copilot Chat is your AI pair programmer. Use it to:</p>
                     <ul>
                         <li>Generate component boilerplate</li>
@@ -227,7 +265,7 @@ Update the document directly with your improvements.</code></pre>
                 </section>
 
                 <section aria-labelledby="build-mvp-heading">
-                    <h4 id="build-mvp-heading">6.5 Build Your MVP Features</h4>
+                    <h4 id="build-mvp-heading">6.6 Build Your MVP Features</h4>
                     <p>Follow this workflow to implement your MVP:</p>
                     
                     <div class="steps-section">
@@ -250,7 +288,7 @@ Update the document directly with your improvements.</code></pre>
                 </section>
 
                 <section aria-labelledby="apply-branding-heading">
-                    <h4 id="apply-branding-heading">6.6 Apply Your Branding</h4>
+                    <h4 id="apply-branding-heading">6.7 Apply Your Branding</h4>
                     <p>Integrate the brand assets you created earlier:</p>
                     
                     <div class="steps-section">
@@ -281,7 +319,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="copilot-features-heading">
-                    <h4 id="copilot-features-heading">6.7 Leverage Key Copilot Features</h4>
+                    <h4 id="copilot-features-heading">6.8 Leverage Key Copilot Features</h4>
                     
                     <div style="margin: 1.5rem 0;">
                         <div style="margin-bottom: 1.5rem;">
@@ -312,7 +350,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="common-patterns-heading">
-                    <h4 id="common-patterns-heading">6.8 Common MVP Patterns</h4>
+                    <h4 id="common-patterns-heading">6.9 Common MVP Patterns</h4>
                     <p>Here are some typical features you might build with example prompts:</p>
                     
                     <div style="margin: 1.5rem 0;">
@@ -344,7 +382,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="troubleshooting-heading">
-                    <h4 id="troubleshooting-heading">6.9 Troubleshooting</h4>
+                    <h4 id="troubleshooting-heading">6.10 Troubleshooting</h4>
                     
                     <div style="margin: 1.5rem 0;">
                         <div style="margin-bottom: 1.5rem;">
@@ -375,7 +413,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="test-refine-heading">
-                    <h4 id="test-refine-heading">6.10 Test and Refine</h4>
+                    <h4 id="test-refine-heading">6.11 Test and Refine</h4>
                     <p>Before finalizing your prototype:</p>
                     <ol>
                         <li><strong>Test all features:</strong> Click through every button, form, and interaction</li>
@@ -393,7 +431,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="deploy-heading">
-                    <h4 id="deploy-heading">6.11 Deploy Your Prototype</h4>
+                    <h4 id="deploy-heading">6.12 Deploy Your Prototype</h4>
                     <p>Make your prototype accessible online:</p>
                     
                     <div class="steps-section">
@@ -436,7 +474,7 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                 </section>
 
                 <section aria-labelledby="document-heading">
-                    <h4 id="document-heading">6.12 Document Your Work</h4>
+                    <h4 id="document-heading">6.13 Document Your Work</h4>
                     <p>Create a brief README or documentation including:</p>
                     <ul>
                         <li><strong>Project description:</strong> What your MVP does (1-2 sentences)</li>
@@ -463,8 +501,52 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                     </div>
                 </section>
 
+                <section aria-labelledby="success-criteria-heading">
+                    <h4 id="success-criteria-heading">6.14 Success Criteria</h4>
+                    <p>How do you know when your prototype is complete? Use this checklist:</p>
+
+                    <div style="margin: 1.5rem 0;">
+                        <div style="padding: 1.5rem; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de;">
+                            <h5 style="margin-top: 0; color: #16a34a;">✅ Minimum Success (MVP Complete)</h5>
+                            <ul style="margin-bottom: 0;">
+                                <li>App runs without errors (<code>npm run dev</code> works)</li>
+                                <li>Core user action is functional (the main thing your app does)</li>
+                                <li>UI is usable (user can complete the primary flow)</li>
+                                <li>No console errors in browser DevTools</li>
+                            </ul>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de; margin-top: 1rem;">
+                            <h5 style="margin-top: 0; color: #0366d6;">🎯 Good Success (Polished MVP)</h5>
+                            <ul style="margin-bottom: 0;">
+                                <li>All items from Minimum Success, plus:</li>
+                                <li>Brand colors and styling applied</li>
+                                <li>Responsive design (works on mobile)</li>
+                                <li>Clear feedback for user actions (loading states, success messages)</li>
+                                <li>README documentation created</li>
+                            </ul>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de; margin-top: 1rem;">
+                            <h5 style="margin-top: 0; color: #8b5cf6;">🚀 Great Success (Deployed & Shareable)</h5>
+                            <ul style="margin-bottom: 0;">
+                                <li>All items from Good Success, plus:</li>
+                                <li>Deployed to a live URL (Vercel, Netlify, or GitHub Pages)</li>
+                                <li>Multiple features from PRD implemented</li>
+                                <li>Professional polish (animations, hover states, thoughtful UX)</li>
+                                <li>Ready to share with stakeholders</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">⏱️ Time Box Reminder</h5>
+                        <p style="margin-bottom: 0;">Remember: This is a 30-60 minute exercise. Aim for "Minimum Success" first, then iterate towards "Good" or "Great" if time allows. A working prototype is better than a perfect prototype that's unfinished!</p>
+                    </div>
+                </section>
+
                 <section aria-labelledby="next-steps-heading">
-                    <h4 id="next-steps-heading">6.13 What's Next?</h4>
+                    <h4 id="next-steps-heading">6.15 What's Next?</h4>
                     <p>After completing your code prototype:</p>
                     <ul>
                         <li>Review <a href="learnings-resources.html">7.0 Learnings and Resources</a> for additional tips</li>
@@ -501,19 +583,21 @@ Apply these colors throughout the app with a modern, clean design.</code></pre>
                     <ul role="list">
                         <li><a href="#intro-heading">Time to Bring Your Idea to Life</a></li>
                         <li><a href="#overview-heading">6.0 Overview</a></li>
-                        <li><a href="#get-started-heading">6.1 Get Started</a></li>
-                        <li><a href="#prerequisites-heading">6.2 Prerequisites</a></li>
-                        <li><a href="#setup-heading">6.3 Add Your PRD</a></li>
-                        <li><a href="#copilot-chat-heading">6.4 Use GitHub Copilot Chat</a></li>
-                        <li><a href="#build-mvp-heading">6.5 Build Your MVP Features</a></li>
-                        <li><a href="#apply-branding-heading">6.6 Apply Your Branding</a></li>
-                        <li><a href="#copilot-features-heading">6.7 Leverage Key Copilot Features</a></li>
-                        <li><a href="#common-patterns-heading">6.8 Common MVP Patterns</a></li>
-                        <li><a href="#troubleshooting-heading">6.9 Troubleshooting</a></li>
-                        <li><a href="#test-refine-heading">6.10 Test and Refine</a></li>
-                        <li><a href="#deploy-heading">6.11 Deploy Your Prototype</a></li>
-                        <li><a href="#document-heading">6.12 Document Your Work</a></li>
-                        <li><a href="#next-steps-heading">6.13 What's Next?</a></li>
+                        <li><a href="#copilot-free-tier-heading">6.1 Copilot Free Tier Features</a></li>
+                        <li><a href="#get-started-heading">6.2 Get Started</a></li>
+                        <li><a href="#prerequisites-heading">6.3 Prerequisites</a></li>
+                        <li><a href="#setup-heading">6.4 Add Your PRD</a></li>
+                        <li><a href="#copilot-chat-heading">6.5 Use GitHub Copilot Chat</a></li>
+                        <li><a href="#build-mvp-heading">6.6 Build Your MVP Features</a></li>
+                        <li><a href="#apply-branding-heading">6.7 Apply Your Branding</a></li>
+                        <li><a href="#copilot-features-heading">6.8 Leverage Key Copilot Features</a></li>
+                        <li><a href="#common-patterns-heading">6.9 Common MVP Patterns</a></li>
+                        <li><a href="#troubleshooting-heading">6.10 Troubleshooting</a></li>
+                        <li><a href="#test-refine-heading">6.11 Test and Refine</a></li>
+                        <li><a href="#deploy-heading">6.12 Deploy Your Prototype</a></li>
+                        <li><a href="#document-heading">6.13 Document Your Work</a></li>
+                        <li><a href="#success-criteria-heading">6.14 Success Criteria</a></li>
+                        <li><a href="#next-steps-heading">6.15 What's Next?</a></li>
                     </ul>
                 </nav>
             </aside>
