@@ -124,78 +124,49 @@
                 </section>
 
                 <section aria-labelledby="choose-approach-heading">
-                    <h4 id="choose-approach-heading">5.2 Choose a Build Approach</h4>
-                    <p>It's time to build. At this point, make a decision on how you will prototype.</p>
+                    <h4 id="choose-approach-heading">5.2 Choose Your Prototyping Path</h4>
+                    <p>It's time to build! You've done the hard work of ideation, research, and planning. Now you'll bring it to life.</p>
                     
-                    <ul>
-                        <li><strong>No-Code Path:</strong> Ideal if you're not a developer or want to focus on design/interaction flow, or have limited time.<br>
-                        Example: GitHub Spark or another no-code platform.</li>
-                        <li><strong>GitHub Copilot Path:</strong> Ideal if you're comfortable with code and want to customize deeply.</li>
-                    </ul>
+                    <p>At this point, you'll choose one of two paths based on what feels right for you today:</p>
 
-                    <p>To build your prototype, you have two different routes you can explore: No-Code Tooling or AI-Assisted Tooling. You will need to select how you want to build. The below table outlines some of the common differences between both approaches. We highlight common tools and platforms here, but note <strong>1P tools and platforms</strong> should be used.</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <!-- Option A Card -->
+                        <div style="background: white; border: 2px solid #0366d6; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h5 style="color: #0366d6; margin-top: 0; font-size: 1.1rem;">Option A: Code a Web Page</h5>
+                            <p style="font-size: 0.9rem; color: #586069; margin-bottom: 1rem;"><strong>Best for:</strong> Building your own idea into a working prototype</p>
+                            <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin-bottom: 1rem;">
+                                <li>Single-file HTML/JS solution</li>
+                                <li>No build step, no terminal required</li>
+                                <li>Integrates your PRD and branding</li>
+                                <li>Works with screen readers & zoom</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: #22863a; margin: 0;"><strong>✅ Great for:</strong> Pairing, co-creation</p>
+                        </div>
+                        
+                        <!-- Option B Card -->
+                        <div style="background: white; border: 2px solid #8b5cf6; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h5 style="color: #8b5cf6; margin-top: 0; font-size: 1.1rem;">Option B: Create a Document</h5>
+                            <p style="font-size: 0.9rem; color: #586069; margin-bottom: 1rem;"><strong>Best for:</strong> Writing-focused creation with AI as co-author</p>
+                            <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin-bottom: 1rem;">
+                                <li>Markdown-first artifact</li>
+                                <li>Focus on language & structure</li>
+                                <li>Premade use cases to explore</li>
+                                <li>No coding required</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: #22863a; margin: 0;"><strong>✅ Great for:</strong> Dyslexia, fatigue, "not coding today"</p>
+                        </div>
+                    </div>
 
-                    <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
-                        <thead>
-                            <tr style="background-color: #f6f8fa;">
-                                <th style="border: 1px solid #d0d7de; padding: 12px; text-align: left;">Category</th>
-                                <th style="border: 1px solid #d0d7de; padding: 12px; text-align: left;">No-Code Tooling (Vibe Coding)</th>
-                                <th style="border: 1px solid #d0d7de; padding: 12px; text-align: left;">AI-Assisted Tooling (e.g., GitHub Copilot)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Primary Audience</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Non-developers, designers, product managers, hobbyists</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Developers, engineers, technical teams</td>
-                            </tr>
-                            <tr style="background-color: #f6f8fa;">
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Examples of Tools</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>GitHub Spark</strong>, v0, Replit, Bolt, Claude.ai</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>GitHub Copilot</strong>, Cline, Roo</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Interface Style</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Drag-and-drop, visual workflows, form-based inputs</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Code editor integration (e.g., VS Code)</td>
-                            </tr>
-                            <tr style="background-color: #f6f8fa;">
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Learning Curve</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Low – minimal or no coding required</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Medium – benefits from coding knowledge</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Speed to Prototype</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Very fast – ideal for MVPs and quick experiments</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Fast – especially for repetitive or boilerplate code</td>
-                            </tr>
-                            <tr style="background-color: #f6f8fa;">
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Customization</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Limited to platform capabilities</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">High – full control over code and architecture</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>AI Integration</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Often includes LLMs for content generation or logic</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Deep integration with LLMs for code suggestions</td>
-                            </tr>
-                            <tr style="background-color: #f6f8fa;">
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Collaboration</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Easy sharing and remixing, often real-time</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Git-based workflows, PRs, and code reviews</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;"><strong>Deployment</strong></td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">One-click or managed hosting</td>
-                                <td style="border: 1px solid #d0d7de; padding: 12px;">Requires manual setup or CI/CD pipelines</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div style="background: #f8f9fa; border: 1px solid #d0d7de; border-radius: 8px; padding: 1rem; margin: 1.5rem 0;">
+                        <p style="margin: 0; font-size: 0.9rem; color: #24292f;">
+                            <strong>✅ Both options:</strong> Feel like building something • Demonstrate AI-assisted creation • Work with GitHub Copilot Free tier
+                        </p>
+                    </div>
 
-                    <p style="margin-top: 2rem;"><strong>For this challenge, we'll focus on the GitHub Copilot path.</strong> Ready to start building?</p>
+                    <p style="margin-top: 2rem;"><strong>Ready to start?</strong> Continue to Step 6 to choose your path and get detailed instructions.</p>
 
                     <div style="margin: 2rem 0;">
-                        <a href="code-prototyping.html" class="btn-primary" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #b91c1c; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Building with GitHub Copilot →</a>
+                        <a href="code-prototyping.html" class="btn-primary" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #0366d6; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Continue to Step 6: Choose Your Path →</a>
                     </div>
                 </section>
 
