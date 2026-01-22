@@ -78,7 +78,19 @@ This challenge is designed for **GitHub Copilot Free Tier** users. All core feat
 │   ├── product-requirements.html   # Step 4
 │   ├── prototype.html              # Step 5
 │   ├── code-prototyping.html       # Step 6 (path chooser)
-│   └── learnings-resources.html    # Step 7
+│   ├── learnings-resources.html    # Step 7
+│   └── vibe-coding-guide.html      # Comprehensive Vibe Coding Guide
+├── templates/
+│   ├── option-a/                   # Code a Web Page starter files
+│   │   ├── index.html              # Single-file HTML template
+│   │   └── README.md               # Getting started instructions
+│   └── option-b/                   # Create a Document templates
+│       ├── README.md               # Getting started instructions
+│       ├── product-pitch.md        # Product pitch template
+│       ├── user-guide.md           # User guide template
+│       ├── blog-post.md            # Blog post template
+│       ├── faq.md                  # FAQ template
+│       └── presentation.md         # Presentation outline template
 ├── .github/
 │   └── copilot-instructions.md     # Workspace instructions for Copilot
 └── README.md
