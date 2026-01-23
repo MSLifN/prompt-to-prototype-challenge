@@ -23,11 +23,11 @@ Et poleret dokument, der kommunikerer din idé effektivt. Vælg mellem forhånds
 | [Blog Post](blog-post.md) | En artikel om din idé | Deling af dine tanker offentligt |
 | [FAQ Document](faq.md) | Spørgsmål og svar | Forudse brugerbehov |
 | [Presentation Outline](presentation.md) | Præsentationsstruktur | Forberedelse af foredrag eller demo |
-| [Dansk Product Pitch](product-pitch.da.md) | En overbevisende præsentation af din idé | Præsentation for interessenter |
-| [Dansk User Guide](user-guide.da.md) | Dokumentation for dit produkt | Forklaring af hvordan noget virker |
-| [Dansk Blog Post](blog-post.da.md) | En artikel om din idé | Deling af dine tanker offentligt |
-| [Dansk FAQ Document](faq.da.md) | Spørgsmål og svar | Forudse brugerbehov |
-| [Dansk Presentation Outline](presentation.da.md) | Præsentationsstruktur | Forberedelse af foredrag eller demo |
+| [Product Pitch](product-pitch.da.md) | En overbevisende præsentation af din idé | Præsentation for interessenter |
+| [User Guide](user-guide.da.md) | Dokumentation for dit produkt | Forklaring af hvordan noget virker |
+| [Blog Post](blog-post.da.md) | En artikel om din idé | Deling af dine tanker offentligt |
+| [FAQ Document](faq.da.md) | Spørgsmål og svar | Forudse brugerbehov |
+| [Presentation Outline](presentation.da.md) | Præsentationsstruktur | Forberedelse af foredrag eller demo |
 
 ## 🚀 Kom godt i gang
 
@@ -124,7 +124,7 @@ Tilføj alt-tekstbeskrivelser til eventuelle billeder, jeg skal inkludere
 ```
 
 ```
-Forenkle ordforrådet for ikke-indfødte engelsktalende
+Forenkle ordforrådet for ikke-indfødte dansktalende
 ```
 
 ## 📖 Sådan forhåndsviser du
