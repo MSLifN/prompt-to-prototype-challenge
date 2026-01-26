@@ -4,7 +4,7 @@ Build your prototype as a **single HTML file** with embedded CSS and JavaScript.
 
 ## ✅ What You'll Create
 
-A working web page that brings your idea to life, using the PRD and branding you created in earlier steps.
+A working web page that brings your idea to life, using the Product Requirements Document (PRD) and branding you created in earlier steps.
 
 ## 🎯 Who This Is For
 

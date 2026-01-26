@@ -1,15 +1,15 @@
 # Prompt to Prototype Vibe Coding Challenge
 
-The SkillUp AI **Prompt to Prototype** is a fast-paced AI-powered creation challenge.  
+The SkillUp Artificial Intelligence (AI) **Prompt to Prototype** is a fast-paced AI-powered creation challenge.  
 In one hour, you'll take an idea from a concept to a working **prototype** using Microsoft Copilot and GitHub Copilot.
 
 You'll go through **six key stages**:
 
 1. Ideation — get or refine your idea
 2. Research — validate and explore your concept
-3. PRD — define your product requirements
+3. Product Requirements Document (PRD) — define your product requirements
 4. Branding — give your product a look, feel, and personality
-5. Prototype — build your MVP
+5. Prototype — build your Minimum Viable Product (MVP)
 6. Submit — package your work for sharing
 
 Visit [https://aka.ms/skillupai/ptpchallenge](https://aka.ms/skillupai/ptpchallenge) to learn more about the Challenge and get started.
