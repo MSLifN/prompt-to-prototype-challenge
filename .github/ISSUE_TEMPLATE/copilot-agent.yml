@@ -1,0 +1,100 @@
+name: "🤖 Copilot Coding Agent Task"
+description: "Well-scoped task suitable for GitHub Copilot coding agent"
+labels: ["copilot"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🤖 Copilot Coding Agent Task
+        Use this template for tasks you want to assign to the GitHub Copilot coding agent.
+        Keep tasks focused and well-scoped for best results.
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: "🧠 Objective"
+      description: "Describe what needs to be done in 1-3 sentences"
+      placeholder: "Add keyboard navigation support to the prototype template..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: "Complexity"
+      options:
+        - Small (< 30 min)
+        - Medium (30-60 min)
+        - Large (> 60 min)
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: "✅ Expected Outcome"
+      description: "Explain what 'done' looks like"
+      placeholder: |
+        - [ ] Users can navigate with Tab key
+        - [ ] Focus states are visible
+        - [ ] Works with screen readers
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: accessibility
+    attributes:
+      label: "♿ Accessibility Requirements"
+      description: "Select all that apply"
+      options:
+        - label: "Clear headings and short steps"
+        - label: "No assumptions about prior knowledge"
+        - label: "Works with screen readers / keyboard navigation"
+        - label: "Good color contrast (WCAG AA)"
+
+  - type: textarea
+    id: scope-allowed
+    attributes:
+      label: "🧩 Allowed Changes"
+      description: "Files and folders Copilot may modify"
+      placeholder: |
+        - templates/option-a/
+        - docs/
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope-not-allowed
+    attributes:
+      label: "🚫 Not Allowed"
+      description: "Restrictions on what Copilot should NOT change"
+      placeholder: |
+        - No changes to .github/ configuration
+        - No new dependencies
+        - No breaking changes to existing functionality
+
+  - type: textarea
+    id: technical-context
+    attributes:
+      label: "🏗️ Technical Context"
+      description: "Related issues, key files, or edge cases to consider"
+      placeholder: |
+        - Related to #123
+        - Reference: docs/accessibility.html
+
+  - type: dropdown
+    id: testing
+    attributes:
+      label: "🧪 Testing Required"
+      options:
+        - Manual browser testing
+        - Visual review of rendered output
+        - Accessibility audit
+        - No testing required
+
+  - type: textarea
+    id: special-instructions
+    attributes:
+      label: "⚠️ Special Instructions"
+      description: "Keep this focused - Copilot works best with clear, concise guidance"
+      placeholder: "Prefer existing patterns over new abstractions..."
