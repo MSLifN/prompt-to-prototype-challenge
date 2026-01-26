@@ -1,10 +1,10 @@
-# Mulighed A: Byg en webside
+# Mulighed A: Byg en hjemmeside
 
-Byg din prototype som **én enkelt HTML-fil** med CSS og JavaScript inkluderet. Ingen byggeværktøjer, ingen terminal, ingen npm krævet.
+Byg din prototype som **én enkelt HTML-fil** med CSS og JavaScript inkluderet. Ingen byggeværktøjer, ingen terminal krævet.
 
 ## ✅ Hvad du kommer til at lave
 
-En fungerende webside, der gør din idé til virkelighed — baseret på dit produktkravsdokument (PRD) og din branding fra de tidligere trin.
+En fungerende hjemmeside, der gør din idé til virkelighed — baseret på dit produktkravsdokument (PRD) og din branding fra de tidligere trin.
 
 ## 🎯 Hvem er dette for?
 
@@ -15,17 +15,24 @@ En fungerende webside, der gør din idé til virkelighed — baseret på dit pro
 
 ## 🚀 Kom godt i gang
 
-### Trin 1: Åbn i VS Code
+### Trin 1: Klon projektet i VS Code
 
 1. Åbn VS Code
-2. Gå til **File > Open Folder** og vælg mappen `templates/option-a`
-3. Åbn `index.html`
+2. Tryk `Ctrl+Shift+P` (Windows) eller `Cmd+Shift+P` (Mac) for at åbne kommandopaletten
+3. Skriv **Git: Clone** og vælg det
+4. Indsæt URL'en til dette repository og vælg en mappe på din computer
+5. Åbn det klonede projekt, når VS Code spørger
 
-### Trin 2: Åbn Copilot Chat
+### Trin 2: Åbn skabelonen
+
+1. Gå til mappen `templates/option-a`
+2. Åbn `index.html`
+
+### Trin 3: Åbn Copilot Chat
 
 Klik på chatikonet i sidepanelet, eller tryk på `Ctrl+Alt+I` (Windows) / `Cmd+Alt+I` (Mac)
 
-### Trin 3: Brug dit produktkravsdokument (PRD)
+### Trin 4: Brug dit produktkravsdokument (PRD)
 
 Kopier dit PRD ind i chatten og skriv:
 
@@ -35,7 +42,7 @@ Baseret på dette produktkravsdokument (PRD), opdater index.html så den viser h
 [Indsæt dit PRD her]
 ```
 
-### Trin 4: Tilføj din branding
+### Trin 5: Tilføj din branding
 
 ```
 Anvend disse farver og styling på siden:
@@ -46,7 +53,7 @@ Anvend disse farver og styling på siden:
 - Opdater tagline til: [tagline]
 ```
 
-### Trin 5: Byg funktionerne
+### Trin 6: Byg funktionerne
 
 For hver funktion i dit PRD, bed Copilot om hjælp:
 
@@ -54,7 +61,7 @@ For hver funktion i dit PRD, bed Copilot om hjælp:
 Tilføj [funktionsnavn] til siden. Den skal [beskriv hvad den gør].
 ```
 
-### Trin 6: Se resultatet
+### Trin 7: Se resultatet
 
 Åbn `index.html` i din browser:
 - **Windows:** Højreklik på filen > Open with > Chrome/Edge/Firefox

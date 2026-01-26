@@ -24,16 +24,6 @@ A polished document that communicates your idea effectively. Choose from premade
 | [FAQ Document](faq.md) | Questions and answers | Anticipating user needs |
 | [Presentation Outline](presentation.md) | Slides structure | Preparing a talk or demo |
 
-### Danish Templates (da-DK)
-
-| Template | What You'll Create | Best For |
-|----------|-------------------|----------|
-| [Product Pitch](product-pitch.da.md) | En overbevisende præsentation | Præsentation for interessenter |
-| [User Guide](user-guide.da.md) | Dokumentation for dit produkt | Forklaring af hvordan noget virker |
-| [Blog Post](blog-post.da.md) | En artikel om din idé | Deling af dine tanker |
-| [FAQ Document](faq.da.md) | Spørgsmål og svar | Forudse brugerbehov |
-| [Presentation Outline](presentation.da.md) | Præsentationsstruktur | Forberedelse af foredrag |
-
 ## 🚀 Getting Started
 
 ### Step 1: Choose a Template
