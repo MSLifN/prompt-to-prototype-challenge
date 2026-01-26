@@ -18,15 +18,15 @@
 
 ## Slide 2: Problemet
 
-<!-- Bed Copilot: "Hjælp mig med at beskrive problemet i 3 punkter eller mindre" -->
+<!-- Bed Copilot: "Hjælp mig med at beskrive problemet i højst 3 punkter" -->
 
 **[Problemoverskrift]**
 
-- [Smertepunkt 1]
-- [Smertepunkt 2]
-- [Smertepunkt 3]
+- [Udfordring 1]
+- [Udfordring 2]
+- [Udfordring 3]
 
-*Talernote: [Hvad du vil sige for at uddybe dette]*
+*Talernoter: [Hvad du vil sige for at uddybe dette]*
 
 ---
 
@@ -36,29 +36,29 @@
 
 **[Nøgleindsigt eller erkendelse]**
 
-[Én kraftfuld udtalelse eller statistik]
+[Én stærk udtalelse eller statistik]
 
-*Talernote: [Din historie eller kontekst]*
+*Talernoter: [Din historie eller kontekst]*
 
 ---
 
 ## Slide 4: Løsningen
 
-<!-- Bed Copilot: "Opsummer min løsning på en overbevisende måde til et slide" -->
+<!-- Bed Copilot: "Opsummer min løsning overbevisende til et slide, baseret på mit produktkravsdokument (PRD)" -->
 
-**Vi præsenterer [produktnavn]**
+**Her er [produktnavn]**
 
 [Én sætning, der forklarer, hvad det gør]
 
-[Nøgleviseuel: skærmbillede, diagram eller illustrationsidé]
+[Nøglevisuel: skærmbillede, diagram eller illustration]
 
 ---
 
-## Slide 5: Hvordan det virker
+## Slide 5: Sådan virker det
 
-<!-- Bed Copilot: "Opdel hvordan mit produkt virker i 3 enkle trin" -->
+<!-- Bed Copilot: "Forklar hvordan mit produkt virker i 3 enkle trin" -->
 
-**Så simpelt som 1-2-3**
+**Så enkelt som 1-2-3**
 
 1. [Trin 1]
 2. [Trin 2]
@@ -84,45 +84,45 @@
 
 ## Slide 7: Demo / Skærmbillede
 
-<!-- Vis, fortæl ikke bare -->
+<!-- Vis det, fortæl ikke bare om det -->
 
 **[Produktnavn] i aktion**
 
 [Beskriv hvilken visuel/demo du vil vise her]
 
-*Talernote: [Nøglepunkter at fremhæve under demo]*
+*Talernoter: [Vigtige pointer at fremhæve under demo]*
 
 ---
 
 ## Slide 8: Resultater / Bevis
 
-<!-- Bed Copilot: "Hjælp mig med at præsentere bevis for, at min løsning virker" -->
+<!-- Bed Copilot: "Hjælp mig med at vise bevis for, at min løsning virker" -->
 
 **Effekten**
 
-- [Resultat eller metrik 1]
-- [Resultat eller metrik 2]
+- [Resultat eller måling 1]
+- [Resultat eller måling 2]
 - [Udtalelse eller citat, hvis tilgængeligt]
 
 ---
 
-## Slide 9: Hvad er det næste
+## Slide 9: Hvad nu?
 
-<!-- Fremtidig vision eller køreplan -->
+<!-- Fremtidig vision eller plan -->
 
 **Hvor vi er på vej hen**
 
 - [Kortfristet mål]
-- [Mellemlangsigtet vision]
+- [Mellemlangtsigtet vision]
 - [Langsigtet ambition]
 
 ---
 
-## Slide 10: Call to Action
+## Slide 10: Opfordring til handling
 
 <!-- Hvad vil du have publikum til at gøre? -->
 
-**[Klar call to action]**
+**[Klar opfordring til handling]**
 
 [Hvordan man kommer i gang / bliver involveret / lærer mere]
 
@@ -141,13 +141,13 @@
 
 ## Appendiks (Valgfrie backup-slides)
 
-<!-- Ekstra detalje, hvis der opstår spørgsmål -->
+<!-- Ekstra detaljer, hvis der opstår spørgsmål -->
 
 ### Tekniske detaljer
-[Mere dybtgående indhold]
+[Mere dybdegående indhold]
 
-### Konkurrencelandskab  
-[Hvordan du sammenligner]
+### Konkurrenter
+[Hvordan du sammenligner med andre]
 
 ### Team / Om os
 [Hvem står bag dette]

@@ -12,11 +12,11 @@ Velkommen til [produktnavn]! Denne vejledning vil hjælpe dig med at [opnå mål
 
 ## Kom godt i gang
 
-<!-- Bed Copilot: "Opret en hurtigstartguide i 5 trin eller mindre" -->
+<!-- Bed Copilot: "Lav en hurtigstartguide i højst 5 trin" -->
 
 ### Forudsætninger
 
-Før du begynder, skal du sikre dig, at du har:
+Før du begynder, skal du have:
 
 - [ ] [Krav 1]
 - [ ] [Krav 2]
@@ -33,7 +33,7 @@ Før du begynder, skal du sikre dig, at du har:
 
 ## Kernefunktioner
 
-<!-- Bed Copilot: "Forklar hver af mine funktioner med trin-for-trin instruktioner" -->
+<!-- Bed Copilot: "Forklar hver af funktionerne fra mit produktkravsdokument (PRD) med trin-for-trin-instruktioner" -->
 
 ### Funktion 1: [Navn]
 
@@ -76,7 +76,7 @@ Før du begynder, skal du sikre dig, at du har:
 
 [Løsning eller workaround]
 
-### Kan jeg [kapabilitetsspørgsmål]?
+### Kan jeg [spørgsmål om funktionalitet]?
 
 [Ja/Nej med forklaring]
 
@@ -103,9 +103,9 @@ Hvis du har brug for assistance:
 
 ---
 
-## Hvad er næste skridt?
+## Hvad nu?
 
-Nu hvor du kender det grundlæggende, prøv:
+Nu hvor du kender det grundlæggende, kan du prøve:
 
 - [ ] [Foreslået næste trin]
 - [ ] [Avanceret funktion at udforske]

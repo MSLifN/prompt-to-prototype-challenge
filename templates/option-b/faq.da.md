@@ -6,7 +6,7 @@
 
 ## Generelle spørgsmål
 
-<!-- Bed Copilot: "Generer 5 generelle spørgsmål, som en nybegynder vil stille om mit produkt" -->
+<!-- Bed Copilot: "Lav 5 grundlæggende spørgsmål, som en nybegynder ville stille om mit produkt" -->
 
 ### Hvad er [produktnavn]?
 
@@ -26,15 +26,15 @@
 
 ---
 
-## Funktioner og funktionalitet
+## Funktioner og muligheder
 
-<!-- Bed Copilot: "Opret FAQ-spørgsmål om mine hovedfunktioner" -->
+<!-- Bed Copilot: "Lav FAQ-spørgsmål om mine hovedfunktioner" -->
 
-### Kan jeg [almindeligt kapabilitetsspørgsmål]?
+### Kan jeg [typisk spørgsmål om funktionalitet]?
 
 [Ja/Nej med forklaring af hvordan]
 
-### Understøtter [produktnavn] [almindelig integration/funktion]?
+### Understøtter [produktnavn] [typisk integration/funktion]?
 
 [Svar med detaljer]
 
@@ -46,7 +46,7 @@
 
 ## Tekniske spørgsmål
 
-<!-- Bed Copilot: "Hvilke tekniske spørgsmål vil brugere stille?" -->
+<!-- Bed Copilot: "Hvilke tekniske spørgsmål vil brugere typisk stille?" -->
 
 ### Hvad har jeg brug for for at bruge [produktnavn]?
 
@@ -64,9 +64,9 @@
 
 ## Fejlfinding
 
-<!-- Bed Copilot: "Hvilke problemer kan brugere støde på, og hvordan løser de dem?" -->
+<!-- Bed Copilot: "Hvilke problemer kan brugere opleve, og hvordan løser de dem?" -->
 
-### Jeg har problemer med [almindeligt problem]. Hvad skal jeg gøre?
+### Jeg har problemer med [typisk problem]. Hvad gør jeg?
 
 [Trin-for-trin løsning]
 
@@ -98,7 +98,7 @@
 
 ## Har du stadig spørgsmål?
 
-[Call to action — hvordan man kontakter for svar, der ikke er dækket her]
+[Opfordring til handling — hvordan man kan få svar på spørgsmål, der ikke er dækket her]
 
 ---
 

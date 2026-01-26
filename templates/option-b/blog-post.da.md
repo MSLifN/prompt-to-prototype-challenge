@@ -4,43 +4,43 @@
 
 ---
 
-<!-- Bed Copilot: "Hjælp mig med at skrive et engagerende åbningsafsnit, der trækker læserne ind" -->
+<!-- Bed Copilot: "Hjælp mig med at skrive en fængende åbning, der får læserne til at læse videre" -->
 
-[Åbningsafsnit — Start med en krog. Et overraskende faktum, et relatérbart problem eller en dristig påstand.]
+[Åbningsafsnit — Start med en krog. Et overraskende faktum, et genkendeligt problem, eller en modig påstand.]
 
 ## Udfordringen
 
-<!-- Bed Copilot: "Beskriv problemet eller udfordringen på en måde, der resonerer følelsesmæssigt" -->
+<!-- Bed Copilot: "Beskriv problemet eller udfordringen på en måde, som læseren kan relatere til" -->
 
-[Sæt konteksten. Hvilken situation førte dig til denne idé? Hvilket problem forsøgte du at løse?]
+[Sæt konteksten. Hvilken situation førte dig til denne idé? Hvilket problem prøvede du at løse?]
 
 ## Indsigten
 
 <!-- Bed Copilot: "Hjælp mig med at formulere nøgleindsigten eller 'aha-øjeblikket'" -->
 
-[Del dit gennembrudøjeblik. Hvad indså du? Hvad ændrede dit perspektiv?]
+[Del dit gennembrud. Hvad gik op for dig? Hvad ændrede dit perspektiv?]
 
 ## Tilgangen
 
-<!-- Bed Copilot: "Forklar min tilgang på en klar, narrativ måde" -->
+<!-- Bed Copilot: "Forklar min fremgangsmåde på en klar, fortællende måde" -->
 
-[Beskriv hvad du byggede eller skabte. Før læserne gennem din proces.]
+[Beskriv hvad du byggede eller skabte. Tag læserne med gennem din proces.]
 
 ### Hvad jeg prøvede
 
-[Del specifikke eksempler, eksperimenter eller iterationer]
+[Del konkrete eksempler, eksperimenter eller gentagelser]
 
 ### Hvad jeg lærte
 
-[Nøgleindsigter fra oplevelsen]
+[Vigtige indsigter fra oplevelsen]
 
 ## Resultaterne
 
-<!-- Bed Copilot: "Hjælp mig med at præsentere mine resultater på en overbevisende måde" -->
+<!-- Bed Copilot: "Hjælp mig med at præsentere mine resultater overbevisende" -->
 
-[Hvad skete der? Hvad opnåede du? Inkluder specifikke resultater, hvis muligt.]
+[Hvad skete der? Hvad opnåede du? Inkluder konkrete resultater, hvis muligt.]
 
-## Nøgleindsigter
+## Vigtigste læringer
 
 <!-- Bed Copilot: "Opsummer de vigtigste læringer i 3-5 punkter" -->
 
@@ -48,9 +48,9 @@
 2. **[Indsigt 2]** — [Kort forklaring]
 3. **[Indsigt 3]** — [Kort forklaring]
 
-## Hvad er det næste
+## Hvad nu?
 
-<!-- Bed Copilot: "Skriv en fremadskuende konklusion, der inspirerer til handling" -->
+<!-- Bed Copilot: "Skriv en fremadskuende afslutning, der inspirerer til handling" -->
 
 [Hvor fører dette hen? Hvad arbejder du på nu? Hvad skal læserne gøre?]
 
@@ -58,7 +58,7 @@
 
 ## Om forfatteren
 
-[Kort biografi — hvem du er, og hvorfor du er troværdig om dette emne]
+[Kort biografi — hvem du er, og hvorfor du ved noget om dette emne]
 
 ---
 

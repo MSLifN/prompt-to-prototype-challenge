@@ -1,16 +1,16 @@
-# Mulighed B: Opret et dokument
+# Mulighed B: Skriv et dokument
 
-Opret et **Markdown-baseret artefakt** med GitHub Copilot som din medforfatter. Fokuser på sprog, struktur og klarhed — ingen kodning påkrævet.
+Skriv et **Markdown-dokument** med GitHub Copilot som din medforfatter. Fokusér på sprog, struktur og klarhed — ingen programmering krævet.
 
-## ✅ Hvad du vil skabe
+## ✅ Hvad du kommer til at lave
 
-Et poleret dokument, der kommunikerer din idé effektivt. Vælg mellem forhåndsskabte skabeloner eller opret din egen.
+Et velskrevet dokument, der formidler din idé effektivt. Vælg mellem færdige skabeloner eller lav din egen.
 
-## 🎯 Hvem dette er for
+## 🎯 Hvem er dette for?
 
-- Forfattere og indholdsskabere
+- Forfattere og indholdsproducenter
 - Dem, der foretrækker ord frem for kode
-- Perfekt til dysleksi, træthed eller kognitiv overbelastning
+- Godt hvis du har dysleksi, er træt, eller har brug for lavt kognitivt load
 - Perfekt til "Jeg har ikke lyst til at kode i dag"
 - Alle, der ønsker Copilot som skrivepartner
 
@@ -39,27 +39,27 @@ Gennemse skabelonerne ovenfor og vælg en, der passer til dit mål. Åbn den i V
 
 Klik på chatikonet i sidepanelet, eller tryk på `Ctrl+Alt+I`
 
-### Trin 3: Introducer dit projekt
+### Trin 3: Fortæl om dit projekt
 
 ```
-Jeg opretter et [dokumenttype] til mit projekt. Her er min idé:
+Jeg skriver et [dokumenttype] til mit projekt. Her er min idé:
 
-[Indsæt din PRD eller beskriv din idé]
+[Indsæt dit produktkravsdokument (PRD) eller beskriv din idé]
 
-Hjælp mig med at udfylde denne skabelon med overbevisende indhold.
+Hjælp mig med at udfylde denne skabelon med godt indhold.
 ```
 
 ### Trin 4: Arbejd sektion for sektion
 
-For hver sektion skal du bede Copilot om at hjælpe:
+For hver sektion kan du bede Copilot om hjælp:
 
 ```
 Skriv sektionen [sektionsnavn]. Den skal [beskriv hvad du ønsker].
 ```
 
-### Trin 5: Forfin med Inline Edit
+### Trin 5: Finjustér med Inline Edit
 
-Vælg en hvilken som helst tekst og tryk på `Ctrl+I` for at bede om forbedringer:
+Markér tekst og tryk `Ctrl+I` for at bede om forbedringer:
 
 ```
 Gør dette klarere og mere kortfattet
@@ -127,31 +127,31 @@ Tilføj alt-tekstbeskrivelser til eventuelle billeder, jeg skal inkludere
 Forenkle ordforrådet for ikke-indfødte dansktalende
 ```
 
-## 📖 Sådan forhåndsviser du
+## 📖 Sådan ser du resultatet
 
 **I VS Code:**
 1. Åbn din `.md`-fil
-2. Tryk på `Ctrl+Shift+V` for at åbne Markdown-forhåndsvisning
+2. Tryk `Ctrl+Shift+V` for at åbne Markdown-visning
 3. Eller klik på forhåndsvisningsikonet i øverste højre hjørne
 
 **På GitHub:**
-Markdown-filer gengives smukt, når du pusher til GitHub!
+Markdown-filer vises flot, når du pusher til GitHub!
 
-## ✅ Succes-tjekliste
+## ✅ Tjekliste
 
 - [ ] Dokumentet har en klar struktur med overskrifter
 - [ ] Hovedbudskabet er let at forstå
-- [ ] Indholdet flyder logisk fra sektion til sektion
+- [ ] Indholdet hænger logisk sammen fra sektion til sektion
 - [ ] Ingen pladsholdertekst tilbage
 - [ ] Gennemgået for stavning og grammatik
 
-## 🎉 Du klarede det!
+## 🎉 Tillykke!
 
-Når din tjekliste er færdig, har du et poleret dokument!
+Når din tjekliste er opfyldt, har du et velskrevet dokument!
 
 **Næste skridt:**
 - Del som PDF (VS Code: Ctrl+Shift+P > "Markdown: Export to PDF")
-- Push til GitHub for en flot gengivet visning
+- Push til GitHub for en flot visning
 - Brug som grundlag for en præsentation eller webside
 
 ---
