@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Text Customization Tool - Adjust fonts, sizes, and spacing for better readability">
+    <title>Text Customization Tool</title>
+    <style>
+        /* ========================================
+           TEXT CUSTOMIZATION ACCESSIBILITY TOOL
+           Customize with Copilot prompts like:
+           - "Add more font options"
+           - "Add a reading ruler feature"
+           - "Save preferences to localStorage"
+           ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --font-size: 16px;
+            --line-height: 1.6;
+            --letter-spacing: 0;
+            --word-spacing: 0;
+            --font-family: system-ui, -apple-system, sans-serif;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px 16px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size);
+            line-height: var(--line-height);
+            letter-spacing: var(--letter-spacing);
+            word-spacing: var(--word-spacing);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .controls-panel {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 2px solid #e9ecef;
+        }
+
+        .controls-panel h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+
+        .control-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            min-width: 150px;
+            height: 8px;
+            border-radius: 4px;
+            background: #dee2e6;
+            cursor: pointer;
+        }
+
+        input[type="range"]:focus {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .value-display {
+            min-width: 60px;
+            text-align: center;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .font-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .font-btn {
+            padding: 0.75rem 1rem;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .font-btn:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .font-btn:focus {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .font-btn.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+
+        .font-btn[data-font="opendyslexic"] {
+            font-family: 'OpenDyslexic', sans-serif;
+        }
+
+        .font-btn[data-font="serif"] {
+            font-family: Georgia, serif;
+        }
+
+        .font-btn[data-font="mono"] {
+            font-family: 'Courier New', monospace;
+        }
+
+        .sample-text {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border: 2px solid #e9ecef;
+        }
+
+        .sample-text h2 {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        .sample-text p {
+            margin-bottom: 1rem;
+        }
+
+        .sample-text ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sample-text li {
+            margin-bottom: 0.5rem;
+        }
+
+        .reset-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .reset-btn:hover {
+            background: #5a6268;
+        }
+
+        .reset-btn:focus {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        /* OpenDyslexic font - loaded from CDN */
+        @import url('https://fonts.cdnfonts.com/css/opendyslexic');
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+            font-size: 0.875rem;
+        }
+
+        /* Copilot Help Section */
+        .copilot-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d1b4e 100%);
+            color: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 12px;
+        }
+        .copilot-section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .copilot-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .copilot-section ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+        .copilot-section li {
+            margin-bottom: 0.75rem;
+        }
+        .copilot-section code {
+            background: rgba(255,255,255,0.15);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .copilot-section .prompt-box {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border-left: 3px solid #60a5fa;
+        }
+        .copilot-section kbd {
+            background: rgba(255,255,255,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: system-ui;
+            font-size: 0.85rem;
+        }
+        .copilot-section .step-box {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .copilot-section .step-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+        }
+        .copilot-section .step-box p {
+            margin-bottom: 0.5rem;
+        }
+        .copilot-section .step-box code {
+            display: block;
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            word-break: break-all;
+        }
+        .copilot-section .clone-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .copilot-section .clone-url {
+            flex: 1;
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+        .copilot-section .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .copilot-section .copy-btn:hover {
+            background: #2563eb;
+        }
+        .copilot-section .copy-btn:focus {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+        .copilot-section .copy-btn.copied {
+            background: #10b981;
+        }
+
+        /* Navigation */
+        .template-nav {
+            background: #1e293b;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .template-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        .template-nav a:hover {
+            color: #fff;
+            background: #334155;
+        }
+        .template-nav a:focus {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+        .template-nav .nav-label {
+            color: #64748b;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .template-nav .current {
+            color: #fff;
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="template-nav" aria-label="Template navigation">
+        <span class="nav-label">Templates:</span>
+        <a href="text-customization.html" class="current" aria-current="page">Text</a>
+        <a href="high-contrast.html">Contrast</a>
+        <a href="focus-navigation.html">Focus</a>
+        <a href="text-to-speech.html">Speech</a>
+        <a href="simplified-interface.html">Simple</a>
+    </nav>
+
+    <header>
+        <h1>📖 Text Customization Tool</h1>
+        <p>Adjust text settings for better readability</p>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="controls-panel" aria-labelledby="controls-heading">
+            <h2 id="controls-heading">⚙️ Customize Your Reading Experience</h2>
+
+            <div class="control-group">
+                <label for="font-size">Font Size</label>
+                <div class="control-row">
+                    <input type="range" id="font-size" min="12" max="32" value="16" aria-describedby="font-size-value">
+                    <span id="font-size-value" class="value-display">16px</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="line-height">Line Spacing</label>
+                <div class="control-row">
+                    <input type="range" id="line-height" min="1" max="3" step="0.1" value="1.6" aria-describedby="line-height-value">
+                    <span id="line-height-value" class="value-display">1.6</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="letter-spacing">Letter Spacing</label>
+                <div class="control-row">
+                    <input type="range" id="letter-spacing" min="0" max="10" step="0.5" value="0" aria-describedby="letter-spacing-value">
+                    <span id="letter-spacing-value" class="value-display">0px</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="word-spacing">Word Spacing</label>
+                <div class="control-row">
+                    <input type="range" id="word-spacing" min="0" max="20" step="1" value="0" aria-describedby="word-spacing-value">
+                    <span id="word-spacing-value" class="value-display">0px</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label id="font-family-label">Font Style</label>
+                <div class="font-buttons" role="group" aria-labelledby="font-family-label">
+                    <button class="font-btn active" data-font="system" aria-pressed="true">Default</button>
+                    <button class="font-btn" data-font="serif" aria-pressed="false">Serif</button>
+                    <button class="font-btn" data-font="mono" aria-pressed="false">Monospace</button>
+                    <button class="font-btn" data-font="opendyslexic" aria-pressed="false">OpenDyslexic</button>
+                </div>
+            </div>
+
+            <button class="reset-btn" id="reset-btn">↺ Reset to Defaults</button>
+        </section>
+
+        <section class="sample-text" aria-labelledby="sample-heading">
+            <h2 id="sample-heading">Sample Text</h2>
+            <p>
+                This is sample text to help you see how your customization settings affect readability. 
+                Adjust the controls above to find the settings that work best for you.
+            </p>
+            <p>
+                <strong>Reading tips:</strong> Many people find it easier to read with increased line spacing 
+                and slightly larger fonts. The OpenDyslexic font is specifically designed to help readers 
+                with dyslexia by using unique letter shapes.
+            </p>
+            <ul>
+                <li>Try increasing the font size if text feels too small</li>
+                <li>Add more line spacing to prevent lines from blending together</li>
+                <li>Letter spacing can help distinguish similar letters</li>
+                <li>Word spacing helps with tracking across long lines</li>
+            </ul>
+            <p>
+                Your comfort matters! There's no "right" setting — experiment until you find 
+                what works for you.
+            </p>
+        </section>
+    </main>
+
+    <!-- Copilot Customization Guide -->
+    <section class="copilot-section" aria-labelledby="copilot-heading">
+        <h2 id="copilot-heading">🤖 Continue in VS Code with GitHub Copilot</h2>
+        <p>Like this template? Open it in VS Code to customize it with Copilot!</p>
+        
+        <div class="step-box">
+            <h3>Step 1: Clone the Repository</h3>
+            <p>Open VS Code and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>, then type <strong>Git: Clone</strong></p>
+            <div class="clone-box">
+                <code class="clone-url" id="clone-url">https://github.com/MSLifN/prompt-to-prototype-challenge.git</code>
+                <button class="copy-btn" onclick="copyCloneUrl()" aria-label="Copy clone URL">📋 Copy</button>
+            </div>
+        </div>
+        
+        <div class="step-box">
+            <h3>Step 2: Open This Template</h3>
+            <p>Navigate to: <code>templates/option-b/text-customization.html</code></p>
+        </div>
+        
+        <div class="step-box">
+            <h3>Step 3: Start Customizing</h3>
+            <p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> to open Copilot Chat and try:</p>
+            <div class="prompt-box">"Add a dark mode toggle to this page"</div>
+            <div class="prompt-box">"Save the user's settings to localStorage so they persist"</div>
+            <div class="prompt-box">"Add more font options like Arial, Verdana, and Comic Sans"</div>
+            <div class="prompt-box">"Add a reading ruler that follows the mouse cursor"</div>
+        </div>
+        
+        <p style="margin-top: 1rem;">💡 <strong>Tip:</strong> Select any code and press <kbd>Ctrl</kbd>+<kbd>I</kbd> for inline edits!</p>
+    </section>
+
+    <footer>
+        <p>Built for the Prompt to Prototype Challenge</p>
+    </footer>
+
+    <script>
+        /* ========================================
+           JAVASCRIPT FUNCTIONALITY
+           Customize with Copilot prompts like:
+           - "Save settings to localStorage"
+           - "Add a dark mode toggle"
+           - "Add preset buttons for common settings"
+           ======================================== */
+
+        // Font family mappings
+        const fonts = {
+            'system': 'system-ui, -apple-system, sans-serif',
+            'serif': 'Georgia, "Times New Roman", serif',
+            'mono': '"Courier New", Consolas, monospace',
+            'opendyslexic': '"OpenDyslexic", sans-serif'
+        };
+
+        // Get all controls
+        const fontSizeSlider = document.getElementById('font-size');
+        const lineHeightSlider = document.getElementById('line-height');
+        const letterSpacingSlider = document.getElementById('letter-spacing');
+        const wordSpacingSlider = document.getElementById('word-spacing');
+        const fontButtons = document.querySelectorAll('.font-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // Update CSS custom properties
+        function updateStyle(property, value, unit = '') {
+            document.documentElement.style.setProperty(property, value + unit);
+        }
+
+        // Update display values
+        function updateDisplay(id, value, unit = '') {
+            document.getElementById(id).textContent = value + unit;
+        }
+
+        // Font size control
+        fontSizeSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            updateStyle('--font-size', value, 'px');
+            updateDisplay('font-size-value', value, 'px');
+        });
+
+        // Line height control
+        lineHeightSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            updateStyle('--line-height', value);
+            updateDisplay('line-height-value', value);
+        });
+
+        // Letter spacing control
+        letterSpacingSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            updateStyle('--letter-spacing', value, 'px');
+            updateDisplay('letter-spacing-value', value, 'px');
+        });
+
+        // Word spacing control
+        wordSpacingSlider.addEventListener('input', (e) => {
+            const value = e.target.value;
+            updateStyle('--word-spacing', value, 'px');
+            updateDisplay('word-spacing-value', value, 'px');
+        });
+
+        // Font family buttons
+        fontButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                fontButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+
+                // Update font
+                const fontKey = btn.dataset.font;
+                updateStyle('--font-family', fonts[fontKey]);
+            });
+        });
+
+        // Reset button
+        resetBtn.addEventListener('click', () => {
+            // Reset sliders
+            fontSizeSlider.value = 16;
+            lineHeightSlider.value = 1.6;
+            letterSpacingSlider.value = 0;
+            wordSpacingSlider.value = 0;
+
+            // Reset displays
+            updateDisplay('font-size-value', '16', 'px');
+            updateDisplay('line-height-value', '1.6');
+            updateDisplay('letter-spacing-value', '0', 'px');
+            updateDisplay('word-spacing-value', '0', 'px');
+
+            // Reset CSS properties
+            updateStyle('--font-size', '16', 'px');
+            updateStyle('--line-height', '1.6');
+            updateStyle('--letter-spacing', '0', 'px');
+            updateStyle('--word-spacing', '0', 'px');
+            updateStyle('--font-family', fonts['system']);
+
+            // Reset font buttons
+            fontButtons.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-pressed', 'false');
+            });
+            document.querySelector('[data-font="system"]').classList.add('active');
+            document.querySelector('[data-font="system"]').setAttribute('aria-pressed', 'true');
+
+            // Announce reset to screen readers
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.className = 'sr-only';
+            announcement.textContent = 'Settings have been reset to defaults';
+            document.body.appendChild(announcement);
+            setTimeout(() => announcement.remove(), 1000);
+        });
+
+        // Copy clone URL function
+        function copyCloneUrl() {
+            const url = document.getElementById('clone-url').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

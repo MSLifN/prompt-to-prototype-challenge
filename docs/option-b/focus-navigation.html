@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Focus and Keyboard Navigation Helper - Enhanced visual focus and keyboard shortcuts">
+    <title>Focus & Navigation Helper</title>
+    <style>
+        /* ========================================
+           FOCUS & NAVIGATION ACCESSIBILITY TOOL
+           Customize with Copilot prompts like:
+           - "Add more keyboard shortcuts"
+           - "Make focus ring customizable"
+           - "Add a reading focus mode"
+           ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --focus-color: #ff6b00;
+            --focus-width: 4px;
+            --focus-style: solid;
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --accent: #0066cc;
+        }
+
+        /* Enhanced focus styles */
+        *:focus {
+            outline: var(--focus-width) var(--focus-style) var(--focus-color) !important;
+            outline-offset: 3px !important;
+        }
+
+        *:focus:not(:focus-visible) {
+            outline: none !important;
+        }
+
+        *:focus-visible {
+            outline: var(--focus-width) var(--focus-style) var(--focus-color) !important;
+            outline-offset: 3px !important;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -50px;
+            left: 0;
+            background: var(--focus-color);
+            color: white;
+            padding: 12px 20px;
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8533 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .panel {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .panel h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Focus customization controls */
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .control-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        input[type="color"] {
+            width: 50px;
+            height: 40px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .style-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .style-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .style-btn:hover {
+            border-color: var(--focus-color);
+        }
+
+        .style-btn.active {
+            border-color: var(--focus-color);
+            background: var(--focus-color);
+            color: white;
+        }
+
+        /* Keyboard shortcuts panel */
+        .shortcuts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .shortcut-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+        }
+
+        .shortcut-key {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            padding: 0.5rem 0.75rem;
+            background: #333;
+            color: white;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .shortcut-desc {
+            flex: 1;
+        }
+
+        /* Interactive demo area */
+        .demo-area {
+            background: #e9ecef;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .demo-area h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .demo-item {
+            padding: 1.5rem;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .demo-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .demo-item .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .demo-link {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .demo-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .demo-button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .demo-button:hover {
+            background: #0052a3;
+        }
+
+        /* Current focus indicator */
+        .focus-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .focus-indicator strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--focus-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+        }
+
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Copilot Help Section */
+        .copilot-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d1b4e 100%);
+            color: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 12px;
+        }
+        .copilot-section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .copilot-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .copilot-section ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+        .copilot-section li {
+            margin-bottom: 0.75rem;
+        }
+        .copilot-section .prompt-box {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border-left: 3px solid #60a5fa;
+        }
+        .copilot-section kbd {
+            background: rgba(255,255,255,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: system-ui;
+            font-size: 0.85rem;
+        }
+        .copilot-section .step-box {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .copilot-section .step-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+        }
+        .copilot-section .step-box p {
+            margin-bottom: 0.5rem;
+        }
+        .copilot-section .step-box code {
+            display: block;
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            word-break: break-all;
+        }
+        .copilot-section .clone-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .copilot-section .clone-url {
+            flex: 1;
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+        .copilot-section .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .copilot-section .copy-btn:hover {
+            background: #2563eb;
+        }
+        .copilot-section .copy-btn:focus {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+        .copilot-section .copy-btn.copied {
+            background: #10b981;
+        }
+
+        /* Navigation */
+        .template-nav {
+            background: #1e293b;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .template-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        .template-nav a:hover {
+            color: #fff;
+            background: #334155;
+        }
+        .template-nav a:focus {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+        .template-nav .nav-label {
+            color: #64748b;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .template-nav .current {
+            color: #fff;
+            background: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="template-nav" aria-label="Template navigation">
+        <span class="nav-label">Templates:</span>
+        <a href="text-customization.html">Text</a>
+        <a href="high-contrast.html">Contrast</a>
+        <a href="focus-navigation.html" class="current" aria-current="page">Focus</a>
+        <a href="text-to-speech.html">Speech</a>
+        <a href="simplified-interface.html">Simple</a>
+    </nav>
+
+    <header>
+        <h1>⌨️ Focus & Navigation Helper</h1>
+        <p>Enhanced keyboard navigation with visible focus indicators</p>
+    </header>
+
+    <main id="main-content" class="container">
+        <!-- Focus Customization -->
+        <section class="panel" aria-labelledby="customize-heading">
+            <h2 id="customize-heading">🎨 Customize Focus Appearance</h2>
+
+            <div class="control-group">
+                <label for="focus-color">Focus Ring Color</label>
+                <div class="control-row">
+                    <input type="color" id="focus-color" value="#ff6b00" aria-describedby="color-hint">
+                    <span id="color-hint">Choose a color that's easy for you to see</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="focus-width">Focus Ring Thickness</label>
+                <div class="control-row">
+                    <input type="range" id="focus-width" min="2" max="8" value="4">
+                    <span id="width-value">4px</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label id="focus-style-label">Focus Ring Style</label>
+                <div class="style-buttons" role="radiogroup" aria-labelledby="focus-style-label">
+                    <button class="style-btn active" data-style="solid" role="radio" aria-checked="true">Solid</button>
+                    <button class="style-btn" data-style="dashed" role="radio" aria-checked="false">Dashed</button>
+                    <button class="style-btn" data-style="dotted" role="radio" aria-checked="false">Dotted</button>
+                    <button class="style-btn" data-style="double" role="radio" aria-checked="false">Double</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keyboard Shortcuts -->
+        <section class="panel" aria-labelledby="shortcuts-heading">
+            <h2 id="shortcuts-heading">⌨️ Keyboard Shortcuts</h2>
+            <p style="margin-bottom: 1rem;">Use these keyboard shortcuts to navigate this page:</p>
+
+            <div class="shortcuts-grid">
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Tab</span>
+                    <span class="shortcut-desc">Move to next interactive element</span>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Shift+Tab</span>
+                    <span class="shortcut-desc">Move to previous element</span>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Enter</span>
+                    <span class="shortcut-desc">Activate buttons and links</span>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Space</span>
+                    <span class="shortcut-desc">Toggle checkboxes, activate buttons</span>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Arrow Keys</span>
+                    <span class="shortcut-desc">Navigate within groups</span>
+                </div>
+                <div class="shortcut-item">
+                    <span class="shortcut-key">Escape</span>
+                    <span class="shortcut-desc">Close dialogs, cancel actions</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="demo-area" aria-labelledby="demo-heading">
+            <h2 id="demo-heading">🧪 Try It Out</h2>
+            <p style="margin-bottom: 1.5rem;">Practice keyboard navigation on these interactive elements. Press <kbd>Tab</kbd> to move between items.</p>
+
+            <div class="demo-grid">
+                <button class="demo-item" tabindex="0">
+                    <div class="icon">📁</div>
+                    <div>Button 1</div>
+                </button>
+
+                <a href="#demo-link" class="demo-item demo-link">
+                    <div class="icon">🔗</div>
+                    <div>Link Example</div>
+                </a>
+
+                <button class="demo-item" tabindex="0">
+                    <div class="icon">⚙️</div>
+                    <div>Button 2</div>
+                </button>
+
+                <div class="demo-item" style="padding: 0.75rem;">
+                    <label for="demo-text" class="sr-only">Sample text input</label>
+                    <input type="text" id="demo-text" class="demo-input" placeholder="Text input">
+                </div>
+
+                <button class="demo-item" tabindex="0">
+                    <div class="icon">📊</div>
+                    <div>Button 3</div>
+                </button>
+
+                <div class="demo-item" style="padding: 0;">
+                    <button class="demo-button">Action Button</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Focus indicator -->
+    <div class="focus-indicator" id="focus-indicator" aria-live="polite">
+        <strong>Current Focus:</strong>
+        <span id="focus-element">None</span>
+    </div>
+
+    <!-- Copilot Customization Guide -->
+    <section class="copilot-section" aria-labelledby="copilot-heading">
+        <h2 id="copilot-heading">🤖 Continue in VS Code with GitHub Copilot</h2>
+        <p>Like this template? Open it in VS Code to customize it with Copilot!</p>
+        
+        <div class="step-box">
+            <h3>Step 1: Clone the Repository</h3>
+            <p>Open VS Code and press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>, then type <strong>Git: Clone</strong></p>
+            <div class="clone-box">
+                <code class="clone-url" id="clone-url">https://github.com/MSLifN/prompt-to-prototype-challenge.git</code>
+                <button class="copy-btn" onclick="copyCloneUrl()" aria-label="Copy clone URL">📋 Copy</button>
+            </div>
+        </div>
+        
+        <div class="step-box">
+            <h3>Step 2: Open This Template</h3>
+            <p>Navigate to: <code>templates/option-b/focus-navigation.html</code></p>
+        </div>
+        
+        <div class="step-box">
+            <h3>Step 3: Start Customizing</h3>
+            <p>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> to open Copilot Chat and try:</p>
+            <div class="prompt-box">"Add a shortcut to jump directly to the main content area"</div>
+            <div class="prompt-box">"Add a focus history that lets me go back to previous elements"</div>
+            <div class="prompt-box">"Save my focus ring preferences to localStorage"</div>
+            <div class="prompt-box">"Add Vim-style navigation (h, j, k, l keys)"</div>
+        </div>
+        
+        <p style="margin-top: 1rem;">💡 <strong>Tip:</strong> Select any code and press <kbd>Ctrl</kbd>+<kbd>I</kbd> for inline edits!</p>
+    </section>
+
+    <footer>
+        <p>Built for the Prompt to Prototype Challenge</p>
+    </footer>
+
+    <script>
+        /* ========================================
+           JAVASCRIPT FUNCTIONALITY
+           Customize with Copilot prompts like:
+           - "Add custom keyboard shortcuts"
+           - "Add a focus history feature"
+           - "Save settings to localStorage"
+           ======================================== */
+
+        // Focus customization
+        const focusColorInput = document.getElementById('focus-color');
+        const focusWidthInput = document.getElementById('focus-width');
+        const styleButtons = document.querySelectorAll('.style-btn');
+        const widthValue = document.getElementById('width-value');
+
+        function updateFocusStyle() {
+            document.documentElement.style.setProperty('--focus-color', focusColorInput.value);
+            document.documentElement.style.setProperty('--focus-width', focusWidthInput.value + 'px');
+        }
+
+        focusColorInput.addEventListener('input', updateFocusStyle);
+
+        focusWidthInput.addEventListener('input', (e) => {
+            widthValue.textContent = e.target.value + 'px';
+            updateFocusStyle();
+        });
+
+        styleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                styleButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-checked', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-checked', 'true');
+                document.documentElement.style.setProperty('--focus-style', btn.dataset.style);
+            });
+        });
+
+        // Focus indicator
+        const focusIndicator = document.getElementById('focus-indicator');
+        const focusElementSpan = document.getElementById('focus-element');
+
+        document.addEventListener('focusin', (e) => {
+            const element = e.target;
+            let description = '';
+
+            if (element.tagName === 'BUTTON') {
+                description = `Button: "${element.textContent.trim().substring(0, 30)}"`;
+            } else if (element.tagName === 'A') {
+                description = `Link: "${element.textContent.trim().substring(0, 30)}"`;
+            } else if (element.tagName === 'INPUT') {
+                const type = element.type || 'text';
+                const label = element.placeholder || element.id || type;
+                description = `Input (${type}): ${label}`;
+            } else if (element.classList.contains('demo-item')) {
+                description = `Interactive item: "${element.textContent.trim().substring(0, 30)}"`;
+            } else {
+                description = `${element.tagName.toLowerCase()}`;
+            }
+
+            focusElementSpan.textContent = description;
+        });
+
+        document.addEventListener('focusout', () => {
+            // Small delay to check if focus moved to another element
+            setTimeout(() => {
+                if (!document.activeElement || document.activeElement === document.body) {
+                    focusElementSpan.textContent = 'None';
+                }
+            }, 100);
+        });
+
+        // Demo item interactions
+        document.querySelectorAll('.demo-item').forEach(item => {
+            if (item.tagName !== 'A') {
+                item.addEventListener('click', () => {
+                    alert('You activated: ' + item.textContent.trim());
+                });
+                item.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        item.click();
+                    }
+                });
+            }
+        });
+
+        // Copy clone URL function
+        function copyCloneUrl() {
+            const url = document.getElementById('clone-url').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
