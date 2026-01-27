@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valgfrit: Udforsk Local AI Foundry-integration til din prototype">
+    <title>Trin 7 Valgfrit: Lokal AI-integration - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <div class="layout-container">
+        <nav aria-label="Hovednavigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+                <!-- Language Switcher -->
+                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+                    <a href="../step-7-optional.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li>
+                    <a href="index.html" class="nav-link">
+                        Introduktion
+                    </a>
+                </li>
+                <li>
+                    <a href="idea-generation.html" class="nav-link">
+                        1.0 Idégenerering
+                    </a>
+                </li>
+                <li>
+                    <a href="research.html" class="nav-link">
+                        2.0 Research
+                    </a>
+                </li>
+                <li>
+                    <a href="branding.html" class="nav-link">
+                        3.0 Branding
+                    </a>
+                </li>
+                <li>
+                    <a href="product-requirements.html" class="nav-link">
+                        4.0 Produktkrav
+                    </a>
+                </li>
+                <li>
+                    <a href="prototype.html" class="nav-link">
+                        5.0 Prototype
+                    </a>
+                </li>
+                <li>
+                    <a href="code-prototyping.html" class="nav-link">
+                        6.0 Prototyping
+                    </a>
+                </li>
+                <li>
+                    <a href="learnings-resources.html" class="nav-link">
+                        7.0 Læring og Ressourcer
+                    </a>
+                </li>
+                <li>
+                    <a href="step-7-optional.html" aria-current="page" class="nav-link active">
+                        ✨ Valgfrit: Lokal AI
+                    </a>
+                </li>
+                <li>
+                    <a href="vibe-coding-guide.html" class="nav-link">
+                        Vibe Coding Guide
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <span style="background: linear-gradient(135deg, #6d28d9, #5856d6); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">✨ VALGFRIT BONUS</span>
+                    </div>
+                    <h2 class="page-title">Udforsk lokal kunstig intelligens (AI) integration</h2>
+                    <p style="font-size: 1.1rem; color: #4b5563; margin-top: 0.5rem;">Tilføj AI-drevne funktioner til din prototype med Local AI Foundry</p>
+                </header>
+
+                <!-- Congratulations Banner -->
+                <section aria-labelledby="congrats-heading" style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); border: 2px solid #16a34a; border-radius: 12px; padding: 2rem; margin-bottom: 2rem;">
+                    <h3 id="congrats-heading" style="color: #15803d; margin-top: 0;">🎉 Tillykke!</h3>
+                    <p style="color: #166534; margin-bottom: 0; font-size: 1.1rem;">
+                        <strong>Du har allerede haft succes!</strong> Ved at fuldføre Trin 6 har du bygget en fungerende prototype ved hjælp af AI-assisteret udvikling. 
+                        Dette valgfrie trin er bonusindhold for dem, der vil udforske at tilføje AI-funktioner til deres prototype.
+                    </p>
+                </section>
+
+                <!-- Skip This Section -->
+                <div style="background: #f8f9fa; border: 1px solid #d0d7de; border-radius: 8px; padding: 1rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">⏭️</span>
+                    <div>
+                        <p style="margin: 0; font-weight: 600;">Ikke interesseret i AI-integration lige nu?</p>
+                        <p style="margin: 0.25rem 0 0 0; color: #4b5563;">Det er helt fint! <a href="learnings-resources.html" style="color: #0366d6;">Vend tilbage til Læring og Ressourcer →</a></p>
+                    </div>
+                </div>
+
+                <section aria-labelledby="overview-heading">
+                    <h3 id="overview-heading">Hvad du vil udforske</h3>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                        <div style="background: #f6f8fa; border-radius: 8px; padding: 1rem; border: 1px solid #d0d7de;">
+                            <p style="font-weight: 600; margin: 0 0 0.5rem 0;">⏱️ Estimeret tid</p>
+                            <p style="margin: 0; color: #4b5563;">30-60 minutter</p>
+                        </div>
+                        <div style="background: #f6f8fa; border-radius: 8px; padding: 1rem; border: 1px solid #d0d7de;">
+                            <p style="font-weight: 600; margin: 0 0 0.5rem 0;">🎯 Færdighedsniveau</p>
+                            <p style="margin: 0; color: #4b5563;">Mellemliggende (konceptuelt)</p>
+                        </div>
+                        <div style="background: #f6f8fa; border-radius: 8px; padding: 1rem; border: 1px solid #d0d7de;">
+                            <p style="font-weight: 600; margin: 0 0 0.5rem 0;">🔧 Krav</p>
+                            <p style="margin: 0; color: #4b5563;">Windows 11-pc med NPU</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="what-is-heading">
+                    <h3 id="what-is-heading">Hvad er Local AI Foundry?</h3>
+                    
+                    <p><strong>Local AI Foundry</strong> er Microsofts løsning til at køre AI-modeller direkte på din computer. I stedet for at sende data til cloud-tjenester kører AI lokalt på din enhed.</p>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <h4 style="margin-bottom: 1rem;">Hvorfor overveje lokal AI?</h4>
+                        <ul>
+                            <li><strong>Privatliv:</strong> Dine data forlader aldrig din enhed</li>
+                            <li><strong>Hastighed:</strong> Ingen netværksforsinkelse for AI-svar</li>
+                            <li><strong>Offline:</strong> Fungerer uden internetforbindelse</li>
+                            <li><strong>Omkostninger:</strong> Ingen per-anmodning Application Programming Interface (API) gebyrer</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #fff9e6; border-left: 4px solid #f4a300; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+                        <h5 style="color: #8b5a00; margin-top: 0;">⚠️ Hardwarekrav</h5>
+                        <p style="color: #5c4200; margin-bottom: 0;">
+                            Local AI Foundry kræver en Windows 11-pc med en Neural Processing Unit (NPU) - typisk fundet i nyere bærbare computere med "Copilot+ PC" branding. 
+                            Hvis du ikke har kompatibel hardware, kan du stadig lære koncepterne og anvende dem senere.
+                        </p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="ideate-heading">
+                    <h3 id="ideate-heading">Idégenerering af AI-funktioner med Copilot</h3>
+                    
+                    <p>Før du implementerer AI-funktioner, brug GitHub Copilot til at brainstorme, hvad AI kunne tilføje til din prototype. Sådan gør du:</p>
+
+                    <div class="prompt-box" style="margin: 1.5rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Brainstorm AI-funktioner</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                    <span aria-hidden="true">↺</span> Gendan
+                                </button>
+                                <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                    <span aria-hidden="true">✎</span> Rediger
+                                </button>
+                                <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopiér
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Jeg har en prototype til [beskriv din app]. 
+
+Hvilke AI-drevne funktioner kunne forbedre denne applikation? Overvej:
+- Tekstanalyse eller -generering
+- Billedforståelse
+- Smarte forslag eller anbefalinger
+- Naturlige sproggrænseflader
+
+For hver funktion, forklar:
+1. Hvad den ville gøre
+2. Hvordan den ville forbedre brugeroplevelsen
+3. Om den kunne køre lokalt vs. kræver cloud AI</code></pre>
+                    </div>
+
+                    <div style="margin: 2rem 0;">
+                        <h4>Eksempler på AI-funktionsidéer</h4>
+                        <p>Afhængigt af din prototype kunne AI tilføje:</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                            <div style="background: #f0f9ff; border: 1px solid #0078d4; border-radius: 8px; padding: 1rem;">
+                                <h5 style="color: #0078d4; margin-top: 0;">📝 Tekst-apps</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem;">
+                                    <li>Smart autofuldførelse</li>
+                                    <li>Indholdsopsummering</li>
+                                    <li>Tonejustering</li>
+                                    <li>Grammatikforslag</li>
+                                </ul>
+                            </div>
+                            <div style="background: #f0fdf4; border: 1px solid #16a34a; border-radius: 8px; padding: 1rem;">
+                                <h5 style="color: #16a34a; margin-top: 0;">📊 Data-apps</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem;">
+                                    <li>Mønstergenkendelse</li>
+                                    <li>Anomalihåndtering</li>
+                                    <li>Naturlige sprogforespørgsler</li>
+                                    <li>Trendforudsigelser</li>
+                                </ul>
+                            </div>
+                            <div style="background: #fef3c7; border: 1px solid #d97706; border-radius: 8px; padding: 1rem;">
+                                <h5 style="color: #b45309; margin-top: 0;">🎨 Kreative apps</h5>
+                                <ul style="margin: 0; padding-left: 1.2rem;">
+                                    <li>Stilforslag</li>
+                                    <li>Indholdsidéer</li>
+                                    <li>Billedbeskrivelser</li>
+                                    <li>Farveanbefalinger</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="integration-heading">
+                    <h3 id="integration-heading">Konceptuel integrationstilgang</h3>
+                    
+                    <p>Hvis du beslutter dig for at tilføje lokal AI til din prototype, er her den generelle tilgang:</p>
+
+                    <div style="margin: 1.5rem 0;">
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #0078d4; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 style="margin: 0;">Installér AI Toolkit-udvidelsen</h4>
+                                <p style="margin: 0.5rem 0 0 0; color: #4b5563;">Tilføj AI Toolkit-udvidelsen til VS Code for at få adgang til lokale AI-modeller.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #0078d4; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 style="margin: 0;">Vælg en model</h4>
+                                <p style="margin: 0.5rem 0 0 0; color: #4b5563;">Vælg en lille sprogmodel (SLM) optimeret til din enheds NPU.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #0078d4; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 style="margin: 0;">Design interaktionen</h4>
+                                <p style="margin: 0.5rem 0 0 0; color: #4b5563;">Beslut hvor AI tilføjer værdi i dit brugerflow uden at overvælde oplevelsen.</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                            <div style="background: #0078d4; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</div>
+                            <div>
+                                <h4 style="margin: 0;">Implementér omhyggeligt</h4>
+                                <p style="margin: 0.5rem 0 0 0; color: #4b5563;">Start med én AI-funktion, test den grundigt, og overvej derefter at tilføje flere.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prompt-box" style="margin: 1.5rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Spørg Copilot om implementeringsidéer</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                    <span aria-hidden="true">↺</span> Gendan
+                                </button>
+                                <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                    <span aria-hidden="true">✎</span> Rediger
+                                </button>
+                                <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopiér
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Jeg vil tilføje en [beskriv AI-funktion] til min HTML/JavaScript-prototype.
+
+Funktionen skal:
+- [Beskriv hvad den gør]
+- [Beskriv hvornår den aktiveres]
+- [Beskriv forventet output]
+
+Hvordan ville jeg strukturere denne funktion? 
+Hold det enkelt - jeg prototyper, ikke bygger produktionskode.</code></pre>
+                    </div>
+                </section>
+
+                <section aria-labelledby="resources-heading">
+                    <h3 id="resources-heading">Lær mere</h3>
+                    
+                    <p>Klar til at dykke dybere? Her er ressourcer til at fortsætte din læring:</p>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <div style="padding: 1rem; background: #f6f8fa; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="margin: 0 0 0.5rem 0;">📚 AI Toolkit til VS Code</h4>
+                            <p style="margin: 0; color: #4b5563;">
+                                Officiel udvidelse til at køre lokale AI-modeller i VS Code.
+                                <br><a href="https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio" target="_blank" rel="noopener noreferrer">Se i VS Code Marketplace →</a>
+                            </p>
+                        </div>
+                        
+                        <div style="padding: 1rem; background: #f6f8fa; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="margin: 0 0 0.5rem 0;">📖 Windows AI-dokumentation</h4>
+                            <p style="margin: 0; color: #4b5563;">
+                                Microsofts guide til AI-udvikling på Windows.
+                                <br><a href="https://learn.microsoft.com/en-us/windows/ai/" target="_blank" rel="noopener noreferrer">Læs dokumentationen →</a>
+                            </p>
+                        </div>
+                        
+                        <div style="padding: 1rem; background: #f6f8fa; border-radius: 8px; margin-bottom: 1rem;">
+                            <h4 style="margin: 0 0 0.5rem 0;">🎥 Kom godt i gang-videoer</h4>
+                            <p style="margin: 0; color: #4b5563;">
+                                Videovejledninger om brug af AI Toolkit og lokale modeller.
+                                <br><a href="https://www.youtube.com/results?search_query=ai+toolkit+vscode" target="_blank" rel="noopener noreferrer">Søg på YouTube →</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Final Encouragement -->
+                <section aria-labelledby="final-heading" style="background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); border-radius: 12px; padding: 2rem; margin-top: 2rem;">
+                    <h3 id="final-heading" style="color: #6d28d9; margin-top: 0;">🚀 Du er klar!</h3>
+                    <p style="color: #5b21b6; margin-bottom: 1rem;">
+                        Uanset om du udforsker lokal AI-integration eller ej, har du opnået noget fantastisk i dag. 
+                        Du tog en idé fra koncept til fungerende prototype ved hjælp af AI-assisteret udvikling.
+                    </p>
+                    <p style="color: #5b21b6; margin-bottom: 0;">
+                        <strong>Fortsæt med at eksperimentere, fortsæt med at bygge, og fortsæt med at lære!</strong>
+                    </p>
+                </section>
+
+                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Forrige</p>
+                        <a href="learnings-resources.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 7.0 Læring og Ressourcer
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Guide</p>
+                        <a href="vibe-coding-guide.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            Vibe Coding Guide →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">På denne side</h2>
+                <nav aria-label="Sidens indholdsfortegnelse">
+                    <ul role="list">
+                        <li><a href="#congrats-heading">🎉 Tillykke!</a></li>
+                        <li><a href="#overview-heading">Hvad du vil udforske</a></li>
+                        <li><a href="#what-is-heading">Hvad er Local AI Foundry?</a></li>
+                        <li><a href="#ideate-heading">Idégenerering af AI-funktioner</a></li>
+                        <li><a href="#integration-heading">Integrationstilgang</a></li>
+                        <li><a href="#resources-heading">Lær mere</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

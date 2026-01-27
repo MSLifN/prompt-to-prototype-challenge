@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Højkontrasttilstand - Skift mellem farveskemaer for bedre synlighed">
+    <title>Højkontrasttilstand</title>
+    <style>
+        /* ========================================
+           HØJKONTRAST TILGÆNGELIGHEDSVÆRKTØJ
+           Tilpas med Copilot-prompts som:
+           - "Tilføj flere farveskemamuligheder"
+           - "Tilføj en farveblindhedssimulering"
+           - "Gem præference til localStorage"
+           ======================================== */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --accent: #0066cc;
+            --accent-hover: #0052a3;
+            --border: #dee2e6;
+            --focus-ring: #0066cc;
+        }
+
+        /* High Contrast - Dark */
+        [data-theme="high-contrast-dark"] {
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --accent: #ffff00;
+            --accent-hover: #cccc00;
+            --border: #ffffff;
+            --focus-ring: #ffff00;
+        }
+
+        /* High Contrast - Light */
+        [data-theme="high-contrast-light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f0f0f0;
+            --text-primary: #000000;
+            --text-secondary: #1a1a1a;
+            --accent: #0000cc;
+            --accent-hover: #000099;
+            --border: #000000;
+            --focus-ring: #0000cc;
+        }
+
+        /* Yellow on Black */
+        [data-theme="yellow-black"] {
+            --bg-primary: #000000;
+            --bg-secondary: #1a1a00;
+            --text-primary: #ffff00;
+            --text-secondary: #cccc00;
+            --accent: #00ffff;
+            --accent-hover: #00cccc;
+            --border: #ffff00;
+            --focus-ring: #00ffff;
+        }
+
+        /* Blue on White */
+        [data-theme="blue-white"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #e6f2ff;
+            --text-primary: #003366;
+            --text-secondary: #004080;
+            --accent: #0066cc;
+            --accent-hover: #004d99;
+            --border: #003366;
+            --focus-ring: #0066cc;
+        }
+
+        /* Cream Background (reduces eye strain) */
+        [data-theme="cream"] {
+            --bg-primary: #fdf6e3;
+            --bg-secondary: #eee8d5;
+            --text-primary: #073642;
+            --text-secondary: #586e75;
+            --accent: #268bd2;
+            --accent-hover: #1a6091;
+            --border: #93a1a1;
+            --focus-ring: #268bd2;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            padding: 8px 16px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-color: var(--bg-secondary);
+            border-bottom: 3px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-secondary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .theme-selector {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .theme-selector h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .theme-btn {
+            padding: 1rem;
+            border: 3px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            transition: all 0.2s;
+        }
+
+        .theme-btn:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .theme-btn:focus {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 2px;
+        }
+
+        .theme-btn.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .theme-preview {
+            display: flex;
+            gap: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .color-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .sample-content {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .sample-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .sample-content p {
+            margin-bottom: 1rem;
+        }
+
+        .sample-content a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        .sample-content a:hover {
+            color: var(--accent-hover);
+        }
+
+        .sample-content a:focus {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 2px;
+        }
+
+        .sample-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .sample-button:hover {
+            background: var(--accent-hover);
+        }
+
+        .sample-button:focus {
+            outline: 3px solid var(--focus-ring);
+            outline-offset: 2px;
+        }
+
+        .info-box {
+            background: var(--bg-primary);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Copilot Help Section */
+        .copilot-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d1b4e 100%);
+            color: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 12px;
+        }
+        .copilot-section h2 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        .copilot-section p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        .copilot-section ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+        .copilot-section li {
+            margin-bottom: 0.75rem;
+        }
+        .copilot-section .prompt-box {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border-left: 3px solid #60a5fa;
+        }
+        .copilot-section kbd {
+            background: rgba(255,255,255,0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: system-ui;
+            font-size: 0.85rem;
+        }
+        .copilot-section .step-box {
+            background: rgba(0,0,0,0.2);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .copilot-section .step-box h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+        }
+        .copilot-section .step-box p {
+            margin-bottom: 0.5rem;
+        }
+        .copilot-section .step-box code {
+            display: block;
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            word-break: break-all;
+        }
+        .copilot-section .clone-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .copilot-section .clone-url {
+            flex: 1;
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+        .copilot-section .copy-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .copilot-section .copy-btn:hover {
+            background: #1d4ed8;
+        }
+        .copilot-section .copy-btn:focus {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+        .copilot-section .copy-btn.copied {
+            background: #10b981;
+        }
+
+        /* Navigation */
+        .template-nav {
+            background: #1e293b;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .template-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.875rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        .template-nav a:hover {
+            color: #fff;
+            background: #334155;
+        }
+        .template-nav a:focus {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+        .template-nav .nav-label {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .template-nav .current {
+            color: #fff;
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body data-theme="default">
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <nav class="template-nav" aria-label="Skabelonnavigation">
+        <span class="nav-label">Skabeloner:</span>
+        <a href="text-customization.html">Tekst</a>
+        <a href="high-contrast.html" class="current" aria-current="page">Kontrast</a>
+        <a href="focus-navigation.html">Fokus</a>
+        <a href="text-to-speech.html">Tale</a>
+        <a href="simplified-interface.html">Enkel</a>
+    </nav>
+
+    <header>
+        <h1>🎨 Højkontrasttilstand</h1>
+        <p>Vælg et farveskema, der fungerer bedst for dit syn</p>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="theme-selector" aria-labelledby="theme-heading">
+            <h2 id="theme-heading">Vælg et farveskema</h2>
+            
+            <div class="theme-grid" role="radiogroup" aria-labelledby="theme-heading">
+                <button class="theme-btn active" data-theme="default" role="radio" aria-checked="true">
+                    <span>Standard</span>
+                    <div class="theme-preview">
+                        <span class="color-swatch" style="background: #ffffff;"></span>
+                        <span class="color-swatch" style="background: #212529;"></span>
+                        <span class="color-swatch" style="background: #0066cc;"></span>
+                    </div>
+                </button>
+
+                <button class="theme-btn" data-theme="high-contrast-dark" role="radio" aria-checked="false">
+                    <span>Høj kontrast mørk</span>
+                    <div class="theme-preview">
+                        <span class="color-swatch" style="background: #000000;"></span>
+                        <span class="color-swatch" style="background: #ffffff;"></span>
+                        <span class="color-swatch" style="background: #ffff00;"></span>
+                    </div>
+                </button>
+
+                <button class="theme-btn" data-theme="high-contrast-light" role="radio" aria-checked="false">
+                    <span>Høj kontrast lys</span>
+                    <div class="theme-preview">
+                        <span class="color-swatch" style="background: #ffffff;"></span>
+                        <span class="color-swatch" style="background: #000000;"></span>
+                        <span class="color-swatch" style="background: #0000cc;"></span>
+                    </div>
+                </button>
+
+                <button class="theme-btn" data-theme="yellow-black" role="radio" aria-checked="false">
+                    <span>Gul på sort</span>
+                    <div class="theme-preview">
+                        <span class="color-swatch" style="background: #000000;"></span>
+                        <span class="color-swatch" style="background: #ffff00;"></span>
+                        <span class="color-swatch" style="background: #00ffff;"></span>
+                    </div>
+                </button>
+
+                <button class="theme-btn" data-theme="blue-white" role="radio" aria-checked="false">
+                    <span>Blå på hvid</span>
+                    <div class="theme-preview">
+                        <span class="color-swatch" style="background: #ffffff;"></span>
+                        <span class="color-swatch" style="background: #003366;"></span>
+                        <span class="color-swatch" style="background: #0066cc;"></span>
+                    </div>
+                </button>
+
+                <button class="theme-btn" data-theme="cream" role="radio" aria-checked="false">
+                    <span>Cremefarvet (skånsom for øjnene)</span>
+                    <div class="theme-preview">
+                        <span class="color-swatch" style="background: #fdf6e3;"></span>
+                        <span class="color-swatch" style="background: #073642;"></span>
+                        <span class="color-swatch" style="background: #268bd2;"></span>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section class="sample-content" aria-labelledby="sample-heading">
+            <h2 id="sample-heading">Eksempelindhold</h2>
+            <p>
+                Denne sektion viser, hvordan indhold ser ud med dit valgte farveskema. 
+                Højkontrasttilstande kan hjælpe personer med nedsat syn, lysfølsomhed 
+                eller visse typer farveblindhed.
+            </p>
+            <p>
+                Her er et <a href="#sample-link">eksempellink</a> for at se, hvordan links vises. 
+                Links bør tydeligt kunne skelnes fra almindelig tekst.
+            </p>
+            <button class="sample-button">Eksempelknap</button>
+
+            <div class="info-box">
+                <h3>💡 Tip</h3>
+                <p>
+                    Det bedste farveskema afhænger af dine individuelle behov og omgivelser. 
+                    Prøv forskellige muligheder for at finde det, der fungerer bedst for dig. Nogle mennesker foretrækker 
+                    mørke baggrunde i dårligt belyste omgivelser og lyse baggrunde i lyse rum.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Copilot Customization Guide -->
+    <section class="copilot-section" aria-labelledby="copilot-heading">
+        <h2 id="copilot-heading">🤖 Fortsæt i VS Code med GitHub Copilot</h2>
+        <p>Kan du lide denne skabelon? Åbn den i VS Code for at tilpasse den med Copilot!</p>
+        
+        <div class="step-box">
+            <h3>Trin 1: Klon repositoryet</h3>
+            <p>Åbn VS Code og tryk <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>, skriv derefter <strong>Git: Clone</strong></p>
+            <div class="clone-box">
+                <code class="clone-url" id="clone-url">https://github.com/MSLifN/prompt-to-prototype-challenge.git</code>
+                <button class="copy-btn" onclick="copyCloneUrl()" aria-label="Kopier klon-URL">📋 Kopier</button>
+            </div>
+        </div>
+        
+        <div class="step-box">
+            <h3>Trin 2: Åbn denne skabelon</h3>
+            <p>Naviger til: <code>templates/option-b/high-contrast.html</code></p>
+        </div>
+        
+        <div class="step-box">
+            <h3>Trin 3: Begynd at tilpasse</h3>
+            <p>Tryk <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> for at åbne Copilot Chat og prøv:</p>
+            <div class="prompt-box">"Tilføj et nyt farveskema til farveblindhed (deuteranopi)"</div>
+            <div class="prompt-box">"Gem brugerens temapræference til localStorage"</div>
+            <div class="prompt-box">"Registrer brugerens systempræference for mørk tilstand"</div>
+            <div class="prompt-box">"Tilføj en knap til at skifte mellem temaer med en tastaturgenvej"</div>
+        </div>
+        
+        <p style="margin-top: 1rem;">💡 <strong>Tip:</strong> Marker enhver kode og tryk <kbd>Ctrl</kbd>+<kbd>I</kbd> for inline-redigeringer!</p>
+    </section>
+
+    <footer>
+        <p>Bygget til Prompt to Prototype Challenge</p>
+    </footer>
+
+    <script>
+        /* ========================================
+           JAVASCRIPT-FUNKTIONALITET
+           Tilpas med Copilot-prompts som:
+           - "Gem temapræference til localStorage"
+           - "Tilføj systempræferenceregistrering"
+           - "Tilføj flere temamuligheder"
+           ======================================== */
+
+        const themeButtons = document.querySelectorAll('.theme-btn');
+
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                themeButtons.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-checked', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-checked', 'true');
+
+                // Apply theme
+                const theme = btn.dataset.theme;
+                document.body.setAttribute('data-theme', theme);
+
+                // Announce change to screen readers
+                const themeName = btn.querySelector('span').textContent;
+                announceToScreenReader(`Farveskema ændret til ${themeName}`);
+            });
+        });
+
+        // Keyboard navigation for theme grid
+        document.querySelector('.theme-grid').addEventListener('keydown', (e) => {
+            const buttons = Array.from(themeButtons);
+            const currentIndex = buttons.findIndex(btn => btn === document.activeElement);
+
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                const nextIndex = (currentIndex + 1) % buttons.length;
+                buttons[nextIndex].focus();
+            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                const prevIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+                buttons[prevIndex].focus();
+            }
+        });
+
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.style.position = 'absolute';
+            announcement.style.left = '-9999px';
+            announcement.textContent = message;
+            document.body.appendChild(announcement);
+            setTimeout(() => announcement.remove(), 1000);
+        }
+
+        // Copy clone URL function
+        function copyCloneUrl() {
+            const url = document.getElementById('clone-url').textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✓ Kopieret!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = '📋 Kopier';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

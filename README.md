@@ -14,6 +14,13 @@ You'll go through **six key stages**:
 
 Visit [https://aka.ms/skillupai/ptpchallenge](https://aka.ms/skillupai/ptpchallenge) to learn more about the Challenge and get started.
 
+## 🌍 Language / Sprog
+
+| Language | Documentation |
+|----------|---------------|
+| 🇬🇧 English | [docs/](./docs/) |
+| 🇩🇰 Dansk | [docs/da/](./docs/da/) |
+
 ## 🛤️ Choose Your Prototyping Path
 
 At Step 6 (Prototyping), you'll choose one of two paths. **Both work with GitHub Copilot Free tier** and are designed for accessibility.
@@ -79,11 +86,25 @@ This challenge is designed for **GitHub Copilot Free Tier** users. All core feat
 │   ├── prototype.html              # Step 5
 │   ├── code-prototyping.html       # Step 6 (path chooser)
 │   ├── learnings-resources.html    # Step 7
-│   └── vibe-coding-guide.html      # Comprehensive Vibe Coding Guide
+│   ├── vibe-coding-guide.html      # Comprehensive Vibe Coding Guide
+│   ├── option-b/                   # Accessibility templates (English)
+│   └── da/                         # Danish translations
+│       ├── index.html              # Introduktion
+│       ├── idea-generation.html    # Trin 1: Idégenerering
+│       ├── research.html           # Trin 2: Research
+│       ├── branding.html           # Trin 3: Branding
+│       ├── product-requirements.html # Trin 4: Produktkrav
+│       ├── prototype.html          # Trin 5: Prototype
+│       ├── code-prototyping.html   # Trin 6: Prototyping
+│       ├── learnings-resources.html # Læring og Ressourcer
+│       ├── step-7-optional.html    # Valgfrit: Lokal AI
+│       ├── vibe-coding-guide.html  # Vibe Coding Guide
+│       └── option-b/               # Tilgængelighedsløsninger (Danish)
 ├── templates/
 │   ├── option-a/                   # Code a Web Page starter files
 │   │   ├── index.html              # Single-file HTML template
-│   │   └── README.md               # Getting started instructions
+│   │   ├── README.md               # Getting started instructions
+│   │   └── README.da.md            # Danish instructions
 │   └── option-b/                   # Create a Document templates
 │       ├── README.md               # Getting started instructions
 │       ├── product-pitch.md        # Product pitch template
