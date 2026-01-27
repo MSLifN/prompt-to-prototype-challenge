@@ -14,10 +14,10 @@ This report documents comprehensive accessibility and usability testing of the P
 
 **Overall Result:** ✅ **Site is highly accessible and usable**
 
-- **Average Lighthouse Accessibility Score:** 97.3%
+- **Average Lighthouse Accessibility Score:** 98.7%
 - **Critical Issues Found:** 0
 - **Minor Issues Found:** 2
-- **Pages Tested:** 9 of 9
+- **Pages Tested:** 9 of 9 ✅
 
 ---
 
@@ -26,14 +26,14 @@ This report documents comprehensive accessibility and usability testing of the P
 | Page | Lighthouse Score | Status |
 |------|-----------------|--------|
 | 1. index.html (Home with Option A/B chooser) | 96% | ✅ Pass |
-| 2. idea-generation.html | 100% | ✅ Pass |
-| 3. research.html | Not tested | ⏳ Pending |
-| 4. branding.html | Not tested | ⏳ Pending |
-| 5. product-requirements.html | Not tested | ⏳ Pending |
-| 6. prototype.html | Not tested | ⏳ Pending |
+| 2. idea-generation.html | 100% | ✅ Perfect |
+| 3. research.html | 100% | ✅ Perfect |
+| 4. branding.html | 100% | ✅ Perfect |
+| 5. product-requirements.html | 100% | ✅ Perfect |
+| 6. prototype.html | 96% | ✅ Pass |
 | 7. code-prototyping.html (with Option A/B chooser) | 96% | ✅ Pass |
-| 8. learnings-resources.html | Not tested | ⏳ Pending |
-| 9. vibe-coding-guide.html | Not tested | ⏳ Pending |
+| 8. learnings-resources.html | 100% | ✅ Perfect |
+| 9. vibe-coding-guide.html | 100% | ✅ Perfect |
 
 ---
 
@@ -98,7 +98,8 @@ This report documents comprehensive accessibility and usability testing of the P
 
 **Details:**
 - Lighthouse flagged: "Background and foreground colors do not have a sufficient contrast ratio."
-- Affects index.html and code-prototyping.html pages
+- Affects index.html, code-prototyping.html, and prototype.html pages
+- 6 out of 9 pages (67%) pass with perfect 100% scores
 - Specific elements not identified in automated scan
 
 **Impact:** Low - Site is generally readable, but some text may be difficult for users with low vision or color blindness
@@ -120,6 +121,7 @@ This report documents comprehensive accessibility and usability testing of the P
 
 **Details:**
 - Lighthouse flagged: "Elements with visible text labels do not have matching accessible names."
+- Affects index.html, code-prototyping.html, and prototype.html pages
 - Likely affects buttons with icon + text combinations
 - Example: Copy/Edit/Revert buttons may have aria-label that doesn't match visible text
 
@@ -241,6 +243,21 @@ This report documents comprehensive accessibility and usability testing of the P
 1. ❌ Color contrast - Background and foreground colors do not have sufficient contrast ratio
 2. ❌ Label content name mismatch - Elements with visible text labels do not have matching accessible names
 
+### Prototype Page (prototype.html)
+**Accessibility Score:** 96/100
+
+**Failed Audits (2):**
+1. ❌ Color contrast - Background and foreground colors do not have sufficient contrast ratio
+2. ❌ Label content name mismatch - Elements with visible text labels do not have matching accessible names
+
+### Perfect Scores (100/100) ✅
+The following pages achieved perfect accessibility scores:
+- research.html
+- branding.html
+- product-requirements.html
+- learnings-resources.html
+- vibe-coding-guide.html
+
 ---
 
 ## Recommendations
@@ -257,15 +274,11 @@ This report documents comprehensive accessibility and usability testing of the P
    - Remove redundant aria-labels where not needed
 
 ### Priority 2: Medium Impact, Medium Effort
-3. **Complete Testing on Remaining Pages**
-   - Run Lighthouse audits on:
-     - research.html
-     - branding.html
-     - product-requirements.html
-     - prototype.html
-     - learnings-resources.html
-     - vibe-coding-guide.html
-   - Verify consistent accessibility across all pages
+3. **~~Complete Testing on Remaining Pages~~ ✅ COMPLETED**
+   - ✅ All 9 pages tested with Lighthouse
+   - ✅ 6 pages achieved perfect 100% scores
+   - ✅ 3 pages scored 96% with same minor issues
+   - ✅ Consistent accessibility across all pages verified
 
 4. **Test Responsive Design**
    - Verify mobile layout (320px - 768px)
@@ -335,7 +348,7 @@ This report documents comprehensive accessibility and usability testing of the P
 
 ## Conclusion
 
-The Prompt to Prototype Challenge site demonstrates **strong accessibility and usability practices**. With an average Lighthouse accessibility score of 97.3%, the site is well-structured and navigable for users with diverse needs.
+The Prompt to Prototype Challenge site demonstrates **strong accessibility and usability practices**. With an average Lighthouse accessibility score of 98.7%, the site is well-structured and navigable for users with diverse needs.
 
 ### Key Strengths
 - ✅ Excellent semantic HTML structure
@@ -346,8 +359,8 @@ The Prompt to Prototype Challenge site demonstrates **strong accessibility and u
 - ✅ Consistent navigation across all pages
 
 ### Areas for Improvement
-- ⚠️ Color contrast on some elements (2 pages affected)
-- ⚠️ Aria-label/visible text mismatch on some buttons (2 pages affected)
+- ⚠️ Color contrast on some elements (3 pages affected: index, code-prototyping, prototype)
+- ⚠️ Aria-label/visible text mismatch on some buttons (3 pages affected: index, code-prototyping, prototype)
 
 ### Recommendation
 **The site is production-ready** with minor improvements recommended for optimal accessibility. The identified issues are cosmetic and do not significantly impact usability for most users.
@@ -383,5 +396,5 @@ The Prompt to Prototype Challenge site demonstrates **strong accessibility and u
 ---
 
 **Report Generated:** January 27, 2026  
-**Report Status:** Complete (3 of 9 pages audited with Lighthouse, all pages structurally verified)  
-**Next Steps:** Address color contrast and label mismatch issues, complete remaining page audits
+**Report Status:** Complete ✅ (All 9 pages audited with Lighthouse and structurally verified)  
+**Next Steps:** Address color contrast and label mismatch issues on 3 affected pages (index, code-prototyping, prototype)
