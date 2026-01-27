@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vibe Coding med GitHub Copilot - En begyndervenlig guide til at bygge prototyper hurtigt med AI-assistance">
+    <title>Vibe Coding Guide - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <div class="layout-container">
+        <nav aria-label="Hovednavigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+                    <a href="../vibe-coding-guide.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li><a href="index.html" class="nav-link">Introduktion</a></li>
+                <li><a href="idea-generation.html" class="nav-link">1.0 Idégenerering</a></li>
+                <li><a href="research.html" class="nav-link">2.0 Forskning</a></li>
+                <li><a href="branding.html" class="nav-link">3.0 Branding</a></li>
+                <li><a href="product-requirements.html" class="nav-link">4.0 Produktkrav</a></li>
+                <li><a href="prototype.html" class="nav-link">5.0 Prototype</a></li>
+                <li><a href="code-prototyping.html" class="nav-link">6.0 Prototyping</a></li>
+                <li><a href="learnings-resources.html" class="nav-link">7.0 Læring og ressourcer</a></li>
+                <li><a href="step-7-optional.html" class="nav-link">✨ Valgfrit: Lokal AI</a></li>
+                <li><a href="vibe-coding-guide.html" aria-current="page" class="nav-link active">Guide til Vibe-kodning</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <h2 class="page-title">Vibe Coding med GitHub Copilot Free Tier</h2>
+                    <p class="page-subtitle">En begyndervenlig guide til at bygge prototyper hurtigt med hjælp fra kunstig intelligens (AI)</p>
+                </header>
+
+                <section aria-labelledby="what-is-heading">
+                    <h3 id="what-is-heading">Hvad er Vibe Coding?</h3>
+                    <p>Vibe Coding er en ny måde at bygge software på, hvor du beskriver, hvad du vil have på almindeligt engelsk, og AI hjælper dig med at skrive koden. I stedet for at lære syntaks udenad eller kæmpe med dokumentation har du en samtale med GitHub Copilot for at bringe dine ideer til live.</p>
+                    <p><strong>Perfekt til:</strong> Ikke-programmører, begyndere og alle, der gerne vil bygge en prototype hurtigt uden at sidde fast i tekniske detaljer.</p>
+                </section>
+
+                <section aria-labelledby="need-heading">
+                    <h3 id="need-heading">Hvad du har brug for</h3>
+                    <ol>
+                        <li><strong>VS Code</strong> — Download fra <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+                        <li><strong>GitHub Copilot Extension</strong> — Gratis niveau tilgængeligt med enhver GitHub-konto</li>
+                        <li><strong>En klar idé</strong> — Vid, hvad du vil bygge (selv bare 2-3 sætninger)</li>
+                    </ol>
+
+                    <div class="info-box" style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 1rem; margin: 1rem 0;">
+                        <p style="margin: 0;"><strong>Ingen terminal påkrævet!</strong> Du har ikke brug for Node.js, npm eller andre kommandolinjeværktøjer. Bare VS Code og en browser.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="setup-heading">
+                    <h3 id="setup-heading">Opsætning (5 minutter)</h3>
+                    
+                    <h4>Trin 1: Installer VS Code</h4>
+                    <ul>
+                        <li>Download og installer fra <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+                        <li>Åbn VS Code</li>
+                    </ul>
+
+                    <h4>Trin 2: Installer GitHub Copilot</h4>
+                    <ol>
+                        <li>Klik på ikonet Extensions i venstre sidepanel (eller tryk på Ctrl+Shift+X)</li>
+                        <li>Søg efter "GitHub Copilot"</li>
+                        <li>Klik på "Installer"</li>
+                        <li>Log ind med din GitHub-konto, når du bliver bedt om det</li>
+                    </ol>
+
+                    <h4>Trin 3: Bekræft, at det virker</h4>
+                    <ul>
+                        <li>Se efter Copilot-ikonet i statuslinjen nederst til højre</li>
+                        <li>Hvis du ser det, er du klar til at gå i gang!</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="tools-heading">
+                    <h3 id="tools-heading">De tre værktøjer, du skal bruge</h3>
+
+                    <h4>Copilot Chat (din AI-partner)</h4>
+                    <ul>
+                        <li><strong>Hvad den gør:</strong> Besvarer spørgsmål, genererer kode, forklarer ting</li>
+                        <li><strong>Sådan åbner du:</strong> Klik på chat-ikonet i venstre sidebjælke eller tryk Ctrl+Alt+I</li>
+                        <li><strong>Brug den til:</strong> Få startkode, spørge, hvordan man gør noget, planlægge din app</li>
+                    </ul>
+
+                    <h4>Kodekomplettering (automatiske forslag)</h4>
+                    <ul>
+                        <li><strong>Hvad den gør:</strong> Foreslår kode, mens du skriver (vises med grå tekst)</li>
+                        <li><strong>Sådan bruger du den:</strong> Bare begynd at skrive, tryk på Tab for at acceptere forslaget</li>
+                        <li><strong>Brug den til:</strong> Skrive HTML, CSS, JavaScript — hvad som helst!</li>
+                    </ul>
+
+                    <h4>Inline chat (hurtige redigeringer)</h4>
+                    <ul>
+                        <li><strong>Hvad den gør:</strong> Ændrer den specifikke kode, du vælger</li>
+                        <li><strong>Sådan åbner du:</strong> Vælg kode, tryk Ctrl+I (Windows) eller Cmd+I (Mac)</li>
+                        <li><strong>Brug den til:</strong> "Gør dette responsivt", "Tilføj en knap her", "Ret denne fejl"</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="workflow-heading">
+                    <h3 id="workflow-heading">Arbejdsgangen for Vibe-kodning</h3>
+                    <ol>
+                        <li><strong>BESKRIV</strong> hvad du vil have — brug chat</li>
+                        <li><strong>FÅ</strong> startkode — kopier/indsæt i din fil</li>
+                        <li><strong>TEST</strong> den — Åbn i browseren</li>
+                        <li><strong>TWEAK</strong> specifikke dele — Brug Inline Chat (Ctrl+I)</li>
+                        <li><strong>TILFØJ</strong> flere funktioner — Tilbage til chat</li>
+                        <li><strong>GENTAG</strong> — Gentag trin 3-5, indtil det er færdigt</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="tips-heading">
+                    <h3 id="tips-heading">Tips til succes</h3>
+
+                    <h4>Vær specifik i dine opfordringer</h4>
+                    <ul>
+                        <li><strong>Dårligt:</strong> "Opret en hjemmeside"</li>
+                        <li><strong>Godt:</strong> "Opret en landingsside for en kæledyrsadoptionstjeneste med et heltebillede, en liste over tilgængelige kæledyr og en kontaktformular"</li>
+                    </ul>
+
+                    <h4>Start enkelt, tilføj senere</h4>
+                    <ul>
+                        <li>Byg den grundlæggende struktur først</li>
+                        <li>Tilføj funktioner en ad gangen</li>
+                        <li>Test efter hver tilføjelse</li>
+                    </ul>
+
+                    <h4>Du skal ikke bekymre dig om at forstå alt</h4>
+                    <ul>
+                        <li>Du behøver ikke at forstå hver eneste kodelinje</li>
+                        <li>Bed Copilot om at forklare noget: "Hvad gør denne kode?"</li>
+                        <li>Fokuser på at få det til at fungere, og lær hen ad vejen</li>
+                    </ul>
+
+                    <h4>Brug det rigtige værktøj til opgaven</h4>
+                    <ul>
+                        <li><strong>Store spørgsmål eller nye funktioner?</strong> — Chat</li>
+                        <li><strong>Små justeringer af eksisterende kode?</strong> — Inline-chat (Ctrl+I)</li>
+                        <li><strong>Skriver du linje for linje?</strong> — Lad udfyldninger hjælpe dig</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="prompts-heading">
+                    <h3 id="prompts-heading">Almindelige begynderprompter</h3>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Start et projekt</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-copy-btn" aria-label="Kopier prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopier
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Opret en HTML-side med en enkelt fil til [beskriv din idé] med indlejret CSS og JavaScript</code></pre>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Sådan kommer du videre</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-copy-btn" aria-label="Kopier prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopier
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Jeg prøver at [hvad du vil gøre], men får denne fejl: [indsæt fejl]</code></pre>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Tilføjelse af funktioner</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-copy-btn" aria-label="Kopier prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopier
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Tilføj en [specifik funktion] til denne komponent, der [beskriver adfærd]</code></pre>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Forståelse af kode</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-copy-btn" aria-label="Kopier prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopier
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Forklar, hvad denne kode gør i enkle vendinger</code></pre>
+                    </div>
+                </section>
+
+                <section aria-labelledby="troubleshooting-heading">
+                    <h3 id="troubleshooting-heading">Fejlfinding</h3>
+
+                    <h4>"Copilot foreslår ikke noget"</h4>
+                    <ul>
+                        <li>Sørg for, at Copilot-ikonet i statuslinjen er aktivt (ikke overstreget)</li>
+                        <li>Prøv at skrive en kommentar, der beskriver, hvad du vil have: <code>// lav en funktion, der adderer to tal</code></li>
+                        <li>Tryk på Enter og vent — Copilot vil foreslå koden</li>
+                    </ul>
+
+                    <h4>"Koden virker ikke"</h4>
+                    <ul>
+                        <li>Kopier fejlmeddelelsen</li>
+                        <li>Indsæt den i Copilot Chat med: "Jeg fik denne fejl, hvordan løser jeg den?"</li>
+                        <li>Copilot vil forklare og foreslå en løsning</li>
+                    </ul>
+
+                    <h4>"Jeg forstår ikke koden"</h4>
+                    <ul>
+                        <li>Vælg en hvilken som helst kode</li>
+                        <li>Tryk Ctrl+I og skriv: "Forklar dette i enkle vendinger"</li>
+                        <li>Eller spørg i chatten: "Hvad gør [specifik del]?"</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="build-heading">
+                    <h3 id="build-heading">Hvad du kan bygge (på 30-60 minutter hver)</h3>
+                    <ul>
+                        <li><strong>Landingssider</strong> — For et produkt, en tjeneste eller en begivenhed</li>
+                        <li><strong>Porteføljesider</strong> — Vis dit arbejde frem</li>
+                        <li><strong>Simple webapps</strong> — Todo-lister, lommeregnere, quiz-spil</li>
+                        <li><strong>Interaktive prototyper</strong> — Demonstrer en idé</li>
+                        <li><strong>Formularer og undersøgelser</strong> — Indsaml information</li>
+                        <li><strong>Datavisninger</strong> — Diagrammer, tabeller, dashboards</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="mindset-heading">
+                    <h3 id="mindset-heading">Vigtige skift i tankesæt</h3>
+
+                    <h4>Traditionel kodning:</h4>
+                    <ul>
+                        <li>Lær syntaksen udenad</li>
+                        <li>Læs dokumentation</li>
+                        <li>Skriv hver eneste linje selv</li>
+                        <li>Fejlsøg i timevis</li>
+                    </ul>
+
+                    <h4>Vibe-kodning:</h4>
+                    <ul>
+                        <li>Beskriv, hvad du vil have</li>
+                        <li>Lad AI håndtere syntaks</li>
+                        <li>Accepter og tilpas forslag</li>
+                        <li>Bed AI om at rette fejl</li>
+                    </ul>
+
+                    <p>Det forventes ikke, at du ved alt — det forventes, at du kommunikerer dine idéer klart og tydeligt og itererer med AI-assistance.</p>
+                </section>
+
+                <section aria-labelledby="remember-heading">
+                    <h3 id="remember-heading">Husk at huske</h3>
+                    <ul>
+                        <li><strong>Der er ingen forkert måde at bruge Copilot på</strong> — eksperimenter og find ud af, hvad der fungerer for dig</li>
+                        <li><strong>Du lærer, mens du bygger</strong> — hver session lærer dig mere</li>
+                        <li><strong>Hastighed er vigtigere end perfektion</strong> — få det til at fungere, og gør det så bedre</li>
+                        <li><strong>AI er din holdkammerat, ikke en erstatning</strong> — du leverer visionen, Copilot håndterer detaljerne</li>
+                    </ul>
+                    <p><strong>Gå nu i gang med at bygge noget!</strong></p>
+                </section>
+
+                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Tidligere</p>
+                        <a href="step-7-optional.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← Valgfrit: Lokal AI
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Start</p>
+                        <a href="index.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            Introduktion →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">På denne side</h2>
+                <nav aria-label="Indholdsfortegnelse">
+                    <ul role="list">
+                        <li><a href="#what-is-heading">Hvad er Vibe Coding?</a></li>
+                        <li><a href="#need-heading">Hvad du har brug for</a></li>
+                        <li><a href="#setup-heading">Opsætning (5 minutter)</a></li>
+                        <li><a href="#tools-heading">De tre værktøjer</a></li>
+                        <li><a href="#workflow-heading">Arbejdsgangen</a></li>
+                        <li><a href="#tips-heading">Tips til succes</a></li>
+                        <li><a href="#prompts-heading">Almindelige begynderprompter</a></li>
+                        <li><a href="#troubleshooting-heading">Fejlfinding</a></li>
+                        <li><a href="#build-heading">Hvad du kan bygge</a></li>
+                        <li><a href="#mindset-heading">Skift i tankesæt</a></li>
+                        <li><a href="#remember-heading">Husk at huske</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
