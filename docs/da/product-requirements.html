@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Produktkrav - Definér dine produktkrav">
+    <title>4.0 Produktkrav - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <div class="layout-container">
+        <nav aria-label="Hovednavigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+                    <a href="../product-requirements.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li>
+                    <a href="index.html" class="nav-link">
+                        Introduktion
+                    </a>
+                </li>
+                <li>
+                    <a href="idea-generation.html" class="nav-link">
+                        1.0 Idégenerering
+                    </a>
+                </li>
+                <li>
+                    <a href="research.html" class="nav-link">
+                        2.0 Research
+                    </a>
+                </li>
+                <li>
+                    <a href="branding.html" class="nav-link">
+                        3.0 Branding
+                    </a>
+                </li>
+                <li>
+                    <a href="product-requirements.html" aria-current="page" class="nav-link active">
+                        4.0 Produktkrav
+                    </a>
+                </li>
+                <li>
+                    <a href="prototype.html" class="nav-link">
+                        5.0 Prototype
+                    </a>
+                </li>
+                <li>
+                    <a href="code-prototyping.html" class="nav-link">
+                        6.0 Prototyping
+                    </a>
+                </li>
+                <li>
+                    <a href="learnings-resources.html" class="nav-link">
+                        7.0 Læring og Ressourcer
+                    </a>
+                </li>
+                <li>
+                    <a href="step-7-optional.html" class="nav-link">
+                        ✨ Valgfrit: Lokal AI
+                    </a>
+                </li>
+                <li>
+                    <a href="vibe-coding-guide.html" class="nav-link">
+                        Vibe Coding Guide
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <h2 class="page-title">4.0 Produktkrav</h2>
+                    <p class="status-badge incomplete">Ikke fuldført</p>
+                </header>
+
+                <section aria-labelledby="goal-heading">
+                    <h3 id="goal-heading">Definér hvad der skal bygges</h3>
+                    
+                    <div class="goal-section">
+                        <h4>4.0 Mål</h4>
+                        <p>Omdan din research og idé til en <strong>klar, handlingsorienteret byggeplan</strong>.</p>
+                        <p>Her tager du din <strong>produktchef</strong>-hat på — og afklarer hvad du bygger, for hvem, og hvad der tæller som succes.</p>
+                    </div>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h5>⏱️ Estimeret tid</h5>
+                            <p>10 minutter</p>
+                        </div>
+                        <div class="info-card">
+                            <h5>🚀 Færdigheder, der udvikles</h5>
+                            <p>Funktionsdefinition, Produktkrav</p>
+                        </div>
+                        <div class="info-card">
+                            <h5>✅ Teknologi</h5>
+                            <p>Copilot Chat</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="objectives-heading">
+                    <h4 id="objectives-heading">Mål/Resultater</h4>
+                    <p>Ved at gennemføre dette modul vil du være i stand til at:</p>
+                    <ul>
+                        <li>Forstå de essentielle sektioner i et Produktkravsdokument (PRD)</li>
+                        <li>Oversætte research-indsigter til specifikke produktbeslutninger</li>
+                        <li>Klart adskille MVP-essentielle funktioner fra stretch-funktioner</li>
+                        <li>Skrive brugerhistorier, der guider både no-code og kode-baserede builds</li>
+                        <li>Bruge AI (Copilot) til hurtigt at strukturere og udarbejde et PRD</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="get-started-heading">
+                    <h4 id="get-started-heading">4.1 Kom i gang</h4>
+                    <p>Et PRD er broen mellem din idé og dit build.</p>
+                    <p>Det besvarer:</p>
+                    <ul>
+                        <li>Hvilket problem løser du?</li>
+                        <li>Hvem bygger du til?</li>
+                        <li>Hvad vil du bygge først (MVP) kontra senere (stretch goals)?</li>
+                        <li>Hvordan ved du, om det virker?</li>
+                    </ul>
+                    <p>Til denne øvelse bør dit PRD være letvægts — lige nok til at holde dig fokuseret, mens du bygger. Du kan eventuelt bruge dette dokument til at forankre modellen, når du prototyper, afhængigt af din platform.</p>
+                </section>
+
+                <section aria-labelledby="create-prd-heading">
+                    <h4 id="create-prd-heading">4.2 Opret et PRD</h4>
+                    <p>Vi bruger Copilot til at hjælpe os med at udarbejde et meget overordnet og letvægts Produktkravsdokument.</p>
+                    
+                    <div class="subsection">
+                        <h5>Generér dokumentet</h5>
+                                                <div class="steps-section">
+                            <h5>Trin:</h5>
+                            <ol>
+                                <li>Tilpas prompten nedenfor efter behov. Da du vender tilbage til din oprindelige samtale med Copilot, som allerede har konteksten, behøver du muligvis ikke at redigere.</li>
+                                <li>Kopiér prompten</li>
+                                <li>Fortsæt din samtale og indsend prompten</li>
+                            </ol>
+                        </div>
+
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Prompt</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                        <span aria-hidden="true">↺</span> Gendan
+                                    </button>
+                                    <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                        <span aria-hidden="true">✎</span> Rediger
+                                    </button>
+                                    <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                        <span aria-hidden="true">📋</span> Kopiér
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>Jeg opretter et Produktkravsdokument (PRD) til mit projekt.
+
+Opret venligst et kort letvægts PRD, der inkluderer:
+1. Vision og mål (1-2 sætninger)
+2. Brugerhistorier (3-5 historier i formatet "Som en [bruger], vil jeg [funktion] så jeg [fordel]")
+3. Funktionsliste (opdelt i MVP og nice-to-have/stretch goals)
+4. Succesmetrikker (hvordan vi ved, at det virker)
+5. Begrænsninger eller antagelser
+
+Hold det kortfattet og afgrænset, så MVP'et kan bygges på under 1 time. Eksportér PRD'et som en Markdown-fil.</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h5>Generér Markdown-teksten</h5>
+                        <p>Nu hvor dit PRD er oprettet, vil vi prøve at generere Markdown-tekst, da de fleste platforme eller værktøjer kan bruge det.</p>
+
+                        <div class="steps-section">
+                            <h5>Trin:</h5>
+                            <ol>
+                                <li>Kopiér prompten</li>
+                                <li>Indsend prompten</li>
+                            </ol>
+                        </div>
+
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Prompt</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                        <span aria-hidden="true">↺</span> Gendan
+                                    </button>
+                                    <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                        <span aria-hidden="true">✎</span> Rediger
+                                    </button>
+                                    <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                        <span aria-hidden="true">📋</span> Kopiér
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>Generér PRD Markdown-teksten</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h5>Prøv at eksportere som en fil, der kan downloades</h5>
+                        <p>Den har sandsynligvis genereret en Markdown-version af PRD'et. Lad os prøve at eksportere det som en fil, der kan downloades. Hvis det virker, får du et link til at downloade filen.</p>
+                        
+                        <div class="steps-section">
+                            <h5>Trin:</h5>
+                            <ol>
+                                <li>Kopiér prompten</li>
+                                <li>Indsend prompten</li>
+                                <li>Hvis det lykkes, modtager du et link til en fil, der kan downloades — klik på linket for at downloade den. Ellers kopiér den genererede Markdown-tekst, åbn Notesblok, indsæt den og gem filen som <code>PRD.md</code>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">Prompt</span>
+                                <div class="prompt-actions">
+                                    <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                        <span aria-hidden="true">↺</span> Gendan
+                                    </button>
+                                    <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                        <span aria-hidden="true">✎</span> Rediger
+                                    </button>
+                                    <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                        <span aria-hidden="true">📋</span> Kopiér
+                                    </button>
+                                </div>
+                            </div>
+                            <pre class="prompt-code"><code>Eksportér som en fil, der kan downloades</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="review-heading">
+                    <h4 id="review-heading">4.3 Gennemgå og justér</h4>
+                    <ul>
+                        <li><strong>Tjek omfang:</strong> MVP-funktioner skal være opnåelige inden for tidsrammen</li>
+                        <li><strong>Forenkl brugerhistorier:</strong> Hold dem på et højt niveau, så de er nemme at oversætte til et build</li>
+                        <li><strong>Bekræft succesmetrikker:</strong> De skal være målbare (også selvom de er simple)</li>
+                        <li><strong>Flyt ekstrafunktioner til stretch goals</strong>, så de ikke distraherer fra kernebyggeriet</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="save-prd-heading">
+                    <h4 id="save-prd-heading">4.4 Gem dit Produktkravsdokument</h4>
+                    <p>Gem dit PRD, så du kan referere til det, når du bygger din prototype.</p>
+                    
+                    <div class="steps-section">
+                        <h5>Trin</h5>
+                        <ol>
+                            <li>Når Copilot har genereret dit PRD, <strong>markér al teksten</strong> i svaret (klik og træk, eller brug Ctrl+A på Windows / Cmd+A på Mac)</li>
+                            <li><strong>Kopiér teksten</strong> (Ctrl+C på Windows / Cmd+C på Mac, eller højreklik > Kopiér)</li>
+                            <li>Åbn dit foretrukne tekstredigeringsprogram eller tekstbehandler, hvor du gemte dit tidligere arbejde (Word, Google Docs, Notesblok/Tekstredigering, OneNote, Notion osv.)</li>
+                            <li><strong>Indsæt PRD'et</strong> (Ctrl+V på Windows / Cmd+V på Mac) i dit dokument</li>
+                            <li>Hvis du anmodede om en Markdown-fil, gem den som <code>PRD.md</code> eller tilføj den til dit eksisterende notedokument</li>
+                            <li>Hav dette PRD ved hånden — det er din plan for prototype-byggefasen</li>
+                        </ol>
+                    </div>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1rem 0;">
+                        <p style="margin: 0;"><strong>Tip:</strong> Dit PRD er kørekortet for dit build. Referér direkte til brugerhistorierne og funktionslisten, når du koder eller designer din prototype.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="visualize-heading">
+                    <h4 id="visualize-heading">4.5 Valgfrit: Visualisér en skærm</h4>
+                    <p>Hvis du vil have et tidligt kig på din apps følelse, kan du bede Copilot om et hurtigt skærmkoncept.</p>
+                    
+                    <div class="steps-section">
+                        <h5>Trin:</h5>
+                        <ol>
+                            <li>Kopiér prompten</li>
+                            <li>Fortsæt din samtale og indsend prompten</li>
+                        </ol>
+                    </div>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Prompt</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                    <span aria-hidden="true">↺</span> Gendan
+                                </button>
+                                <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                    <span aria-hidden="true">✎</span> Rediger
+                                </button>
+                                <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopiér
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Baseret på mit PRD, opret et billede af en simpel mockup af hoved- eller startskærmen.</code></pre>
+                    </div>
+                </section>
+
+                <section aria-labelledby="optional-visual-heading">
+                    <h4 id="optional-visual-heading">4.6 Valgfrit: Gem din visualisering</h4>
+                    <p>Hvis du genererede en mockup eller visuel repræsentation af din app:</p>
+                    <ol>
+                        <li>Klik på billedminiaturen i Copilots svar</li>
+                        <li>Vælg <strong>Download</strong>-ikonet for at gemme billedet</li>
+                        <li>Gem det i samme mappe som dine andre projektfiler</li>
+                        <li>Du kan bruge denne visualisering som reference, når du bygger din prototype</li>
+                    </ol>
+                </section>
+
+                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Forrige</p>
+                        <a href="branding.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 3.0 Branding
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Næste</p>
+                        <a href="prototype.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            5.0 Prototype →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">På denne side</h2>
+                <nav aria-label="Sidens indholdsfortegnelse">
+                    <ul role="list">
+                        <li><a href="#goal-heading">Definér hvad der skal bygges</a></li>
+                        <li><a href="#objectives-heading">Mål/Resultater</a></li>
+                        <li><a href="#get-started-heading">4.1 Kom i gang</a></li>
+                        <li><a href="#create-prd-heading">4.2 Opret et PRD</a></li>
+                        <li><a href="#review-heading">4.3 Gennemgå og justér</a></li>
+                        <li><a href="#save-prd-heading">4.4 Gem dit Produktkravsdokument</a></li>
+                        <li><a href="#visualize-heading">4.5 Valgfrit: Visualisér en skærm</a></li>
+                        <li><a href="#optional-visual-heading">4.6 Valgfrit: Gem din visualisering</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
