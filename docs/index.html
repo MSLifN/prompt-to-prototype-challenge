@@ -112,48 +112,6 @@
                     <p><strong>Skill Level</strong>: Open to all levels and roles.</p>
                 </section>
 
-                <section aria-labelledby="choose-path-heading" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
-                    <h2 id="choose-path-heading" style="text-align: center; margin-bottom: 1.5rem;">🚀 Choose Your Prototyping Path</h2>
-                    
-                    <p style="text-align: center; margin-bottom: 2rem;">When you reach Step 6 (Prototyping), you'll choose one of two paths. Both work with <strong>GitHub Copilot Free tier</strong>, are accessibility-friendly, and lead to a finished artifact!</p>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                        <!-- Option A Card -->
-                        <div style="background: white; border: 2px solid #0366d6; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                            <h3 style="color: #0366d6; margin-top: 0;">Option A: Code a Web Page</h3>
-                            <p style="font-size: 0.9rem; color: #586069; margin-bottom: 1rem;"><strong>Best for:</strong> Building your own idea into a working prototype</p>
-                            <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin-bottom: 1rem;">
-                                <li>Single-file HTML/JS solution</li>
-                                <li>No build step, no terminal required</li>
-                                <li>Integrates artifacts from earlier steps</li>
-                                <li>Works with screen readers & zoom</li>
-                            </ul>
-                            <p style="font-size: 0.85rem; color: #22863a; margin-bottom: 1rem;"><strong>✅ Great for:</strong> Coding with a partner, co-creation sessions</p>
-                            <a href="https://github.com/MSLifN/prompt-to-prototype-challenge/tree/main/templates/option-a" style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #0366d6; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem;">View Template →</a>
-                        </div>
-                        
-                        <!-- Option B Card -->
-                        <div style="background: white; border: 2px solid #6d28d9; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                            <h3 style="color: #6d28d9; margin-top: 0;">Option B: Accessibility Solutions</h3>
-                            <p style="font-size: 0.9rem; color: #586069; margin-bottom: 1rem;"><strong>Best for:</strong> Building inclusive tools with AI assistance</p>
-                            <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin-bottom: 1rem;">
-                                <li>Ready-to-use accessibility templates</li>
-                                <li>Text, contrast, navigation, speech tools</li>
-                                <li>Try in browser, then customize with Copilot</li>
-                                <li>Learn accessibility by doing</li>
-                            </ul>
-                            <p style="font-size: 0.85rem; color: #22863a; margin-bottom: 1rem;"><strong>✅ Great for:</strong> Dyslexia, low vision, motor impairments, cognitive needs</p>
-                            <a href="option-b/" style="display: inline-block; padding: 0.4rem 0.8rem; background-color: #6d28d9; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem;">View Templates →</a>
-                        </div>
-                    </div>
-                    
-                    <div style="background: #f8f9fa; border: 1px solid #d0d7de; border-radius: 8px; padding: 1rem; margin-top: 1.5rem;">
-                        <p style="margin: 0; font-size: 0.9rem; color: #24292f;">
-                            <strong>✅ Both options:</strong> Feel like building something • Demonstrate AI-assisted creation • Work with GitHub Copilot Free tier (no Enterprise agents required)
-                        </p>
-                    </div>
-                </section>
-
                 <section aria-labelledby="objectives-heading">
                     <h2 id="objectives-heading">Learning Objectives / Outcomes</h2>
                     
@@ -178,9 +136,18 @@
                     <p>Before you begin, make sure you have:</p>
                     
                     <ul>
-                        <li>Copilot Chat in the browser at <a href="https://m365.cloud.microsoft/chat/" target="_blank" rel="noopener noreferrer">https://m365.cloud.microsoft/chat/</a></li>
-                        <li>AI Powered Prototyping tool such as GitHub Copilot in Visual Studio Code.</li>
-                        <li>Screen Capture Software such as Snippet</li>
+                        <li>
+                            <strong>Copilot Chat in the browser</strong> at <a href="https://m365.cloud.microsoft/chat/" target="_blank" rel="noopener noreferrer">https://m365.cloud.microsoft/chat/</a>
+                            <br><span style="color: #4b5563; font-size: 0.9em;">Available with your Microsoft 365 account. Use this for brainstorming and document creation.</span>
+                        </li>
+                        <li>
+                            <strong>GitHub Copilot in VS Code</strong> for building your prototype (Step 6)
+                            <br><span style="color: #4b5563; font-size: 0.9em;"><a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">Download VS Code</a>, then install the <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot extension</a>. Requires a <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot subscription</a> or free trial.</span>
+                        </li>
+                        <li>
+                            <strong>Screen Capture Software</strong> such as Snipping Tool (Windows), Screenshot (Mac), or browser extensions
+                            <br><span style="color: #4b5563; font-size: 0.9em;">Useful for capturing inspiration images and sharing your prototype.</span>
+                        </li>
                     </ul>
                 </section>
 
@@ -217,10 +184,6 @@
                         <li>Prompts are written in a way to highlight specific techniques or functionality.</li>
                         <li>Prompts are prompt templates often requiring you to modify them - although they should pull the context of your conversation and might not require any modification.</li>
                     </ul>
-                    
-                    <div class="cta-button">
-                        <a href="idea-generation.html" class="button-primary">Go to Step 1 - Idea Generation</a>
-                    </div>
                 </section>
                 
                 <nav aria-label="Page navigation" class="page-navigation">
@@ -238,7 +201,6 @@
                     <ul role="list">
                         <li><a href="#challenge-heading">Prompt to Prototype Vibe Coding Challenge</a></li>
                         <li><a href="#about-heading">About the Challenge</a></li>
-                        <li><a href="#choose-path-heading">Choose Your Prototyping Path</a></li>
                         <li><a href="#objectives-heading">Learning Objectives / Outcomes</a></li>
                         <li><a href="#need-heading">What You'll Need</a></li>
                         <li><a href="#expectations-heading">Expectations & Output</a></li>
