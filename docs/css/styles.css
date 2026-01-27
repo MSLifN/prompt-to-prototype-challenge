@@ -132,6 +132,33 @@ button:focus-visible {
     margin-bottom: var(--spacing-lg);
 }
 
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-size-small);
+}
+
+.language-switcher a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.language-switcher a:hover {
+    background-color: var(--color-background-alt);
+    color: var(--color-primary);
+}
+
+.language-switcher .lang-active {
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+}
+
 .site-title {
     font-size: var(--font-size-large);
     font-weight: 600;

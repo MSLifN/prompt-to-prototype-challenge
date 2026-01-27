@@ -6,6 +6,75 @@
 (function() {
     'use strict';
 
+    // Language detection and redirect for Danish users
+    function initLanguageDetection() {
+        // Only run on English pages (not already in /da/)
+        if (window.location.pathname.includes('/da/')) {
+            return;
+        }
+
+        // Check if user has already made a language choice
+        const langPreference = localStorage.getItem('preferredLanguage');
+        
+        if (langPreference === 'en') {
+            // User explicitly chose English, don't redirect
+            return;
+        }
+
+        if (langPreference === 'da') {
+            // User explicitly chose Danish, redirect to Danish version
+            redirectToDanish();
+            return;
+        }
+
+        // No preference set - check browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang && (browserLang.startsWith('da'))) {
+            // First-time Danish user - redirect to Danish version
+            redirectToDanish();
+        }
+    }
+
+    function redirectToDanish() {
+        // Get current path and construct Danish equivalent
+        const currentPath = window.location.pathname;
+        const currentFile = currentPath.split('/').pop() || 'index.html';
+        
+        // Construct the Danish URL
+        const basePath = currentPath.substring(0, currentPath.lastIndexOf('/'));
+        const danishUrl = basePath + '/da/' + currentFile;
+        
+        // Redirect to Danish version
+        window.location.href = danishUrl;
+    }
+
+    // Save language preference when clicking language switcher
+    function initLanguageSwitcher() {
+        const switcher = document.querySelector('.language-switcher');
+        if (!switcher) return;
+
+        switcher.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            if (link) {
+                // Determine which language was clicked
+                const hreflang = link.getAttribute('hreflang');
+                if (hreflang) {
+                    localStorage.setItem('preferredLanguage', hreflang);
+                }
+            }
+        });
+
+        // Also mark the active language choice
+        const activeSpan = switcher.querySelector('.lang-active');
+        if (activeSpan) {
+            // If on Danish page, save da preference; if on English, save en
+            const isOnDanishPage = window.location.pathname.includes('/da/');
+            if (isOnDanishPage) {
+                localStorage.setItem('preferredLanguage', 'da');
+            }
+        }
+    }
+
     // Smooth scroll with reduced motion respect
     function initSmoothScroll() {
         const links = document.querySelectorAll('a[href^="#"]');
@@ -565,6 +634,8 @@
     }
 
     function init() {
+        initLanguageDetection();
+        initLanguageSwitcher();
         addSROnlyStyles();
         initSmoothScroll();
         initTOCHighlight();
