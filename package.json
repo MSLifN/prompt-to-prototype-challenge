@@ -1,0 +1,33 @@
+{
+  "name": "prompt-to-prototype-challenge-main",
+  "version": "1.0.0",
+  "description": "The SkillUp Artificial Intelligence (AI) **Prompt to Prototype** is a fast-paced AI-powered creation challenge.  \r In one hour, you'll take an idea from a concept to a working **prototype** using Microsoft Copilot and GitHub Copilot.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "test:accessibility": "npx playwright test tests/accessibility.spec.ts",
+    "test:navigation": "npx playwright test tests/navigation.spec.ts",
+    "test:responsive": "npx playwright test tests/responsive.spec.ts",
+    "test:report": "npx playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSLifN/prompt-to-prototype-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSLifN/prompt-to-prototype-challenge/issues"
+  },
+  "homepage": "https://github.com/MSLifN/prompt-to-prototype-challenge#readme",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.58.0"
+  }
+}
