@@ -6,6 +6,27 @@
 (function() {
     'use strict';
 
+    // Internationalization support
+    const translations = {
+        en: {
+            markAsComplete: 'Mark as Complete',
+            markAsIncomplete: 'Mark as Incomplete'
+        },
+        da: {
+            markAsComplete: 'Markér som færdig',
+            markAsIncomplete: 'Markér som ufærdig'
+        }
+    };
+
+    function getCurrentLanguage() {
+        return window.location.pathname.includes('/da/') ? 'da' : 'en';
+    }
+
+    function t(key) {
+        const lang = getCurrentLanguage();
+        return translations[lang][key] || translations.en[key];
+    }
+
     // Language detection and redirect for Danish users
     function initLanguageDetection() {
         // Only run on English pages (not already in /da/)
@@ -488,7 +509,7 @@
 
         const button = document.createElement('button');
         button.className = 'completion-toggle-btn button-primary';
-        button.textContent = isComplete ? 'Mark as Incomplete' : 'Mark as Complete';
+        button.textContent = isComplete ? t('markAsIncomplete') : t('markAsComplete');
         button.setAttribute('aria-pressed', isComplete ? 'true' : 'false');
 
         button.addEventListener('click', function() {
@@ -500,7 +521,7 @@
             updateSidebarCheckmarks();
 
             // Update button
-            this.textContent = newStatus ? 'Mark as Incomplete' : 'Mark as Complete';
+            this.textContent = newStatus ? t('markAsIncomplete') : t('markAsComplete');
             this.setAttribute('aria-pressed', newStatus ? 'true' : 'false');
         });
 
