@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Byg din prototype med GitHub Copilot">
+    <title>6.0 Prototyping - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <div class="layout-container">
+        <nav aria-label="Hovednavigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+                    <a href="../code-prototyping.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li><a href="index.html" class="nav-link">Introduktion</a></li>
+                <li><a href="idea-generation.html" class="nav-link">1.0 Idégenerering</a></li>
+                <li><a href="research.html" class="nav-link">2.0 Forskning</a></li>
+                <li><a href="branding.html" class="nav-link">3.0 Branding</a></li>
+                <li><a href="product-requirements.html" class="nav-link">4.0 Produktkrav</a></li>
+                <li><a href="prototype.html" class="nav-link">5.0 Prototype</a></li>
+                <li><a href="code-prototyping.html" aria-current="page" class="nav-link active">6.0 Prototyping</a></li>
+                <li><a href="learnings-resources.html" class="nav-link">7.0 Læring og ressourcer</a></li>
+                <li><a href="step-7-optional.html" class="nav-link">✨ Valgfrit: Lokal AI</a></li>
+                <li><a href="vibe-coding-guide.html" class="nav-link">Guide til Vibe-kodning</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <h2 class="page-title">Trin 6. Prototyping med GitHub Copilot</h2>
+                    <p class="status-badge complete">Færdig</p>
+                </header>
+
+                <section aria-labelledby="intro-heading">
+                    <h3 id="intro-heading">Tid til at bringe din idé til live med kunstig intelligens (AI)-assisterede kodningsværktøjer</h3>
+                    
+                    <div class="info-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1rem 0;">
+                        <h4 style="margin-top: 0;">Er du ny i Vibe Coding?</h4>
+                        <p>Hvis det er nyt for dig at kode med GitHub Copilot, kan du læse vores omfattende <a href="vibe-coding-guide.html">Vibe Coding Guide</a>. Den indeholder bl.a:</p>
+                        <ul>
+                            <li>Opsætningsinstruktioner til VS Code og GitHub Copilot</li>
+                            <li>Forklaring af de tre kerneværktøjer (Chat, Completions, Inline Chat)</li>
+                            <li>Trin-for-trin gennemgang af dit første projekt</li>
+                            <li>Tips til succes og fejlfinding af almindelige problemer</li>
+                        </ul>
+                        <a href="vibe-coding-guide.html" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #0366d6; color: white; text-decoration: none; border-radius: 4px;">Læs Vibe-kodningsguiden</a>
+                    </div>
+                </section>
+
+                <section aria-labelledby="overview-heading">
+                    <h3 id="overview-heading">6.0 Oversigt</h3>
+                    <p>I dette afsnit vil vi samarbejde med AI om at påtage os rollen som ingeniør for hurtigt at lave en prototype af vores idé med kode.</p>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h5>⏱️ Anslået tid</h5>
+                            <p>30-60 minutter</p>
+                        </div>
+                        <div class="info-card">
+                            <h5>🚀 Udviklede færdigheder</h5>
+                            <p>Hurtig prototyping, udvikling</p>
+                        </div>
+                        <div class="info-card">
+                            <h5>✅ Teknologi</h5>
+                            <p>GitHub Copilot</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Målsætning:</strong> At bygge en funktionel prototype, der demonstrerer kerneværdien og brandidentiteten inden for en begrænset tidsramme.</p>
+                    <p><strong>Vigtigt resultat:</strong> Fungerende prototype, der kan demonstreres. Hvis den valgte platform eller teknologi understøtter det, er det ideelt med et link til applikationen.</p>
+
+                    <div class="info-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1rem 0;">
+                        <h4 style="margin-top: 0;">Denne vejledning bruger GitHub Copilot Free Tier</h4>
+                        <p style="margin-bottom: 0;">Denne øvelse er designet til at arbejde med GitHub Copilots gratisfunktioner: Code Completions, Copilot Chat og Inline Chat. Der kræves ingen betalte funktioner (agenttilstand, brugerdefinerede agenter eller Copilot Edits).</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="choose-path-heading">
+                    <h3 id="choose-path-heading">Vælg din vej til prototyping</h3>
+                    <p>Vælg den vej, der passer bedst til dine behov og dit komfortniveau. Begge fungerer med GitHub Copilot Free tier!</p>
+
+                    <div class="info-cards" style="margin-top: 1.5rem;">
+                        <div class="info-card" style="flex: 1; min-width: 280px;">
+                            <h5>🅰️ Mulighed A: Kod en webside</h5>
+                            <p><strong>Bedst til:</strong> At opbygge din egen idé til en fungerende prototype</p>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                <li>HTML/JS-løsning i en enkelt fil</li>
+                                <li>Intet byggetrin, ingen terminal påkrævet</li>
+                                <li>Integrerer artefakter fra tidligere trin</li>
+                                <li>Fungerer med skærmlæsere og zoom</li>
+                            </ul>
+                            <p><strong>Det kræver:</strong> VS Code, GitHub Copilot Free</p>
+                            <p><strong>Fantastisk til:</strong> Parring, samskabelse</p>
+                        </div>
+                        
+                        <div class="info-card" style="flex: 1; min-width: 280px;">
+                            <h5>🅱️ Mulighed B: Tilgængelighedsløsninger</h5>
+                            <p><strong>Bedst til:</strong> Opbygning af inkluderende værktøjer med AI-assistance</p>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                                <li>Tilgængelighedsskabeloner, der er klar til brug</li>
+                                <li>Værktøjer til tekst, kontrast, navigation og tale</li>
+                                <li>Prøv i browseren, og tilpas derefter</li>
+                                <li>Lær tilgængelighed ved at gøre det</li>
+                            </ul>
+                            <p><strong>Det kræver:</strong> VS Code, GitHub Copilot Free</p>
+                            <p><strong>Fantastisk til:</strong> Dysleksi, nedsat syn, motoriske funktionsnedsættelser, kognitive behov</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="free-tier-heading">
+                    <h3 id="free-tier-heading">6.1 GitHub Copilot-funktioner på gratis niveau</h3>
+                    <p>Før vi begynder at bygge, skal vi forstå de tre centrale Copilot-funktioner, der er tilgængelige i det gratis niveau:</p>
+
+                    <h4>Copilot Chat (primært værktøj)</h4>
+                    <p><strong>Hvad det gør:</strong> Din AI-parprogrammerer. Stil spørgsmål, generer kode, få forklaringer.</p>
+                    <p><strong>Sådan åbner du:</strong> Klik på chat-ikonet i venstre sidebjælke eller tryk Ctrl+Alt+I</p>
+                    <p><strong>Bedst til:</strong> Generere komponenter, stille "hvordan gør jeg..."-spørgsmål, planlægge funktioner, debugge fejl</p>
+
+                    <h4>Kodekomplettering (automatiske forslag)</h4>
+                    <p><strong>Hvad den gør:</strong> Foreslår kode, mens du skriver (vises med grå tekst)</p>
+                    <p><strong>Sådan bruger du den:</strong> Bare begynd at skrive, tryk på Tab for at acceptere, Esc for at afvise</p>
+                    <p><strong>Bedst til:</strong> Skrive funktioner, udfylde gentagen kode, udfylde mønstre</p>
+
+                    <h4>Inline-chat (hurtige redigeringer)</h4>
+                    <p><strong>Hvad den gør:</strong> Ændrer specifik kode, som du vælger i konteksten</p>
+                    <p><strong>Sådan åbner du:</strong> Vælg kode, tryk Ctrl+I (Windows) eller Cmd+I (Mac)</p>
+                    <p><strong>Bedst til:</strong> "Gør dette responsivt", "Tilføj fejlhåndtering", "Ret denne fejl"</p>
+
+                    <div class="info-box" style="background-color: #fff9e6; border-left: 4px solid #f4a300; padding: 1rem; margin: 1rem 0;">
+                        <h4 style="margin-top: 0;">Arbejdsgang på gratis niveau</h4>
+                        <p style="margin-bottom: 0;">Med free tier arbejder du med én fil ad gangen ved hjælp af Chat og Inline Chat. Det er faktisk en god måde at lære på — du vil forstå, hvad hvert stykke kode gør, når du bygger det!</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="get-started-heading">
+                    <h3 id="get-started-heading">6.2 Kom godt i gang</h3>
+                    <p>Det er tid til at samle det hele. Du har dit koncept, din markedsvalidering, dit produktkravsdokument (PRD) og din brandidentitet. Lad os nu bygge en fungerende prototype, der demonstrerer dit værditilbud ved hjælp af funktion-for-funktion-udvikling.</p>
+                    <p>Denne øvelse opfordrer til udforskning. Vi giver dig vejledning, men du er velkommen til at gentage og udvide baseret på din kreativitet og dine mål.</p>
+                </section>
+
+                <section aria-labelledby="prerequisites-heading">
+                    <h3 id="prerequisites-heading">6.3 Forudsætninger</h3>
+                    <p><strong>Hvad du har brug for:</strong></p>
+                    <ul>
+                        <li>VS Code installeret</li>
+                        <li>GitHub Copilot-udvidelse (det gratis niveau fungerer!)</li>
+                        <li>En webbrowser (Chrome, Firefox, Edge, Safari)</li>
+                        <li>Din PRD og dine branding-aktiver fra tidligere trin</li>
+                    </ul>
+
+                    <div class="info-box" style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 1rem; margin: 1rem 0;">
+                        <h4 style="margin-top: 0;">Der kræves ingen terminal!</h4>
+                        <p style="margin-bottom: 0;">Både Mulighed A og Mulighed B fungerer uden npm, Node.js eller andre kommandolinjeværktøjer. Bare åbn VS Code og begynd at skabe.</p>
+                    </div>
+
+                    <p><strong>Kom godt i gang:</strong></p>
+                    <ol>
+                        <li><strong>Mulighed A (kod en webside):</strong> Opret en ny fil med navnet index.html i VS Code.</li>
+                        <li><strong>Mulighed B (Opret et dokument):</strong> Opret en ny fil med filtypenavnet .md (f.eks. my-project.md).</li>
+                        <li>Åbn Copilot Chat (klik på chat-ikonet i sidepanelet eller tryk Ctrl+Alt+I)</li>
+                        <li>Du er klar til at begynde at bygge med AI-assistance!</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="success-heading">
+                    <h3 id="success-heading">6.14 Succeskriterier</h3>
+                    <p>Hvordan ved du, hvornår din prototype er færdig? Brug denne tjekliste:</p>
+
+                    <h4>Minimum succes (MVP komplet)</h4>
+                    <ul>
+                        <li>Siden åbner i browseren uden fejl</li>
+                        <li>Den centrale brugerhandling er funktionel (det vigtigste, din app gør)</li>
+                        <li>Brugergrænsefladen er brugbar (brugeren kan gennemføre det primære flow)</li>
+                        <li>Ingen konsolfejl i browseren DevTools</li>
+                    </ul>
+
+                    <h4>God succes (poleret MVP)</h4>
+                    <ul>
+                        <li>Alle elementer fra Minimum Succes, plus:</li>
+                        <li>Brandfarver og styling anvendt</li>
+                        <li>Responsivt design (fungerer på mobil)</li>
+                        <li>Tydelig feedback for brugerhandlinger (indlæsningstilstande, succesmeddelelser)</li>
+                        <li>README-dokumentation oprettet</li>
+                    </ul>
+
+                    <h4>Stor succes (implementeret og delbar)</h4>
+                    <ul>
+                        <li>Alle elementer fra god succes, plus:</li>
+                        <li>Implementeret til en live URL (Vercel, Netlify eller GitHub Pages)</li>
+                        <li>Flere funktioner fra PRD implementeret</li>
+                        <li>Professionel polering (animationer, hover states, gennemtænkt UX)</li>
+                        <li>Klar til at dele med interessenter</li>
+                    </ul>
+
+                    <div class="info-box" style="background-color: #fff9e6; border-left: 4px solid #f4a300; padding: 1rem; margin: 1rem 0;">
+                        <h4 style="margin-top: 0;">Påmindelse om tidsboks</h4>
+                        <p style="margin-bottom: 0;">Husk på det: Dette er en øvelse på 30-60 minutter. Sigt efter "minimum succes" først, og iterér derefter mod "god" eller "fantastisk", hvis tiden tillader det. En fungerende prototype er bedre end en perfekt prototype, der ikke er færdig!</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="next-heading">
+                    <h3 id="next-heading">6.15 Hvad er det næste?</h3>
+                    <p>Når du har færdiggjort din kodeprototype:</p>
+                    <ul>
+                        <li>Gennemgå <a href="learnings-resources.html">7.0 Læring og ressourcer</a> for at få flere tips</li>
+                        <li>Overvej at indsamle feedback fra kolleger</li>
+                        <li>Dokumentér erfaringer og områder til fremtidig forbedring</li>
+                        <li>Del din implementerede prototype med dit team eller fællesskab</li>
+                    </ul>
+
+                    <div class="info-box" style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 1rem; margin: 1rem 0;">
+                        <h4 style="margin-top: 0;">Tillykke med det!</h4>
+                        <p style="margin-bottom: 0;">Du har bygget en funktionel MVP ved hjælp af AI-assisteret udvikling. Dette er en grundlæggende færdighed for moderne softwareudvikling.</p>
+                    </div>
+                </section>
+
+                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Tidligere</p>
+                        <a href="prototype.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 5.0 Prototype
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Næste</p>
+                        <a href="learnings-resources.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            7.0 Læring og ressourcer →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">På denne side</h2>
+                <nav aria-label="Indholdsfortegnelse">
+                    <ul role="list">
+                        <li><a href="#intro-heading">Tid til at bringe din idé til live</a></li>
+                        <li><a href="#overview-heading">6.0 Oversigt</a></li>
+                        <li><a href="#choose-path-heading">Vælg din vej</a></li>
+                        <li><a href="#free-tier-heading">6.1 Funktioner på gratis niveau</a></li>
+                        <li><a href="#get-started-heading">6.2 Kom godt i gang</a></li>
+                        <li><a href="#prerequisites-heading">6.3 Forudsætninger</a></li>
+                        <li><a href="#success-heading">6.14 Succeskriterier</a></li>
+                        <li><a href="#next-heading">6.15 Hvad er det næste?</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Valgfrit: Udforsk lokal AI Foundry-integration til din prototype">
+    <title>Valgfrit: Lokal AI-integration - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <div class="layout-container">
+        <nav aria-label="Hovednavigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+                    <a href="../step-7-optional.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li><a href="index.html" class="nav-link">Introduktion</a></li>
+                <li><a href="idea-generation.html" class="nav-link">1.0 Idégenerering</a></li>
+                <li><a href="research.html" class="nav-link">2.0 Forskning</a></li>
+                <li><a href="branding.html" class="nav-link">3.0 Branding</a></li>
+                <li><a href="product-requirements.html" class="nav-link">4.0 Produktkrav</a></li>
+                <li><a href="prototype.html" class="nav-link">5.0 Prototype</a></li>
+                <li><a href="code-prototyping.html" class="nav-link">6.0 Prototyping</a></li>
+                <li><a href="learnings-resources.html" class="nav-link">7.0 Læring og ressourcer</a></li>
+                <li><a href="step-7-optional.html" aria-current="page" class="nav-link active">✨ Valgfrit: Lokal AI</a></li>
+                <li><a href="vibe-coding-guide.html" class="nav-link">Guide til Vibe-kodning</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <span class="badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.875rem;">VALGFRI BONUS</span>
+                    <h2 class="page-title">Udforsk lokal integration af kunstig intelligens (AI)</h2>
+                    <p class="page-subtitle">Føj AI-drevne funktioner til din prototype med Local AI Foundry</p>
+                </header>
+
+                <div class="info-box" style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 1rem; margin: 1rem 0;">
+                    <h3 style="margin-top: 0;">Tillykke med det!</h3>
+                    <p>Det er allerede lykkedes for dig! Når du har gennemført trin 6, har du bygget en fungerende prototype ved hjælp af AI-assisteret udvikling. Dette valgfrie trin er bonusindhold for dem, der ønsker at udforske mulighederne for at tilføje AI til deres prototype.</p>
+                </div>
+
+                <div class="info-box" style="background-color: #f8f9fa; border-left: 4px solid #6c757d; padding: 1rem; margin: 1rem 0;">
+                    <p style="margin: 0;"><strong>Er du ikke interesseret i AI-integration lige nu?</strong> Det er helt i orden! <a href="learnings-resources.html">Tilbage til Læring og ressourcer</a></p>
+                </div>
+
+                <section aria-labelledby="explore-heading">
+                    <h3 id="explore-heading">Hvad du vil udforske</h3>
+                    <ul>
+                        <li><strong>Anslået tid:</strong> 30-60 minutter</li>
+                        <li><strong>Færdighedsniveau:</strong> Mellemliggende (konceptuel)</li>
+                        <li><strong>Krav til udstyr:</strong> Windows 11-pc med NPU</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="what-is-heading">
+                    <h3 id="what-is-heading">Hvad er Local AI Foundry?</h3>
+                    <p>Local AI Foundry er Microsofts løsning til at køre AI-modeller direkte på din computer. I stedet for at sende data til cloud-tjenester kører AI lokalt på din enhed.</p>
+
+                    <h4>Hvorfor overveje lokal AI?</h4>
+                    <ul>
+                        <li><strong>Beskyttelse af personlige oplysninger:</strong> Dine data forlader aldrig din enhed</li>
+                        <li><strong>Hastighed:</strong> Ingen netværksforsinkelse for AI-svar</li>
+                        <li><strong>Offline:</strong> Fungerer uden internetforbindelse</li>
+                        <li><strong>Omkostninger:</strong> Ingen API-gebyrer (Application Programming Interface) pr. anmodning</li>
+                    </ul>
+
+                    <div class="info-box" style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 1rem 0;">
+                        <h4 style="margin-top: 0;">⚠️ Krav til hardware</h4>
+                        <p style="margin-bottom: 0;">Local AI Foundry kræver en Windows 11-pc med en Neural Processing Unit (NPU) — som typisk findes i nyere bærbare computere med "Copilot+ PC"-branding. Hvis du ikke har kompatibel hardware, kan du stadig lære koncepterne og anvende dem senere.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="brainstorm-heading">
+                    <h3 id="brainstorm-heading">Idéudvikling af AI-funktioner med Copilot</h3>
+                    <p>Før du implementerer AI-funktioner, skal du bruge GitHub Copilot til at brainstorme over, hvad AI kan tilføre din prototype. Sådan gør du:</p>
+
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Brainstorm AI-funktioner</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-copy-btn" aria-label="Kopier prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopier
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Jeg har en prototype til [beskriv din app].
+
+Hvilke AI-drevne funktioner kunne forbedre denne applikation? Overvej det:
+- Tekstanalyse eller -generering
+- Forståelse af billeder
+- Smarte forslag eller anbefalinger
+- Grænseflader med naturligt sprog
+
+Forklar for hver funktion:
+1. Hvad den ville gøre
+2. Hvordan den vil forbedre brugeroplevelsen
+3. Om det kunne køre lokalt vs. kræver cloud AI</code></pre>
+                    </div>
+
+                    <h4>Eksempel på ideer til AI-funktioner</h4>
+                    <p>Afhængigt af din prototype kan AI tilføje:</p>
+
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h5>Tekst-apps</h5>
+                            <ul>
+                                <li>Smart autofuldførelse</li>
+                                <li>Opsummering af indhold</li>
+                                <li>Justering af tone</li>
+                                <li>Forslag til grammatik</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h5>Data-apps</h5>
+                            <ul>
+                                <li>Registrering af mønstre</li>
+                                <li>Fremhævelse af anomali</li>
+                                <li>Forespørgsler på naturligt sprog</li>
+                                <li>Forudsigelse af tendenser</li>
+                            </ul>
+                        </div>
+                        <div class="info-card">
+                            <h5>Kreative apps</h5>
+                            <ul>
+                                <li>Forslag til stil</li>
+                                <li>Idéer til indhold</li>
+                                <li>Billedbeskrivelser</li>
+                                <li>Anbefalinger til farver</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="approach-heading">
+                    <h3 id="approach-heading">Konceptuel integrationstilgang</h3>
+                    <p>Hvis du beslutter dig for at tilføje lokal AI til din prototype, er her den generelle fremgangsmåde:</p>
+                    <ol>
+                        <li><strong>Installer AI Toolkit-udvidelsen</strong> — Tilføj AI Toolkit-udvidelsen til VS Code for at få adgang til lokale AI-modeller.</li>
+                        <li><strong>Vælg en model</strong> — Vælg en lille sprogmodel (SLM), der er optimeret til din enheds NPU.</li>
+                        <li><strong>Design interaktionen</strong> — Beslut, hvor AI tilfører værdi i dit brugerflow uden at overvælde oplevelsen.</li>
+                        <li><strong>Implementer med omtanke</strong> — Start med én AI-funktion, test den grundigt, og overvej så at tilføje flere.</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="learn-more-heading">
+                    <h3 id="learn-more-heading">Få mere at vide</h3>
+                    <p>Er du klar til at dykke dybere? Her er ressourcer til at fortsætte med at lære:</p>
+                    <ul>
+                        <li><strong>AI-værktøjssæt til VS Code</strong> — Officiel udvidelse til at køre lokale AI-modeller i VS Code. Se i VS Code Marketplace</li>
+                        <li><strong>Windows AI-dokumentation</strong> — Microsofts guide til AI-udvikling på Windows. Læs dokumentationen</li>
+                        <li><strong>Kom godt i gang-videoer</strong> — Videovejledninger om brug af AI Toolkit og lokale modeller. Søg på YouTube</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="ready-heading">
+                    <h3 id="ready-heading">Du er klar!</h3>
+                    <p>Uanset om du udforsker lokal AI-integration eller ej, har du opnået noget stort i dag. Du har taget en idé fra koncept til fungerende prototype ved hjælp af AI-assisteret udvikling.</p>
+                    <p><strong>Bliv ved med at eksperimentere, bliv ved med at bygge, og bliv ved med at lære!</strong></p>
+                </section>
+
+                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Tidligere</p>
+                        <a href="learnings-resources.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 7.0 Læring og ressourcer
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Næste</p>
+                        <a href="vibe-coding-guide.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            Guide til Vibe-kodning →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">På denne side</h2>
+                <nav aria-label="Indholdsfortegnelse">
+                    <ul role="list">
+                        <li><a href="#explore-heading">Hvad du vil udforske</a></li>
+                        <li><a href="#what-is-heading">Hvad er Local AI Foundry?</a></li>
+                        <li><a href="#brainstorm-heading">Idéudvikling af AI-funktioner</a></li>
+                        <li><a href="#approach-heading">Konceptuel integrationstilgang</a></li>
+                        <li><a href="#learn-more-heading">Få mere at vide</a></li>
+                        <li><a href="#ready-heading">Du er klar!</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
