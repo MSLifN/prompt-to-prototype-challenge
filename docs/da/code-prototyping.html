@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Byg din prototype med GitHub Copilot">
+    <title>6.0 Prototyping - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <div class="layout-container">
+        <nav aria-label="Hovednavigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+                <!-- Language Switcher -->
+                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+                    <a href="../code-prototyping.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li>
+                    <a href="index.html" class="nav-link">
+                        Introduktion
+                    </a>
+                </li>
+                <li>
+                    <a href="idea-generation.html" class="nav-link">
+                        1.0 Idégenerering
+                    </a>
+                </li>
+                <li>
+                    <a href="research.html" class="nav-link">
+                        2.0 Research
+                    </a>
+                </li>
+                <li>
+                    <a href="branding.html" class="nav-link">
+                        3.0 Branding
+                    </a>
+                </li>
+                <li>
+                    <a href="product-requirements.html" class="nav-link">
+                        4.0 Produktkrav
+                    </a>
+                </li>
+                <li>
+                    <a href="prototype.html" class="nav-link">
+                        5.0 Prototype
+                    </a>
+                </li>
+                <li>
+                    <a href="code-prototyping.html" aria-current="page" class="nav-link active">
+                        6.0 Prototyping
+                    </a>
+                </li>
+                <li>
+                    <a href="learnings-resources.html" class="nav-link">
+                        7.0 Læring og Ressourcer
+                    </a>
+                </li>
+                <li>
+                    <a href="step-7-optional.html" class="nav-link">
+                        ✨ Valgfrit: Lokal AI
+                    </a>
+                </li>
+                <li>
+                    <a href="vibe-coding-guide.html" class="nav-link">
+                        Vibe Coding Guide
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <h2 class="page-title">Trin 6. GitHub Copilot Prototyping</h2>
+                    <p class="status-badge complete">Fuldført</p>
+                </header>
+
+                <section aria-labelledby="intro-heading">
+                    <h3 id="intro-heading">Tid til at bringe din idé til live med kunstig intelligens (AI)-assisterede kodningsværktøjer</h3>
+                    
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="margin-top: 0; color: #005a9e;">📘 Ny til Vibe Coding?</h4>
+                        <p style="margin-bottom: 0.5rem;">Hvis du er ny til at kode med GitHub Copilot, så tjek vores omfattende <a href="vibe-coding-guide.html" style="font-weight: bold; color: #005a9e;">Vibe Coding Guide</a>. Den indeholder:</p>
+                        <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem;">
+                            <li>Opsætningsvejledning til VS Code og GitHub Copilot</li>
+                            <li>Forklaring af de tre kerneværktøjer (Chat, Kompletteringer, Inline Chat)</li>
+                            <li>Trin-for-trin gennemgang af dit første projekt</li>
+                            <li>Tips til succes og fejlfinding af almindelige problemer</li>
+                        </ul>
+                        <p style="margin: 1rem 0 0 0;"><a href="vibe-coding-guide.html" class="button-primary" style="display: inline-block; padding: 0.5rem 1rem; background-color: #0078d4; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Læs Vibe Coding Guide →</a></p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="overview-heading">
+                    <h4 id="overview-heading">6.0 Oversigt</h4>
+                    <p>I denne sektion vil vi samarbejde med AI for at påtage os rollen som ingeniør og hurtigt prototype vores idé med kode.</p>
+
+                    <div class="info-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                        <div style="border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem;">
+                            <div style="color: #b91c1c; font-size: 2rem; margin-bottom: 0.5rem;">⏱</div>
+                            <h5 style="margin: 0.5rem 0; font-size: 0.875rem; color: #4b5563;">Estimeret tid</h5>
+                            <p style="margin: 0; font-weight: bold;">30-60 minutter</p>
+                        </div>
+                        <div style="border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem;">
+                            <div style="color: #b91c1c; font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+                            <h5 style="margin: 0.5rem 0; font-size: 0.875rem; color: #4b5563;">Færdigheder, der udvikles</h5>
+                            <p style="margin: 0; font-weight: bold;">Hurtig prototyping, Udvikling</p>
+                        </div>
+                        <div style="border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem;">
+                            <div style="color: #b91c1c; font-size: 2rem; margin-bottom: 0.5rem;">✓</div>
+                            <h5 style="margin: 0.5rem 0; font-size: 0.875rem; color: #4b5563;">Teknologi</h5>
+                            <p style="margin: 0; font-weight: bold;">GitHub Copilot</p>
+                        </div>
+                    </div>
+
+                    <p><strong>Formål:</strong> Byg en funktionel prototype, der demonstrerer den centrale værdiproposition og brandidentitet inden for en begrænset tidsramme.</p>
+                    <p><strong>Nøgleresultat:</strong> En fungerende prototype, der kan demonstreres. Hvis den valgte platform eller teknologi understøtter det, er et link til applikationen ideelt.</p>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">📋 Denne guide bruger GitHub Copilot gratisniveau</h5>
+                        <p style="margin-bottom: 0;">Denne øvelse er designet til at fungere med GitHub Copilots gratisniveaufunktioner: <strong>Kodekompletteringer</strong>, <strong>Copilot Chat</strong> og <strong>Inline Chat</strong>. Ingen betalte funktioner (Agent-tilstand, tilpassede agenter eller Copilot Edits) er påkrævet.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="choose-path-heading" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0;">
+                    <h4 id="choose-path-heading" style="text-align: center; margin-top: 0;">🛤️ Vælg din prototyping-vej</h4>
+                    
+                    <p style="text-align: center; margin-bottom: 1.5rem;">Vælg den vej, der passer bedst til dine behov og komfortniveau. Begge fungerer med GitHub Copilot gratisniveau!</p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <!-- Option A Card -->
+                        <div style="background: white; border: 2px solid #0366d6; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h5 style="color: #0366d6; margin-top: 0; font-size: 1.1rem;">Mulighed A: Kod en webside</h5>
+                            <p style="font-size: 0.9rem; color: #4b5563; margin-bottom: 1rem;"><strong>Bedst til:</strong> At bygge din egen idé til en fungerende prototype</p>
+                            <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin-bottom: 1rem;">
+                                <li>Enkeltfil HTML/JS-løsning</li>
+                                <li>Intet build-trin, ingen terminal påkrævet</li>
+                                <li>Integrerer artefakter fra tidligere trin</li>
+                                <li>Fungerer med skærmlæsere og zoom</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Krav:</strong> VS Code, GitHub Copilot Free</p>
+                            <p style="font-size: 0.85rem; color: #22863a; margin: 0;"><strong>✅ Godt til:</strong> Pararbejde, samskabelse</p>
+                            <div style="margin-top: 1rem;">
+                                <a href="https://github.com/MSLifN/prompt-to-prototype-challenge/tree/main/templates/option-a" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1rem; background-color: #0366d6; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">Start Mulighed A →</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Option B Card -->
+                        <div style="background: white; border: 2px solid #6d28d9; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                            <h5 style="color: #6d28d9; margin-top: 0; font-size: 1.1rem;">Mulighed B: Tilgængelighedsløsninger</h5>
+                            <p style="font-size: 0.9rem; color: #4b5563; margin-bottom: 1rem;"><strong>Bedst til:</strong> At bygge inkluderende værktøjer med AI-assistance</p>
+                            <ul style="font-size: 0.9rem; padding-left: 1.2rem; margin-bottom: 1rem;">
+                                <li>Klar-til-brug tilgængelighedsskabeloner</li>
+                                <li>Tekst-, kontrast-, navigations-, taleværktøjer</li>
+                                <li>Prøv i browser, derefter tilpas</li>
+                                <li>Lær tilgængelighed ved at gøre</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; margin-bottom: 0.5rem;"><strong>Krav:</strong> VS Code, GitHub Copilot Free</p>
+                            <p style="font-size: 0.85rem; color: #22863a; margin: 0;"><strong>✅ Godt til:</strong> Ordblindhed, svagt syn, motoriske funktionsnedsættelser, kognitive behov</p>
+                            <div style="margin-top: 1rem;">
+                                <a href="../option-b/" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.5rem 1rem; background-color: #6d28d9; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">Start Mulighed B →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="copilot-free-tier-heading">
+                    <h4 id="copilot-free-tier-heading">6.1 GitHub Copilot gratisniveaufunktioner</h4>
+                    <p>Før vi begynder at bygge, lad os forstå de tre kerne Copilot-funktioner, der er tilgængelige i gratisniveauet:</p>
+
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f6f8fa; border-radius: 8px; border-left: 4px solid #0366d6;">
+                            <h5 style="color: #0366d6; margin-top: 0;">🗨️ Copilot Chat (Primært værktøj)</h5>
+                            <p><strong>Hvad det gør:</strong> Din AI-parprogrammør. Stil spørgsmål, generér kode, få forklaringer.</p>
+                            <p><strong>Sådan åbner du:</strong> Klik på chat-ikonet i venstre sidepanel eller tryk <code>Ctrl+Alt+I</code></p>
+                            <p style="margin-bottom: 0;"><strong>Bedst til:</strong> Generering af komponenter, "hvordan gør jeg..."-spørgsmål, planlægning af funktioner, fejlretning</p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f6f8fa; border-radius: 8px; border-left: 4px solid #15803d;">
+                            <h5 style="color: #15803d; margin-top: 0;">⚡ Kodekompletteringer (Auto-forslag)</h5>
+                            <p><strong>Hvad det gør:</strong> Foreslår kode mens du skriver (vises som grå tekst)</p>
+                            <p><strong>Sådan bruger du:</strong> Begynd bare at skrive, tryk <code>Tab</code> for at acceptere, <code>Esc</code> for at afvise</p>
+                            <p style="margin-bottom: 0;"><strong>Bedst til:</strong> Skrivning af funktioner, udfyldning af gentagen kode, fuldførelse af mønstre</p>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f6f8fa; border-radius: 8px; border-left: 4px solid #6d28d9;">
+                            <h5 style="color: #6d28d9; margin-top: 0;">✏️ Inline Chat (Hurtige redigeringer)</h5>
+                            <p><strong>Hvad det gør:</strong> Modificerer specifik kode, du vælger, i kontekst</p>
+                            <p><strong>Sådan åbner du:</strong> Vælg kode, tryk <code>Ctrl+I</code> (Windows) eller <code>Cmd+I</code> (Mac)</p>
+                            <p style="margin-bottom: 0;"><strong>Bedst til:</strong> "Gør dette responsivt", "Tilføj fejlhåndtering", "Ret denne fejl"</p>
+                        </div>
+                    </div>
+
+                    <div class="note-box" style="background-color: #fff9e6; border-left: 4px solid #f4a300; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="color: #8b5a00; margin-top: 0;">💡 Gratisniveau-arbejdsgang</h5>
+                        <p style="color: #5c4200; margin-bottom: 0;">Med gratisniveau arbejder du <strong>én fil ad gangen</strong> ved hjælp af Chat og Inline Chat. Dette er faktisk godt for læring—du vil forstå, hvad hver del af koden gør, mens du bygger den!</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="get-started-heading">
+                    <h4 id="get-started-heading">6.2 Kom i gang</h4>
+                    <p>Tid til at samle alt. Du har dit koncept, markedsvalidering, Produktkravsdokument (PRD) og brandidentitet. Lad os nu bygge en fungerende prototype, der demonstrerer din værdiproposition ved hjælp af funktion-for-funktion-udvikling.</p>
+                    
+                    <p>Denne øvelse opfordrer til udforskning. Selvom vi giver vejledning, er du velkommen til at iterere og udvide baseret på din kreativitet og dine mål.</p>
+                </section>
+
+                <section aria-labelledby="prerequisites-heading">
+                    <h4 id="prerequisites-heading">6.3 Forudsætninger</h4>
+                    
+                    <h5>Hvad du har brug for:</h5>
+                    <ul>
+                        <li><a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">VS Code</a> installeret</li>
+                        <li><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a>-udvidelse (Gratisniveau fungerer!)</li>
+                        <li>En webbrowser (Chrome, Firefox, Edge, Safari)</li>
+                        <li>Dit PRD og branding-aktiver fra tidligere trin</li>
+                    </ul>
+
+                    <div class="note-box" style="background-color: #d4edda; border-left: 4px solid #28a745; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0; color: #155724;">✅ Ingen terminal påkrævet!</h5>
+                        <p style="margin-bottom: 0; color: #155724;">Både Mulighed A og Mulighed B fungerer uden npm, Node.js eller nogen kommandolinjeværktøjer. Åbn bare VS Code og begynd at skabe.</p>
+                    </div>
+
+                    <h5>Kom i gang:</h5>
+                    <ol>
+                        <li><strong>Mulighed A (Kod en webside):</strong> Opret en ny fil kaldet <code>index.html</code> i VS Code</li>
+                        <li><strong>Mulighed B (Opret et dokument):</strong> Opret en ny fil med <code>.md</code>-udvidelse (f.eks. <code>mit-projekt.md</code>)</li>
+                        <li>Åbn Copilot Chat (klik på chat-ikonet i sidepanelet eller tryk <code>Ctrl+Alt+I</code>)</li>
+                        <li>Du er klar til at begynde at bygge med AI-assistance!</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="setup-heading">
+                    <h4 id="setup-heading">6.4 Tilføj dit PRD</h4>
+                    
+                    <p>I et tidligere modul genererede du et Produktkravsdokument. Lad os arbejde med Copilot for at forfine det til hurtig prototyping.</p>
+
+                    <h5>Trin:</h5>
+                    <ol>
+                        <li>Find dit gemte PRD, som du oprettede. Hvis du har brug for at oprette en markdown-fil, skal du vælge <strong>Fil</strong> > <strong>Ny fil</strong> og navngive den <code>PRD.md</code> og kopiere dit Produktkrav-indhold dertil.</li>
+                        <li>I Copilot Chat, træk din <code>PRD.md</code>-fil til promptboksen</li>
+                        <li>Brug denne prompt:</li>
+                    </ol>
+
+                    <div class="prompt-box" style="margin: 1rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Prompt</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                    <span aria-hidden="true">↺</span> Gendan
+                                </button>
+                                <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                    <span aria-hidden="true">✎</span> Rediger
+                                </button>
+                                <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopiér
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Vedhæftet er mit Produktkravsdokument ved navn PRD.md. Forfin og opdater venligst dette dokument, så det er optimeret til vibe coding af en letvægts klientside-webapplikation.
+
+Gør formålet klart, identificer kernefunktioner til en simpel prototype, skitser nøglebrugerflows, og sørg for, at det understøtter bygning med begrænset tid.
+
+Opdater dokumentet direkte med dine forbedringer.</code></pre>
+                    </div>
+                </section>
+
+                <section aria-labelledby="copilot-chat-heading">
+                    <h4 id="copilot-chat-heading">6.5 Brug GitHub Copilot Chat</h4>
+                    <p>GitHub Copilot Chat er din AI-parprogrammør. Brug den til at:</p>
+                    <ul>
+                        <li>Generere komponent-boilerplate</li>
+                        <li>Skrive funktioner baseret på naturlige sprogbeskrivelser</li>
+                        <li>Fejlrette problemer og forklare kode</li>
+                        <li>Refaktorere for bedre struktur</li>
+                        <li>Tilføje styling og interaktivitet</li>
+                    </ul>
+
+                    <div class="subsection" style="margin-top: 2rem;">
+                        <h5>Tips til effektive prompts:</h5>
+                        <ul>
+                            <li><strong>Vær specifik:</strong> "Opret en HTML-sektion, der viser en liste over opgaver med afkrydsningsfelter"</li>
+                            <li><strong>Referer til din kontekst:</strong> "Ved hjælp af PRD-funktionerne, byg en formular til [funktionsnavn]"</li>
+                            <li><strong>Iterér:</strong> Start simpelt, og bed derefter Copilot om at forbedre eller modificere</li>
+                            <li><strong>Brug inline chat:</strong> Tryk <code>Ctrl+I</code> (Windows) eller <code>Cmd+I</code> (Mac) for at redigere kode på stedet</li>
+                        </ul>
+                    </div>
+
+                    <div class="prompt-box" style="margin: 2rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Eksempel-prompt</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                    <span aria-hidden="true">↺</span> Gendan
+                                </button>
+                                <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                    <span aria-hidden="true">✎</span> Rediger
+                                </button>
+                                <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopiér
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Opret en HTML quiz-grænseflade i en enkelt fil med:
+- Et spørgsmalsvisningsområde
+- 4 multiple choice-muligheder som knapper
+- En "Næste spørgsmål"-knap
+- JavaScript til at spore score
+- Vis resultater til sidst
+- CSS-styling inkluderet i et style-tag</code></pre>
+                    </div>
+                </section>
+
+                <section aria-labelledby="build-mvp-heading">
+                    <h4 id="build-mvp-heading">6.6 Byg dine Minimum Viable Product (MVP)-funktioner</h4>
+                    <p>Følg denne arbejdsgang for at implementere dit MVP:</p>
+                    
+                    <div class="steps-section">
+                        <h5>Udviklingsarbejdsgang:</h5>
+                        <ol>
+                            <li><strong>Start med struktur:</strong> Opret hovedkomponentfiler til din apps sektioner</li>
+                            <li><strong>Byg én funktion ad gangen:</strong> Referer til dit PRD og håndter MVP-funktioner i rækkefølge</li>
+                            <li><strong>Brug Copilot til boilerplate:</strong> Lad AI generere initial komponentkode</li>
+                            <li><strong>Test undervejs:</strong> Tjek at hver funktion virker, før du går videre</li>
+                            <li><strong>Tilføj interaktivitet:</strong> Forbind knapper, formularer og tilstandshåndtering</li>
+                            <li><strong>Anvend branding:</strong> Tilføj dine farver, logo og typografi</li>
+                            <li><strong>Polér brugeroplevelsen (UX):</strong> Tilføj indlæsningstilstande, fejlmeddelelser, overgange</li>
+                        </ol>
+                    </div>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">🎯 Hold det simpelt</h5>
+                        <p style="margin-bottom: 0;">For et 1-times MVP, hold dig til klientside kun: ingen backends, ingen databaser, ingen autentificering. Brug lokal tilstand, mock-data eller browserlagring.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="apply-branding-heading">
+                    <h4 id="apply-branding-heading">6.7 Anvend din branding</h4>
+                    <p>Integrer de brand-aktiver, du oprettede tidligere:</p>
+                    
+                    <div class="steps-section">
+                        <h5>Branding-integration:</h5>
+                        <ol>
+                            <li><strong>Farver:</strong> Tilføj dine hex-farver til CSS-variabler eller Tailwind-konfiguration</li>
+                            <li><strong>Logo:</strong> Importér din logofil og tilføj den til en header-komponent</li>
+                            <li><strong>Typografi:</strong> Importér webskrifttyper (Google Fonts) eller brug systemskrifttypestak</li>
+                            <li><strong>Tone:</strong> Brug tekst, der matcher din brandstemme</li>
+                        </ol>
+                    </div>
+
+                    <div class="prompt-box" style="margin: 2rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Eksempel-prompt til styling</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                    <span aria-hidden="true">↺</span> Gendan
+                                </button>
+                                <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                    <span aria-hidden="true">✎</span> Rediger
+                                </button>
+                                <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopiér
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Opdater stilene til at bruge denne farvepalet:
+- Primær: #2563eb
+- Sekundær: #6d28d9
+- Accent: #d97706
+- Baggrund: #f9fafb
+- Tekst: #1f2937
+
+Anvend disse farver på hele siden med et moderne, rent design.</code></pre>
+                    </div>
+                </section>
+
+                <section aria-labelledby="copilot-features-heading">
+                    <h4 id="copilot-features-heading">6.8 Udnyt nøgle Copilot-funktioner</h4>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Inline-forslag</h5>
+                            <p>Mens du skriver, foreslår Copilot kompletteringer. Tryk <code>Tab</code> for at acceptere, <code>Esc</code> for at afvise.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Chat-panel</h5>
+                            <p>Åbn med <code>Ctrl+Shift+I</code> for at stille spørgsmål og få kodestykker. Godt til "Hvordan gør jeg..."-spørgsmål.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Inline Chat</h5>
+                            <p>Tryk <code>Ctrl+I</code> i en fil for at redigere kode i kontekst. Bed Copilot om at "refaktorere dette," "tilføje fejlhåndtering," osv.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Generér tests</h5>
+                            <p>Bed Copilot om at generere tests til dine funktioner for at sikre pålidelighed.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Forklar kode</h5>
+                            <p>Vælg kode og spørg "Forklar dette" for at forstå, hvad det gør—nyttigt for læring.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="common-patterns-heading">
+                    <h4 id="common-patterns-heading">6.9 Almindelige MVP-mønstre</h4>
+                    <p>Her er nogle typiske funktioner, du kan bygge med eksempel-prompts:</p>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Formular med validering</h5>
+                            <p><strong>Prompt:</strong> "Opret en kontaktformular med navn-, e-mail- og beskedfelter. Tilføj validering og vis succesmeddelelse ved indsendelse."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Dataliste med filtrering</h5>
+                            <p><strong>Prompt:</strong> "Opret en komponent, der viser en liste over produkter med søge-/filterfunktionalitet ved hjælp af mock-data."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Flertrins-flow</h5>
+                            <p><strong>Prompt:</strong> "Byg en 3-trins guide med Næste/Forrige-knapper og fremskridtsindikator. Gem formulardata på tværs af trin."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Interaktiv beregner/værktøj</h5>
+                            <p><strong>Prompt:</strong> "Opret en budgetberegner, der tager input og viser resultater i realtid med diagrammer."</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem; padding: 1rem; background: #f6f8fa; border-radius: 4px;">
+                            <h5 style="margin-top: 0;">Resultat-/opsummeringsskærm</h5>
+                            <p><strong>Prompt:</strong> "Design en resultatside, der viser et opsummeringskort med nøglemålinger og en call-to-action-knap."</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="troubleshooting-heading">
+                    <h4 id="troubleshooting-heading">6.10 Fejlfinding</h4>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Copilot foreslår ikke noget</h5>
+                            <p>Tjek at Copilot er aktiveret (ikon i statuslinjen). Prøv at tilføje en kommentar, der beskriver, hvad du vil have, og tryk derefter Enter.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Forslagene er upræcise</h5>
+                            <p>Vær mere specifik i kommentarer eller Chat. Giv kontekst om dit PRD, teknologistak eller ønskede resultat.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Koden har fejl</h5>
+                            <p>Spørg Copilot Chat: "Ret denne fejl" og indsæt fejlmeddelelsen. Eller vælg den problematiske kode og brug Inline Chat til at fejlrette.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">HTML renderes ikke korrekt</h5>
+                            <p>Sørg for, at du har gemt filen. Opdater din browser. Tjek for manglende lukkende tags. Brug browserens DevTools til at inspicere HTML-strukturen.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5 style="color: #0366d6;">Stilarter anvendes ikke</h5>
+                            <p>Tjek at CSS er inde i et <code>&lt;style&gt;</code>-tag eller linket korrekt. Verificer at klassenavne matcher. Brug browserens DevTools til at inspicere elementer.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section aria-labelledby="test-refine-heading">
+                    <h4 id="test-refine-heading">6.11 Test og forfin</h4>
+                    <p>Før du færdiggør din prototype:</p>
+                    <ol>
+                        <li><strong>Test alle funktioner:</strong> Klik gennem hver knap, formular og interaktion</li>
+                        <li><strong>Tjek responsivitet:</strong> Tilpas browservinduets størrelse for at teste mobilvisning</li>
+                        <li><strong>Gennemgå konsollen:</strong> Ret eventuelle fejl eller advarsler i browserkonsollen</li>
+                        <li><strong>Validér mod PRD:</strong> Sørg for, at alle MVP-funktioner er implementeret</li>
+                        <li><strong>Polér brugergrænsefladen (UI):</strong> Ret justering, mellemrum og visuel konsistens</li>
+                        <li><strong>Tilføj indlæsningstilstande:</strong> Vis feedback for eventuelle asynkrone handlinger</li>
+                    </ol>
+
+                    <div class="info-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">🐛 Hurtige rettelser</h5>
+                        <p style="margin-bottom: 0;">Brug Copilot Chat til hurtigt at løse problemer: "Denne knap virker ikke, ret onClick-handleren" eller "Tilføj fejlhåndtering til denne formularindsendelse."</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="deploy-heading">
+                    <h4 id="deploy-heading">6.12 Udgiv din prototype</h4>
+                    <p>Gør din prototype tilgængelig online:</p>
+                    
+                    <div class="steps-section">
+                        <h5>Hurtige udgivelsesmuligheder:</h5>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h6>GitHub Pages (Anbefalet til enkeltfil HTML):</h6>
+                            <ol>
+                                <li>Push din <code>index.html</code>-fil til et GitHub-repository</li>
+                                <li>Gå til repository Indstillinger → Pages</li>
+                                <li>Vælg "Deploy from a branch" og vælg <code>main</code></li>
+                                <li>Din side er live på <code>https://brugernavn.github.io/repo-navn</code></li>
+                            </ol>
+                        </div>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h6>Netlify (Træk og slip):</h6>
+                            <ol>
+                                <li>Gå til <code>netlify.com</code> og opret en konto</li>
+                                <li>Træk din projektmappe til udgivelsesområdet</li>
+                                <li>Få en live URL på få sekunder</li>
+                                <li>Intet build-trin påkrævet for statisk HTML!</li>
+                            </ol>
+                        </div>
+                        
+                        <div style="margin: 1.5rem 0;">
+                            <h6>Vercel:</h6>
+                            <ol>
+                                <li>Opret en konto på <code>vercel.com</code></li>
+                                <li>Importér dit GitHub-repository</li>
+                                <li>Vercel serverer statisk HTML automatisk</li>
+                                <li>Få en live URL på få minutter</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="note-box" style="background-color: #fff9e6; border-left: 4px solid #f4a300; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="color: #8b5a00; margin-top: 0;">💡 Pro-tip</h5>
+                        <p style="color: #5c4200; margin-bottom: 0;">Alle tre platforme tilbyder gratisniveauer, der er perfekte til MVP'er. Vercel og Netlify giver øjeblikkelig SSL og tilpassede domæner.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="document-heading">
+                    <h4 id="document-heading">6.13 Dokumentér dit arbejde</h4>
+                    <p>Opret en kort README eller dokumentation, der inkluderer:</p>
+                    <ul>
+                        <li><strong>Projektbeskrivelse:</strong> Hvad dit MVP gør (1-2 sætninger)</li>
+                        <li><strong>Teknologistak:</strong> HTML, CSS, JavaScript (enkeltfil)</li>
+                        <li><strong>Implementerede funktioner:</strong> Liste fra dit PRD</li>
+                        <li><strong>Sådan kører du lokalt:</strong> Åbn <code>index.html</code> i enhver browser</li>
+                        <li><strong>Live demo-link:</strong> URL til udgivet version</li>
+                        <li><strong>Kendte begrænsninger:</strong> Hvad der ikke er implementeret endnu</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin: 2rem 0;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">Bed Copilot om hjælp</span>
+                            <div class="prompt-actions">
+                                <button class="prompt-action-btn" aria-label="Gendan prompt">
+                                    <span aria-hidden="true">↺</span> Gendan
+                                </button>
+                                <button class="prompt-action-btn" aria-label="Rediger prompt">
+                                    <span aria-hidden="true">✎</span> Rediger
+                                </button>
+                                <button class="prompt-copy-btn" aria-label="Kopiér prompt til udklipsholder">
+                                    <span aria-hidden="true">📋</span> Kopiér
+                                </button>
+                            </div>
+                        </div>
+                        <pre class="prompt-code"><code>Opret en README.md til mit projekt med:
+- Projekttitel og beskrivelse
+- Funktionsliste
+- Teknologistak
+- Sådan åbner du i browser
+- Sektion til udgivelses-URL</code></pre>
+                    </div>
+                </section>
+
+                <section aria-labelledby="success-criteria-heading">
+                    <h4 id="success-criteria-heading">6.14 Succeskriterier</h4>
+                    <p>Hvordan ved du, hvornår din prototype er færdig? Brug denne tjekliste:</p>
+
+                    <div style="margin: 1.5rem 0;">
+                        <div style="padding: 1.5rem; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de;">
+                            <h5 style="margin-top: 0; color: #15803d;">✅ Minimumsucces (MVP fuldført)</h5>
+                            <ul style="margin-bottom: 0;">
+                                <li>Siden åbner i browseren uden fejl</li>
+                                <li>Kernebrugerhandlingen er funktionel (det vigtigste din app gør)</li>
+                                <li>UI er brugbar (brugeren kan fuldføre det primære flow)</li>
+                                <li>Ingen konsolfejl i browserens DevTools</li>
+                            </ul>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de; margin-top: 1rem;">
+                            <h5 style="margin-top: 0; color: #0366d6;">🎯 God succes (Poleret MVP)</h5>
+                            <ul style="margin-bottom: 0;">
+                                <li>Alle punkter fra Minimumsucces, plus:</li>
+                                <li>Brandfarver og styling anvendt</li>
+                                <li>Responsivt design (fungerer på mobil)</li>
+                                <li>Klar feedback for brugerhandlinger (indlæsningstilstande, succesmeddelelser)</li>
+                                <li>README-dokumentation oprettet</li>
+                            </ul>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: #f6f8fa; border-radius: 8px; border: 1px solid #d0d7de; margin-top: 1rem;">
+                            <h5 style="margin-top: 0; color: #6d28d9;">🚀 Stor succes (Udgivet og delbar)</h5>
+                            <ul style="margin-bottom: 0;">
+                                <li>Alle punkter fra God succes, plus:</li>
+                                <li>Udgivet til en live URL (Vercel, Netlify eller GitHub Pages)</li>
+                                <li>Flere funktioner fra PRD implementeret</li>
+                                <li>Professionel polering (animationer, hover-tilstande, gennemtænkt UX)</li>
+                                <li>Klar til at dele med interessenter</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="note-box" style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="margin-top: 0;">⏱️ Tidsramme-påmindelse</h5>
+                        <p style="margin-bottom: 0;">Husk: Dette er en 30-60 minutters øvelse. Sigt efter "Minimumsucces" først, og iterér derefter mod "God" eller "Stor", hvis tiden tillader det. En fungerende prototype er bedre end en perfekt prototype, der er ufærdig!</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="next-steps-heading">
+                    <h4 id="next-steps-heading">6.15 Hvad er det næste?</h4>
+                    <p>Efter at have fuldført din kodeprototype:</p>
+                    <ul>
+                        <li>Gennemgå <a href="learnings-resources.html">7.0 Læring og Ressourcer</a> for yderligere tips</li>
+                        <li>Overvej at indsamle feedback fra kolleger</li>
+                        <li>Dokumentér læringer og områder til fremtidig forbedring</li>
+                        <li>Del din udgivne prototype med dit team eller fællesskab</li>
+                    </ul>
+
+                    <div class="info-box" style="background-color: #dcfce7; border-left: 4px solid #15803d; padding: 1rem; margin: 1.5rem 0;">
+                        <h5 style="color: #15803d; margin-top: 0;">🎉 Tillykke!</h5>
+                        <p style="color: #166534; margin-bottom: 0;">Du har bygget et funktionelt MVP ved hjælp af AI-assisteret udvikling. Dette er en grundlæggende færdighed for moderne softwareudvikling.</p>
+                    </div>
+                </section>
+
+                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Forrige</p>
+                        <a href="prototype.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 5.0 Prototype
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Næste</p>
+                        <a href="learnings-resources.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            7.0 Læring og Ressourcer →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">På denne side</h2>
+                <nav aria-label="Sidens indholdsfortegnelse">
+                    <ul role="list">
+                        <li><a href="#intro-heading">Tid til at bringe din idé til live</a></li>
+                        <li><a href="#overview-heading">6.0 Oversigt</a></li>
+                        <li><a href="#choose-path-heading">🛤️ Vælg din vej</a></li>
+                        <li><a href="#copilot-free-tier-heading">6.1 Copilot gratisniveaufunktioner</a></li>
+                        <li><a href="#get-started-heading">6.2 Kom i gang</a></li>
+                        <li><a href="#prerequisites-heading">6.3 Forudsætninger</a></li>
+                        <li><a href="#setup-heading">6.4 Tilføj dit PRD</a></li>
+                        <li><a href="#copilot-chat-heading">6.5 Brug GitHub Copilot Chat</a></li>
+                        <li><a href="#build-mvp-heading">6.6 Byg dine MVP-funktioner</a></li>
+                        <li><a href="#apply-branding-heading">6.7 Anvend din branding</a></li>
+                        <li><a href="#copilot-features-heading">6.8 Udnyt nøgle Copilot-funktioner</a></li>
+                        <li><a href="#common-patterns-heading">6.9 Almindelige MVP-mønstre</a></li>
+                        <li><a href="#troubleshooting-heading">6.10 Fejlfinding</a></li>
+                        <li><a href="#test-refine-heading">6.11 Test og forfin</a></li>
+                        <li><a href="#deploy-heading">6.12 Udgiv din prototype</a></li>
+                        <li><a href="#document-heading">6.13 Dokumentér dit arbejde</a></li>
+                        <li><a href="#success-criteria-heading">6.14 Succeskriterier</a></li>
+                        <li><a href="#next-steps-heading">6.15 Hvad er det næste?</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
