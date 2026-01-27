@@ -4,132 +4,332 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mulighed B: Tilgængelighedsløsninger - Klar-til-brug-skabeloner til Prompt to Prototype Challenge">
-    <title>Mulighed B: Tilgængelighedsløsninger - Prompt to Prototype Challenge</title>
-    <link rel="stylesheet" href="../../css/styles.css">
+    <title>Mulighed B: Tilgængelighedsløsninger</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #2563eb;
+            --accent-light: #60a5fa;
+            --border: #334155;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: white;
+            padding: 12px 20px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .language-switcher a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: var(--card-bg);
+        }
+
+        .language-switcher a:hover {
+            background: var(--accent);
+        }
+
+        .language-switcher .lang-active {
+            background: var(--accent);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d1b4e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .intro h2 {
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .intro ol {
+            margin-left: 1.5rem;
+        }
+
+        .intro li {
+            margin-bottom: 0.75rem;
+        }
+
+        .intro kbd {
+            background: var(--bg);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            border: 1px solid var(--border);
+        }
+
+        h2.section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .template-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .template-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .template-card:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .template-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-light);
+        }
+
+        .template-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-card .helps {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .template-card .helps strong {
+            color: var(--text);
+        }
+
+        .cta-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .cta-section h2 {
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent-light);
+        }
+
+        .cta-btn:focus {
+            outline: 3px solid var(--accent-light);
+            outline-offset: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        footer a {
+            color: var(--accent-light);
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
 
-    <div class="layout-container">
-        <nav aria-label="Hovednavigation" class="sidebar">
-            <div class="sidebar-header">
-                <h1 class="site-title">
-                    <a href="../index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
-                        Prompt to Prototype Vibe Coding Challenge
-                    </a>
-                </h1>
-                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
-                    <a href="../../option-b/index.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
-                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
-                </div>
-            </div>
+    <header>
+        <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+            <a href="../../option-b/index.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+            <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+        </div>
+        <h1>♿ Mulighed B: Tilgængelighedsløsninger</h1>
+        <p>Brugsklare skabeloner, som du kan tilpasse med GitHub Copilot for at bygge inkluderende prototyper</p>
+    </header>
 
-            <ul class="nav-menu" role="list">
-                <li><a href="../index.html" class="nav-link">Introduktion</a></li>
-                <li><a href="../idea-generation.html" class="nav-link">1.0 Idégenerering</a></li>
-                <li><a href="../research.html" class="nav-link">2.0 Forskning</a></li>
-                <li><a href="../branding.html" class="nav-link">3.0 Branding</a></li>
-                <li><a href="../product-requirements.html" class="nav-link">4.0 Produktkrav</a></li>
-                <li><a href="../prototype.html" class="nav-link">5.0 Prototype</a></li>
-                <li><a href="../code-prototyping.html" class="nav-link">6.0 Prototyping</a></li>
-                <li><a href="../learnings-resources.html" class="nav-link">7.0 Læring og ressourcer</a></li>
-                <li><a href="../step-7-optional.html" class="nav-link">✨ Valgfrit: Lokal AI</a></li>
-                <li><a href="../vibe-coding-guide.html" class="nav-link">Guide til Vibe-kodning</a></li>
-            </ul>
-        </nav>
+    <main id="main-content" class="container">
+        <!-- Sådan bruger du -->
+        <section class="intro" aria-labelledby="intro-heading">
+            <h2 id="intro-heading">🚀 Sådan bruger du disse skabeloner</h2>
+            <ol>
+                <li><strong>Vælg en skabelon</strong> nedenfor, som interesserer dig</li>
+                <li><strong>Prøv den</strong> i din browser for at se, hvordan den fungerer</li>
+                <li><strong>Klon repoen</strong> — I VS Code tryk <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> → <strong>Git: Clone</strong></li>
+                <li><strong>Åbn skabelonen</strong> fra <code>templates/option-b/</code></li>
+                <li><strong>Brug Copilot</strong> til at tilpasse — tryk <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> for at chatte</li>
+            </ol>
+        </section>
 
-        <main id="main-content" class="main-content">
-            <article>
-                <header>
-                    <h1 class="page-title">Mulighed B: Tilgængelighedsløsninger</h1>
-                    <p class="page-subtitle">Brugsklare skabeloner, som du kan tilpasse med GitHub Copilot for at bygge inkluderende prototyper</p>
-                </header>
+        <!-- Skabeloner -->
+        <h2 class="section-title">Vælg en skabelon</h2>
+        
+        <div class="templates-grid">
+            <a href="text-customization.html" class="template-card">
+                <div class="icon">📖</div>
+                <h3>Teksttilpasning</h3>
+                <p>Juster skriftstørrelse, afstand, linjehøjde, og skift til ordblindevenlige skrifttyper.</p>
+                <div class="helps"><strong>Hjælper:</strong> Ordblindhed, nedsat syn, læsevanskeligheder</div>
+            </a>
 
-                <section aria-labelledby="how-to-heading">
-                    <h2 id="how-to-heading">Sådan bruger du disse skabeloner</h2>
-                    <ol>
-                        <li>Vælg en skabelon nedenfor, som interesserer dig</li>
-                        <li>Prøv den i din browser for at se, hvordan den fungerer</li>
-                        <li>Klon repoen — I VS Code skal du trykke på Ctrl+Shift+P og derefter Git: Klon</li>
-                        <li>Åbn skabelonen fra templates/option-b/</li>
-                        <li>Brug Copilot til at tilpasse — tryk Ctrl+Alt+I for at chatte</li>
-                    </ol>
-                </section>
+            <a href="high-contrast.html" class="template-card">
+                <div class="icon">🎨</div>
+                <h3>Høj kontrast-tilstand</h3>
+                <p>Skift mellem 6 farveskemaer, inklusiv mørk tilstand, inverteret og blåt filter.</p>
+                <div class="helps"><strong>Hjælper:</strong> Nedsat syn, lysfølsomhed, farveblindhed</div>
+            </a>
 
-                <section aria-labelledby="templates-heading">
-                    <h2 id="templates-heading">Vælg en skabelon</h2>
+            <a href="focus-navigation.html" class="template-card">
+                <div class="icon">⌨️</div>
+                <h3>Fokus og navigation</h3>
+                <p>Tilpas fokusindikatorer og brug tastaturgenveje til at navigere på siden.</p>
+                <div class="helps"><strong>Hjælper:</strong> Motoriske funktionsnedsættelser, tastaturbrugere</div>
+            </a>
 
-                    <div class="info-cards" style="flex-wrap: wrap;">
-                        <div class="info-card" style="flex: 1 1 300px; min-width: 280px;">
-                            <h3>📝 Tilpasning af tekst</h3>
-                            <p>Juster skriftstørrelse, afstand og linjehøjde, og skift til ordblindevenlige skrifttyper.</p>
-                            <p><strong>Det hjælper:</strong> Dysleksi, nedsat syn, læsevanskeligheder</p>
-                            <a href="text-customization.html" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #0366d6; color: white; text-decoration: none; border-radius: 4px;">Prøv skabelon</a>
-                        </div>
+            <a href="text-to-speech.html" class="template-card">
+                <div class="icon">🔊</div>
+                <h3>Tekst til tale</h3>
+                <p>Få tekst læst højt med justerbar stemme, hastighed og tonehøjde.</p>
+                <div class="helps"><strong>Hjælper:</strong> Blindhed, læsevanskeligheder, multitasking</div>
+            </a>
 
-                        <div class="info-card" style="flex: 1 1 300px; min-width: 280px;">
-                            <h3>🎨 Tilstand med høj kontrast</h3>
-                            <p>Skift mellem 6 farveskemaer, herunder mørk tilstand, inverteret og blåt filter.</p>
-                            <p><strong>Hjælper:</strong> Svagtseende, lysfølsomhed, farveblindhed</p>
-                            <a href="high-contrast.html" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #0366d6; color: white; text-decoration: none; border-radius: 4px;">Prøv skabelon</a>
-                        </div>
+            <a href="simplified-interface.html" class="template-card">
+                <div class="icon">🌿</div>
+                <h3>Forenklet brugerflade</h3>
+                <p>En rolig, ren opgavestyring med minimale forstyrrelser og bløde animationer.</p>
+                <div class="helps"><strong>Hjælper:</strong> Kognitiv overbelastning, angst, ADHD</div>
+            </a>
+        </div>
 
-                        <div class="info-card" style="flex: 1 1 300px; min-width: 280px;">
-                            <h3>🎯 Fokus og navigation</h3>
-                            <p>Tilpas fokusindikatorer, og brug tastaturgenveje til at navigere på siden.</p>
-                            <p><strong>Det hjælper:</strong> Motoriske funktionsnedsættelser, brugere, der kun bruger tastatur</p>
-                            <a href="focus-navigation.html" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #0366d6; color: white; text-decoration: none; border-radius: 4px;">Prøv skabelon</a>
-                        </div>
+        <!-- CTA -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <h2 id="cta-heading">📚 Vil du vide mere?</h2>
+            <p>Se README for flere detaljer om, hvordan du tilpasser disse skabeloner med Copilot.</p>
+            <a href="https://github.com/MSLifN/prompt-to-prototype-challenge/tree/main/templates/option-b" class="cta-btn">
+                Se på GitHub
+            </a>
+        </section>
+    </main>
 
-                        <div class="info-card" style="flex: 1 1 300px; min-width: 280px;">
-                            <h3>🔊 Tekst til tale</h3>
-                            <p>Få en hvilken som helst tekst læst højt med justerbar stemme, hastighed og tonehøjde.</p>
-                            <p><strong>Hjælper:</strong> Blindhed, læsevanskeligheder, multitasking</p>
-                            <a href="text-to-speech.html" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #0366d6; color: white; text-decoration: none; border-radius: 4px;">Prøv skabelon</a>
-                        </div>
-
-                        <div class="info-card" style="flex: 1 1 300px; min-width: 280px;">
-                            <h3>🧘 Forenklet brugerflade</h3>
-                            <p>En rolig, ren task manager med minimale forstyrrelser og blide animationer.</p>
-                            <p><strong>Hjælper:</strong> Kognitiv overbelastning, angst, ADHD</p>
-                            <a href="simplified-interface.html" style="display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #0366d6; color: white; text-decoration: none; border-radius: 4px;">Prøv skabelon</a>
-                        </div>
-                    </div>
-                </section>
-
-                <section aria-labelledby="cta-heading">
-                    <h2 id="cta-heading">Vil du vide mere?</h2>
-                    <p>Se README for at få flere detaljer om, hvordan du tilpasser disse skabeloner med Copilot.</p>
-                    <a href="https://github.com/MSLifN/prompt-to-prototype-challenge" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 0.5rem; padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Se på GitHub</a>
-                </section>
-
-                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
-                    <div>
-                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Tilbage til</p>
-                        <a href="../code-prototyping.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
-                            ← 6.0 Prototyping
-                        </a>
-                    </div>
-                </nav>
-            </article>
-
-            <aside aria-labelledby="toc-heading" class="toc-sidebar">
-                <h2 id="toc-heading" class="toc-title">På denne side</h2>
-                <nav aria-label="Indholdsfortegnelse">
-                    <ul role="list">
-                        <li><a href="#how-to-heading">Sådan bruger du disse skabeloner</a></li>
-                        <li><a href="#templates-heading">Vælg en skabelon</a></li>
-                        <li><a href="#cta-heading">Vil du vide mere?</a></li>
-                    </ul>
-                </nav>
-            </aside>
-        </main>
-    </div>
-
-    <footer style="text-align: center; padding: 2rem; background: #f8f9fa; border-top: 1px solid #e1e4e8;">
-        <p>En del af Prompt to Prototype Challenge</p>
+    <footer>
+        <p>En del af <a href="https://github.com/MSLifN/prompt-to-prototype-challenge">Prompt to Prototype Challenge</a></p>
     </footer>
-
-    <script src="../../js/main.js"></script>
 </body>
 </html>
