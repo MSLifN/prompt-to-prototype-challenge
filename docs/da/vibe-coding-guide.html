@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vibe Coding med GitHub Copilot - En begyndervenlig guide til at bygge prototyper hurtigt med AI-assistance">
+    <title>Vibe Coding Guide - Prompt to Prototype Challenge</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Spring til hovedindhold</a>
+
+    <div class="layout-container">
+        <nav aria-label="Hovednavigation" class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title">
+                    <a href="index.html" aria-label="Prompt to Prototype Vibe Coding Challenge Hjem">
+                        Prompt to Prototype Vibe Coding Challenge
+                    </a>
+                </h1>
+                <!-- Language Switcher -->
+                <div class="language-switcher" role="navigation" aria-label="Skift sprog">
+                    <a href="../vibe-coding-guide.html" lang="en" hreflang="en" title="Switch to English">🇬🇧 EN</a>
+                    <span class="lang-active" aria-current="true">🇩🇰 DA</span>
+                </div>
+            </div>
+
+            <ul class="nav-menu" role="list">
+                <li>
+                    <a href="index.html" class="nav-link">
+                        Introduktion
+                    </a>
+                </li>
+                <li>
+                    <a href="idea-generation.html" class="nav-link">
+                        1.0 Idégenerering
+                    </a>
+                </li>
+                <li>
+                    <a href="research.html" class="nav-link">
+                        2.0 Research
+                    </a>
+                </li>
+                <li>
+                    <a href="branding.html" class="nav-link">
+                        3.0 Branding
+                    </a>
+                </li>
+                <li>
+                    <a href="product-requirements.html" class="nav-link">
+                        4.0 Produktkrav
+                    </a>
+                </li>
+                <li>
+                    <a href="prototype.html" class="nav-link">
+                        5.0 Prototype
+                    </a>
+                </li>
+                <li>
+                    <a href="code-prototyping.html" class="nav-link">
+                        6.0 Prototyping
+                    </a>
+                </li>
+                <li>
+                    <a href="learnings-resources.html" class="nav-link">
+                        7.0 Læring og Ressourcer
+                    </a>
+                </li>
+                <li>
+                    <a href="step-7-optional.html" class="nav-link">
+                        ✨ Valgfrit: Lokal AI
+                    </a>
+                </li>
+                <li>
+                    <a href="vibe-coding-guide.html" aria-current="page" class="nav-link active">
+                        Vibe Coding Guide
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main id="main-content" class="main-content">
+            <article>
+                <header>
+                    <h2 class="page-title">Vibe Coding med GitHub Copilot Free Tier</h2>
+                    <p class="page-subtitle">En begyndervenlig guide til at bygge prototyper hurtigt med kunstig intelligens (AI) assistance</p>
+                </header>
+
+                <section aria-labelledby="what-is-heading">
+                    <h3 id="what-is-heading">Hvad er Vibe Coding?</h3>
+                    <p>Vibe coding er en ny måde at bygge software på, hvor du beskriver, hvad du vil have på almindeligt dansk, og AI hjælper dig med at skrive koden. I stedet for at huske syntaks eller kæmpe med dokumentation, har du en samtale med GitHub Copilot for at bringe dine idéer til live.</p>
+                    <p><strong>Perfekt til:</strong> Ikke-programmører, begyndere og alle, der vil bygge en prototype hurtigt uden at gå i stå i tekniske detaljer.</p>
+                </section>
+
+                <section aria-labelledby="what-you-need-heading">
+                    <h3 id="what-you-need-heading">Hvad du skal bruge</h3>
+                    <ol>
+                        <li><strong>VS Code</strong> - Download fra <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+                        <li><strong>GitHub Copilot-udvidelsen</strong> - Gratis niveau tilgængeligt med enhver GitHub-konto</li>
+                        <li><strong>En klar idé</strong> - Ved hvad du vil bygge (selv bare 2-3 sætninger)</li>
+                    </ol>
+                    <div style="background-color: #e8f4fd; border-left: 4px solid #0078d4; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                        <p style="margin: 0;"><strong>💡 Ingen terminal påkrævet!</strong> Du behøver ikke Node.js, npm eller nogen kommandolinjeværktøjer. Kun VS Code og en browser.</p>
+                    </div>
+                </section>
+
+                <section aria-labelledby="setup-heading">
+                    <h3 id="setup-heading">Opsætning (5 minutter)</h3>
+                    
+                    <h4>Trin 1: Installér VS Code</h4>
+                    <ul>
+                        <li>Download og installér fra <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+                        <li>Åbn VS Code</li>
+                    </ul>
+
+                    <h4>Trin 2: Installér GitHub Copilot</h4>
+                    <ol>
+                        <li>Klik på Udvidelser-ikonet i venstre sidepanel (eller tryk <code>Ctrl+Shift+X</code>)</li>
+                        <li>Søg efter "GitHub Copilot"</li>
+                        <li>Klik "Installér"</li>
+                        <li>Log ind med din GitHub-konto, når du bliver bedt om det</li>
+                    </ol>
+
+                    <h4>Trin 3: Verificér at det virker</h4>
+                    <ul>
+                        <li>Se efter Copilot-ikonet i statuslinjen nederst til højre</li>
+                        <li>Hvis du ser det, er du klar!</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="three-tools-heading">
+                    <h3 id="three-tools-heading">De tre værktøjer du vil bruge</h3>
+                    
+                    <div style="margin: 1.5rem 0;">
+                        <h4>🗨️ Copilot Chat (Din AI-partner)</h4>
+                        <ul>
+                            <li><strong>Hvad den gør:</strong> Besvarer spørgsmål, genererer kode, forklarer ting</li>
+                            <li><strong>Sådan åbner du den:</strong> Klik på chat-ikonet i venstre sidepanel eller tryk <code>Ctrl+Alt+I</code></li>
+                            <li><strong>Brug den til:</strong> At få startkode, spørge hvordan man gør noget, planlægge din app</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 1.5rem 0;">
+                        <h4>⚡ Kodefuldførelser (Auto-forslag)</h4>
+                        <ul>
+                            <li><strong>Hvad den gør:</strong> Foreslår kode mens du skriver (vises som grå tekst)</li>
+                            <li><strong>Sådan bruger du den:</strong> Bare begynd at skrive, tryk <code>Tab</code> for at acceptere forslaget</li>
+                            <li><strong>Brug den til:</strong> At skrive HTML, CSS, JavaScript - hvad som helst!</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin: 1.5rem 0;">
+                        <h4>✏️ Inline Chat (Hurtige redigeringer)</h4>
+                        <ul>
+                            <li><strong>Hvad den gør:</strong> Modificerer specifik kode du markerer</li>
+                            <li><strong>Sådan åbner du den:</strong> Markér kode, tryk <code>Ctrl+I</code> (Windows) eller <code>Cmd+I</code> (Mac)</li>
+                            <li><strong>Brug den til:</strong> "Gør dette responsivt", "Tilføj en knap her", "Ret denne fejl"</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section aria-labelledby="first-session-heading">
+                    <h3 id="first-session-heading">Din første Vibe Coding-session</h3>
+                    <p><strong>Eksempel: Byg en simpel landingsside</strong></p>
+
+                    <h4>Trin 1: Start et projekt</h4>
+                    <ol>
+                        <li>Opret en ny mappe på din computer (f.eks. <code>min-landingsside</code>)</li>
+                        <li>I VS Code: <strong>Fil > Åbn mappe</strong> og vælg din mappe</li>
+                        <li>Opret en ny fil: <code>index.html</code></li>
+                    </ol>
+
+                    <h4>Trin 2: Brug Copilot Chat</h4>
+                    <ol>
+                        <li>Åbn Copilot Chat (chat-ikonet i sidepanelet)</li>
+                        <li>Skriv denne prompt:
+                            <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Opret en simpel landingsside HTML-struktur med:
+- En hero-sektion med overskrift og beskrivelse
+- En funktions-sektion med 3 kort
+- En call-to-action knap
+- Grundlæggende CSS-styling inkluderet</code></pre>
+                        </li>
+                        <li>Copilot genererer komplet HTML-kode</li>
+                        <li>Kopiér og indsæt det i din <code>index.html</code>-fil</li>
+                    </ol>
+
+                    <h4>Trin 3: Forhåndsvis din side</h4>
+                    <ol>
+                        <li>Højreklik på <code>index.html</code> i filstifinderen</li>
+                        <li>Vælg "Åbn med Live Server" (eller bare åbn filen i din browser)</li>
+                        <li>Du vil se din landingsside!</li>
+                    </ol>
+
+                    <h4>Trin 4: Lav ændringer med Inline Chat</h4>
+                    <ol>
+                        <li>Markér overskriftsteksten i din HTML</li>
+                        <li>Tryk <code>Ctrl+I</code> for at åbne inline chat</li>
+                        <li>Skriv: "Gør denne overskrift større og skift farven til blå"</li>
+                        <li>Tryk Enter, gennemgå ændringen, klik "Acceptér"</li>
+                    </ol>
+
+                    <h4>Trin 5: Tilføj funktioner med Chat</h4>
+                    <p>Tilbage i Copilot Chat, skriv:</p>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Tilføj en kontaktformular under call-to-action knappen med felter til navn, e-mail og besked</code></pre>
+                    <p>Kopiér den genererede kode og indsæt den i din HTML.</p>
+
+                    <h4>Trin 6: Brug fuldførelser</h4>
+                    <ol>
+                        <li>I din HTML, begynd at skrive: <code>&lt;style&gt;</code></li>
+                        <li>Tryk Enter og begynd at skrive <code>body {</code></li>
+                        <li>Se Copilot foreslå CSS-egenskaber - tryk <code>Tab</code> for at acceptere dem</li>
+                        <li>Fortsæt med at skrive og acceptere forslag for at style din side</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="workflow-heading">
+                    <h3 id="workflow-heading">Vibe Coding-arbejdsgangen</h3>
+                    <div style="background-color: #f6f8fa; padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0;">
+                        <ol style="margin: 0;">
+                            <li><strong>BESKRIV</strong> hvad du vil have → Brug Chat</li>
+                            <li><strong>FÅ</strong> startkode → Kopiér/indsæt i din fil</li>
+                            <li><strong>TEST</strong> det → Åbn i browser</li>
+                            <li><strong>JUSTER</strong> specifikke dele → Brug Inline Chat (Ctrl+I)</li>
+                            <li><strong>TILFØJ</strong> flere funktioner → Tilbage til Chat</li>
+                            <li><strong>ITERÉR</strong> → Gentag trin 3-5 indtil det er færdigt</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section aria-labelledby="tips-heading">
+                    <h3 id="tips-heading">Tips til succes</h3>
+
+                    <h4>✅ Vær specifik i dine prompts</h4>
+                    <ul>
+                        <li>❌ "Opret en hjemmeside"</li>
+                        <li>✅ "Opret en landingsside for en dyreadoptionstjeneste med et hero-billede, liste over tilgængelige kæledyr og kontaktformular"</li>
+                    </ul>
+
+                    <h4>✅ Start simpelt, tilføj senere</h4>
+                    <ul>
+                        <li>Byg den grundlæggende struktur først</li>
+                        <li>Tilføj funktioner én ad gangen</li>
+                        <li>Test efter hver tilføjelse</li>
+                    </ul>
+
+                    <h4>✅ Giv kontekst</h4>
+                    <p>Hvis du har noter eller krav:</p>
+                    <ol>
+                        <li>Opret en fil som <code>ide.md</code> med din beskrivelse</li>
+                        <li>Træk den fil ind i Copilot Chat før du stiller spørgsmål</li>
+                        <li>Sig "Baseret på denne idé, opret..."</li>
+                    </ol>
+
+                    <h4>✅ Bekymr dig ikke om at forstå alt</h4>
+                    <ul>
+                        <li>Du behøver ikke forstå hver linje kode</li>
+                        <li>Bed Copilot forklare hvad som helst: "Hvad gør denne kode?"</li>
+                        <li>Fokusér på at få det til at virke, lær undervejs</li>
+                    </ul>
+
+                    <h4>✅ Brug det rigtige værktøj til opgaven</h4>
+                    <ul>
+                        <li><strong>Store spørgsmål eller nye funktioner?</strong> → Chat</li>
+                        <li><strong>Små justeringer af eksisterende kode?</strong> → Inline Chat (Ctrl+I)</li>
+                        <li><strong>Skriver linje for linje?</strong> → Lad fuldførelser hjælpe dig</li>
+                    </ul>
+
+                    <h4>✅ Iterér frit</h4>
+                    <ul>
+                        <li>Prøv ting, se hvad der virker</li>
+                        <li>Hvis du ikke kan lide noget, bed bare Copilot om at ændre det</li>
+                        <li>Brug <code>Ctrl+Z</code> for at fortryde om nødvendigt</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="common-prompts-heading">
+                    <h3 id="common-prompts-heading">Almindelige begynder-prompts</h3>
+
+                    <h4>Start et projekt</h4>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Opret en enkelt-fil HTML-side til [beskriv din idé] med indlejret CSS og JavaScript</code></pre>
+
+                    <h4>Kom videre når du sidder fast</h4>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Jeg prøver at [hvad du vil gøre] men får denne fejl: [indsæt fejl]</code></pre>
+
+                    <h4>Tilføj funktioner</h4>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Tilføj en [specifik funktion] til denne komponent, der [beskriv adfærd]</code></pre>
+
+                    <h4>Styling</h4>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Få dette [element] til at se ud som [beskrivelse eller reference]</code></pre>
+
+                    <h4>Forstå kode</h4>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Forklar hvad denne kode gør med simple ord</code></pre>
+                </section>
+
+                <section aria-labelledby="quiz-example-heading">
+                    <h3 id="quiz-example-heading">Et komplet eksempel: Byg en quiz-app</h3>
+
+                    <h4>1️⃣ Chat-prompt</h4>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Jeg vil bygge en simpel quiz-app i en enkelt HTML-fil. Den skal:
+- Vise ét spørgsmål ad gangen med 4 multiple choice-muligheder
+- Holde styr på scoren
+- Vise resultater til sidst
+- Have 5 spørgsmål om almen viden
+
+Læg al CSS i et &lt;style&gt;-tag og al JavaScript i et &lt;script&gt;-tag i bunden.</code></pre>
+
+                    <h4>2️⃣ Acceptér koden</h4>
+                    <ul>
+                        <li>Kopiér den genererede kode ind i din <code>index.html</code>-fil</li>
+                        <li>Åbn filen i din browser for at se den</li>
+                    </ul>
+
+                    <h4>3️⃣ Inline-redigering (Ctrl+I)</h4>
+                    <p>Markér spørgsmålsteksten og prompt:</p>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Gør spørgsmålsteksten større og centreret</code></pre>
+
+                    <h4>4️⃣ Chat: Tilføj funktion</h4>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Tilføj nu en fremskridtsbjælke, der viser hvilket spørgsmålsnummer jeg er på</code></pre>
+
+                    <h4>5️⃣ Inline-redigering: Style knapperne</h4>
+                    <p>Markér knap-koden, tryk Ctrl+I:</p>
+                    <pre tabindex="0" style="background-color: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 4px; overflow-x: auto; margin: 1rem 0;"><code>Gør disse knapper farverige og tilføj hover-effekter</code></pre>
+
+                    <h4>6️⃣ Test og iterér</h4>
+                    <ul>
+                        <li>Klik dig igennem din quiz</li>
+                        <li>Ser du noget du vil ændre? Brug inline chat!</li>
+                        <li>Vil du tilføje mere? Spørg i chat!</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="troubleshooting-heading">
+                    <h3 id="troubleshooting-heading">Fejlfinding</h3>
+
+                    <h4>"Copilot foreslår ikke noget"</h4>
+                    <ul>
+                        <li>Sørg for at Copilot-ikonet i statuslinjen er aktivt (ikke krydset over)</li>
+                        <li>Prøv at skrive en kommentar der beskriver hvad du vil: <code>// opret en funktion der lægger to tal sammen</code></li>
+                        <li>Tryk Enter og vent - Copilot vil foreslå koden</li>
+                    </ul>
+
+                    <h4>"Koden virker ikke"</h4>
+                    <ul>
+                        <li>Kopiér fejlmeddelelsen</li>
+                        <li>Indsæt den i Copilot Chat med: "Jeg fik denne fejl, hvordan retter jeg den?"</li>
+                        <li>Copilot vil forklare og foreslå en rettelse</li>
+                    </ul>
+
+                    <h4>"Jeg forstår ikke koden"</h4>
+                    <ul>
+                        <li>Markér en hvilken som helst kode</li>
+                        <li>Tryk Ctrl+I og skriv: "Forklar dette med simple ord"</li>
+                        <li>Eller spørg i Chat: "Hvad gør [specifik del]?"</li>
+                    </ul>
+
+                    <h4>"Copilot foreslog noget forkert"</h4>
+                    <ul>
+                        <li>Ignorer det bare og fortsæt med at skrive, eller</li>
+                        <li>Brug inline chat til at rette det: "Dette virker ikke, ret [det specifikke problem]"</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="what-you-can-build-heading">
+                    <h3 id="what-you-can-build-heading">Hvad du kan bygge (på 30-60 minutter hver)</h3>
+                    <ul>
+                        <li>✅ <strong>Landingssider</strong> - Til et produkt, en tjeneste eller begivenhed</li>
+                        <li>✅ <strong>Portfolio-sider</strong> - Fremvis dit arbejde</li>
+                        <li>✅ <strong>Simple webapps</strong> - Todo-lister, lommeregnere, quiz-spil</li>
+                        <li>✅ <strong>Interaktive prototyper</strong> - Demonstrer en idé</li>
+                        <li>✅ <strong>Formularer og spørgeskemaer</strong> - Indsaml information</li>
+                        <li>✅ <strong>Datavisninger</strong> - Grafer, tabeller, dashboards</li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="mindset-heading">
+                    <h3 id="mindset-heading">Vigtige mindset-skift</h3>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+                        <div>
+                            <h4>Traditionel kodning</h4>
+                            <ul>
+                                <li>Husk syntaks</li>
+                                <li>Læs dokumentation</li>
+                                <li>Skriv hver linje selv</li>
+                                <li>Debug i timevis</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Vibe Coding</h4>
+                            <ul>
+                                <li>Beskriv hvad du vil</li>
+                                <li>Lad AI håndtere syntaks</li>
+                                <li>Acceptér og justér forslag</li>
+                                <li>Bed AI om at rette fejl</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p><strong>Du forventes ikke at vide alt - du forventes at kommunikere dine idéer klart og iterere med AI-assistance.</strong></p>
+                </section>
+
+                <section aria-labelledby="next-steps-heading">
+                    <h3 id="next-steps-heading">Næste skridt</h3>
+                    <ol>
+                        <li><strong>Start med Option A-skabelonen</strong> - Hent <a href="https://github.com/MSLifN/prompt-to-prototype-challenge/tree/main/templates/option-a">starter-skabelonen fra GitHub</a></li>
+                        <li><strong>Følg øvelserne</strong> i dokumentationen</li>
+                        <li><strong>Byg din idé</strong> ved hjælp af arbejdsgangen ovenfor</li>
+                        <li><strong>Del din prototype</strong> - den behøver ikke være perfekt!</li>
+                    </ol>
+                </section>
+
+                <section aria-labelledby="remember-heading">
+                    <h3 id="remember-heading">Husk</h3>
+                    <ul>
+                        <li><strong>Der er ingen forkert måde at bruge Copilot på</strong> - eksperimentér og find hvad der virker for dig</li>
+                        <li><strong>Du lærer mens du bygger</strong> - hver session lærer dig mere</li>
+                        <li><strong>Hastighed er vigtigere end perfektion</strong> - få det til at virke, gør det derefter bedre</li>
+                        <li><strong>AI er din holdkammerat, ikke en erstatning</strong> - du giver visionen, Copilot håndterer detaljerne</li>
+                    </ul>
+                    <p style="font-size: 1.5rem; text-align: center; margin: 2rem 0;"><strong>Gå nu ud og byg noget! 🚀</strong></p>
+                </section>
+
+                <nav aria-label="Sidenavigation" style="display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e1e4e8;">
+                    <div>
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Relateret</p>
+                        <a href="code-prototyping.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            ← 6.0 Kodeprototyping
+                        </a>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="margin: 0; font-size: 0.875rem; color: #4b5563;">Fortsæt</p>
+                        <a href="index.html" style="font-size: 1.125rem; color: #0366d6; text-decoration: none;">
+                            Tilbage til Introduktion →
+                        </a>
+                    </div>
+                </nav>
+            </article>
+
+            <aside aria-labelledby="toc-heading" class="toc-sidebar">
+                <h2 id="toc-heading" class="toc-title">På denne side</h2>
+                <nav aria-label="Sidens indholdsfortegnelse">
+                    <ul role="list">
+                        <li><a href="#what-is-heading">Hvad er Vibe Coding?</a></li>
+                        <li><a href="#what-you-need-heading">Hvad du skal bruge</a></li>
+                        <li><a href="#setup-heading">Opsætning (5 minutter)</a></li>
+                        <li><a href="#three-tools-heading">De tre værktøjer du vil bruge</a></li>
+                        <li><a href="#first-session-heading">Din første Vibe Coding-session</a></li>
+                        <li><a href="#workflow-heading">Vibe Coding-arbejdsgangen</a></li>
+                        <li><a href="#tips-heading">Tips til succes</a></li>
+                        <li><a href="#common-prompts-heading">Almindelige begynder-prompts</a></li>
+                        <li><a href="#quiz-example-heading">Et komplet eksempel: Byg en quiz-app</a></li>
+                        <li><a href="#troubleshooting-heading">Fejlfinding</a></li>
+                        <li><a href="#what-you-can-build-heading">Hvad du kan bygge</a></li>
+                        <li><a href="#mindset-heading">Vigtige mindset-skift</a></li>
+                        <li><a href="#next-steps-heading">Næste skridt</a></li>
+                        <li><a href="#remember-heading">Husk</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
